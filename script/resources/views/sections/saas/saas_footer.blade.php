@@ -1,133 +1,126 @@
-<footer class="bg-white footer">
-    <div class="container border-bottom">
-        <div class="footer__widgets">
-            <div class="row">
+<footer class="footer">
 
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget footer__about-us">
-                        <a href="./" class="hover-logo d-inline-block">
-                            <img src="{{ $setting->logo_front_url }}" class="logo" style="max-height:35px">
-                        </a>
+    <div>
+        <div class="row small-row">
+            <div class="column large-1 footer-submenu-wrapper">
+            </div>
 
-                        <div class="socials mt-4">
-                            @if($frontDetail->social_links)
-                            @foreach (json_decode($frontDetail->social_links,true) as $link)
-                            @if (strlen($link['link']) > 0)
-                            <a href="{{ $link['link'] }}" class="zmdi zmdi-{{$link['name']}}" target="_blank">
-                            </a>
-                            @endif
-                            @endforeach
-                            @endif
+            <div class="column large-10 medium-10 small-12 footer-submenu-wrapper">
+                <div class="footer-submenu">
+                    <h3 class="h6 submenu-title">
+                        Artikel
+                    </h3>
+                    <ul class="submenu-list">
+                        <a href="#"><li>Wat is CRM</li></a>
 
-                        </div>
+                        <a href="#"><li>Projecten beheren</li></a>
 
-                    </div>
-                </div> <!-- end about us -->
+                        <a href="#"><li>Urenregistratie</li></a>
 
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget widget-links">
-                        <h5 class="widget-title">{{__('app.main')}}</h5>
-                        <ul class="list-no-dividers">
-                            <ul class="navbar-nav">
-                                @if($global->enable_register == true)
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        href="{{ route('front.signup.index') }}">@lang('modules.frontCms.getStarted')</a>
-                                </li>
-                                @endif
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        href="{{ route('front.feature') }}">{{ $frontMenu->feature }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('front.pricing') }}">{{ $frontMenu->price }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    @if(module_enabled('Subdomain'))
-                                    <a href="{{ route('front.workspace') }}"
-                                        class="nav-link">{{ $frontMenu->login }}</a>
-                                    @else
-                                    <a href="{{ route('login') }}" class="nav-link">{{ $frontMenu->login }}</a>
-                                    @endif
-                                </li>
-                            </ul>
+                        <a href="#"><li>Rapportages</li></a>
 
-                        </ul>
-                    </div>
+                        <a href="#"><li>Klaten beheren</li></a>
+                    </ul>
                 </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget widget-links">
-                        <h5 class="widget-title">{{__('app.others')}}</h5>
-                        <ul class="navbar-nav ml-auto">
-                            @foreach($footerSettings as $footerSetting)
-                            @if($footerSetting->type != 'header')
-                            <li class="nav-item active"><a class="nav-link"
-                                    href="@if(!is_null($footerSetting->external_link)) {{ $footerSetting->external_link }} @else {{ route('front.page', $footerSetting->slug) }} @endif">{{ $footerSetting->name }}</a>
-                            </li>
-                            @endif
-                            @endforeach
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('front.contact') }}">{{ $frontMenu->contact }}</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="footer-submenu">
+                    <h3 class="h6 submenu-title">
+                        Middelen
+                    </h3>
+                    <ul class="submenu-list">
+                        <a href="#"><li>Integraties</li></a>
+
+                        <a href="#"><li>Hoe Werkt het</li></a>
+
+                        <a href="#"><li>Support an security</li></a>
+
+                    </ul>
                 </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget widget-links">
-                        <h5 class="widget-title">{{ $frontMenu->contact }}</h5>
+                <div class="footer-submenu">
+                    <h3 class="h6 submenu-title">
+                        Bedrijf
+                    </h3>
+                    <ul class="submenu-list">
+                        <a href="#"><li>Over ons</li></a>
 
-                        <div class="socials mt-40">
+                        <a href="#"><li>Onze visle</li></a>
 
-                            <div class="f-contact-detail mt-20">
-                                <i class="flaticon-email"></i>
-                                <p class="mb-0">{{ $frontDetail->email }}</p>
-                            </div>
-                            @if($frontDetail->phone)
-                            <div class="f-contact-detail mt-20">
-                                <i class="flaticon-call"></i>
-                                <p class="mb-0">{{ $frontDetail->phone }}</p>
-                            </div>
-                            @endif
+                        <a href="#"><li>Word partner</li></a>
 
-                            <div class="f-contact-detail mt-20">
-                                <i class="flaticon-placeholder"></i>
-                                <p class="mb-0">{{ $frontDetail->address }}</p>
-                            </div>
-                        </div>
-                    </div>
+                        <a href="#"><li>Slimer werken</li></a>
+                    </ul>
+                </div>
+
+                <div class="footer-submenu">
+                    <h3 class="h6 submenu-title">
+                        Juridisch
+                    </h3>
+                    <ul class="submenu-list">
+                        <a href="#"><li>Algemene Voor waarden</li></a>
+
+                        <a href="#"><li>Privacy policy</li></a>
+
+                        <a href="#"><li>Disclaimer</li></a>
+
+                        <a href="#"><li>Cookie policy</li></a>
+                    </ul>
                 </div>
 
             </div>
+
+            <div class="column large-1 footer-submenu-wrapper">
+            </div>
+
         </div>
-    </div> <!-- end container -->
+    </div>
 
-    <div class="footer__bottom top-divider">
-        <div class="container text-center ">
-            <span class="copyright mr-3">
-                {{ $trFrontDetail->footer_copyright_text ?? "" }}
-            </span>
-            @if(count($languages)>0)
-            <div class="input-group d-inline-flex lang-selector">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupPrepend"><i class="zmdi zmdi-globe-alt"></i></span>
-                </div>
+    <div class="row small-row">
+        <div class="column large-1">
+        </div>
 
-                <select class="custom-select custom-select-sm" onchange="location = this.value;">
-                    <option value="{{ route('front.language.lang', 'en') }}" @if($locale=='en' ) selected @endif>English
-                    </option>
-                    @foreach($languages as $language)
-                    <option value="{{ route('front.language.lang', $language->language_code) }}"
-                        @if($locale==$language->language_code) selected @endif>{{
-                                    $language->language_name }}
-                    </option>
-                    @endforeach
-                </select>
+        <div class="column large-10 medium-10 small-12">
+            <div class="footer-btn text-right">
+                <a href="#">Contact opnemen met de klantenservice</a>
+            </div>
+        </div>
+
+        <div class="column large-1">
+        </div>
+    </div>
+
+    <div class="row small-row no-p">
+        <div class="column large-1">
+        </div>
+
+        <div class="column large-10 medium-10 small-12">
+            <div class="text-center">
+                <ul class="language-list">
+                    <a href="#"><li>English</li></a>
+
+                    <a href="#"><li>Dutch</li></a>
+            </div>
+        </div>
+
+        <div class="column large-1">
+        </div>
+    </div>
+
+    <div>
+        <div id="copyright-border"></div>
+        <div class="row flex-container justify-between align-middle">
+            <div class="column large-1 footer-submenu-wrapper">
+            </div>
+            <div class="column large-10 small-12  footer-submenu-wrapper border f-img">
+                <img src="img/Mews-Logo-White.svg" alt="Mews logo white" id="footer-logo-white" width="100" height="13" />
+            </div>
+            <div class="column large-1 footer-submenu-wrapper">
+            </div>
+            <div class="column">
 
             </div>
-            @endif
         </div>
-    </div> <!-- end footer bottom -->
+    </div>
+
 
 </footer>

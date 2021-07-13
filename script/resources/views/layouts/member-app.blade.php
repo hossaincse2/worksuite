@@ -312,7 +312,7 @@
         }
 
 
-        
+
     </style>
 
     <style>
@@ -343,7 +343,7 @@
     <div class="cssload-speeding-wheel"></div>
 </div>
 <div id="wrapper">
-    @php 
+    @php
     $filterSection = false;
 @endphp
     <!-- Left navbar-header -->
@@ -353,7 +353,7 @@
     <div id="page-wrapper" class="row">
         <div class="container-fluid">
             @if (!empty($__env->yieldContent('filter-section')))
-            @php 
+            @php
                 $filterSection = true;
             @endphp
                 <div class="col-md-3 filter-section">

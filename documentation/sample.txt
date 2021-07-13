@@ -1,0 +1,68 @@
+Here you have an descp for the frondend design.
+Use below section from the super admin into the pages.
+
+
+
+
+Index page 
+
+1. Logo and website name, seo etc etc https://demo-saas.worksuite.biz/super-admin/settings
+2. Menu https://demo-saas.worksuite.biz/super-admin/front-settings/front-menu-settings
+3. Language https://demo-saas.worksuite.biz/super-admin/settings/language-settings
+4. buttons https://demo-saas.worksuite.biz/super-admin/front-settings/front-settings
+5. header text and image https://demo-saas.worksuite.biz/super-admin/front-settings/front-settings
+6. brands https://demo-saas.worksuite.biz/super-admin/front-settings/client-settings
+7. Feature frondend https://demo-saas.worksuite.biz/super-admin/front-settings/feature-settings?type=image
+8. https://demo-saas.worksuite.biz/super-admin/front-settings/feature-settings?type=apps
+9. https://demo-saas.worksuite.biz/super-admin/front-settings/feature-settings?type=icon
+10.
+11.https://demo-saas.worksuite.biz/super-admin/front-settings/testimonial-settings
+12. footer menu and pages https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings and https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings/create
+
+
+Feature page
+
+1. Logo and website name, seo etc etc https://demo-saas.worksuite.biz/super-admin/settings
+2. Menu https://demo-saas.worksuite.biz/super-admin/front-settings/front-menu-settings
+3. Language https://demo-saas.worksuite.biz/super-admin/settings/language-settings
+4. buttons https://demo-saas.worksuite.biz/super-admin/front-settings/front-settings
+5. https://demo-saas.worksuite.biz/super-admin/front-settings/front-feature-settings with https://demo-saas.worksuite.biz/super-admin/front-settings/front-feature-settings/1
+6. https://demo-saas.worksuite.biz/super-admin/front-settings/front-feature-settings with https://demo-saas.worksuite.biz/super-admin/front-settings/front-feature-settings/2
+7. https://demo-saas.worksuite.biz/super-admin/front-settings/client-settings
+8. https://demo-saas.worksuite.biz/super-admin/front-settings/front-feature-settings with https://demo-saas.worksuite.biz/super-admin/front-settings/front-feature-settings/3
+9. https://demo-saas.worksuite.biz/super-admin/front-settings/testimonial-settings
+10. footer menu and pages https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings and https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings/create
+
+Pricing page
+
+1. Logo and website name, seo etc etc https://demo-saas.worksuite.biz/super-admin/settings
+2. Menu https://demo-saas.worksuite.biz/super-admin/front-settings/front-menu-settings
+3. Language https://demo-saas.worksuite.biz/super-admin/settings/language-settings
+4. buttons https://demo-saas.worksuite.biz/super-admin/front-settings/front-settings
+5. https://demo-saas.worksuite.biz/super-admin/front-settings/price-settings
+6. https://demo-saas.worksuite.biz/super-admin/packages
+7. https://demo-saas.worksuite.biz/super-admin/front-settings/faq-settings
+8. https://demo-saas.worksuite.biz/super-admin/front-settings/feature-settings?type=apps
+9. https://demo-saas.worksuite.biz/super-admin/front-settings/client-settings
+10.https://demo-saas.worksuite.biz/super-admin/front-settings/testimonial-settings
+11. footer menu and pages https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings and https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings/create
+
+contact page
+
+1. Logo and website name, seo etc etc https://demo-saas.worksuite.biz/super-admin/settings
+2. Menu https://demo-saas.worksuite.biz/super-admin/front-settings/front-menu-settings
+3. Language https://demo-saas.worksuite.biz/super-admin/settings/language-settings
+4. buttons https://demo-saas.worksuite.biz/super-admin/front-settings/front-settings
+5. https://demo-saas.worksuite.biz/super-admin/front-settings/contact-settings
+6.https://demo-saas.worksuite.biz/super-admin/front-settings/testimonial-settings
+7. footer menu and pages https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings and https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings/create
+
+
+
+default page when creating an new page from 
+1. Logo and website name, seo etc etc https://demo-saas.worksuite.biz/super-admin/settings
+2. Menu https://demo-saas.worksuite.biz/super-admin/front-settings/front-menu-settings
+3. Language https://demo-saas.worksuite.biz/super-admin/settings/language-settings
+4. buttons https://demo-saas.worksuite.biz/super-admin/front-settings/front-settings
+5. https://demo-saas.worksuite.biz/super-admin/front-settings/footer-settings/create
+

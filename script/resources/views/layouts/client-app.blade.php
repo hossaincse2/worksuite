@@ -288,11 +288,11 @@
     <!-- Page Content -->
     <div id="page-wrapper" class="row">
         <div class="container-fluid">
-            @php 
+            @php
                  $filterSection = false;
              @endphp
             @if (!empty($__env->yieldContent('filter-section')))
-            @php 
+            @php
                  $filterSection = true;
             @endphp
                 <div class="col-md-3 filter-section">

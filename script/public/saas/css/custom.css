@@ -1,0 +1,295 @@
+#title {
+    font-size: 35px;
+
+}
+
+.h4 {
+    font-size: 1.7rem;
+}
+
+
+.solutions-info p:first-of-type {
+    padding-right: 10%;
+}
+
+#success-head h2 {
+    font-size: 43px;
+
+}
+
+#success-head p {
+  margin-top: 50px;
+  margin-bottom: 40px;
+
+}
+
+.s-text {
+	margin-bottom: 30px;
+}
+
+.s-text i {
+	font-size: 25px;
+	color: #1B1B1B;
+}
+
+.s-text h4 {
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	color: #1B1B1B;
+}
+
+.s-text p {
+	font-size: 12px;
+	margin-top: 0;
+	color: #1B1B1B;
+}
+
+#success-main a:hover {
+	color: #1B1B1B;
+}
+
+/*review slider*/
+
+/* Slideshow container */
+
+.review-container {
+    max-width: 100%;/*
+    min-height: 835px;*/
+    background: linear-gradient(0deg, #33475b, rgba(51, 71, 91, 0.1)), url("../img/CTAblock-50@0.5x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 16%;
+}
+
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides img {
+  visibility: hidden;
+}
+
+/* Caption text */
+.review-container .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0; 
+  left: 30px;
+  width: 90%;
+  text-align: left;
+}
+
+.dots {
+  position: absolute;
+  bottom: 53%;
+  width: 50%;
+}
+
+
+.review-container .text h2 {
+  color: #fff;
+  font-size: 33px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.review-container .text h3 {
+  color: #fff;
+  font-size: 28px;
+  line-height: 1.4;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.review-container .text i {
+  color: #FFC107;
+  font-size: 12px;
+  margin-left: 3px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* The dots/bullets/indicators */
+.review-container .dot {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.review-container .active, .review-container .dot:hover {
+  background-color: #ddd;
+}
+
+/* Fading animation */
+.review-container .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+.footer {
+	background: #33475B;
+	color: #fff;
+	padding-top: 50px;
+
+}
+
+.f-img {
+	padding-top: 40px;
+}
+
+.footer-submenu a, .footer-submenu * {
+	color: #fff;
+	font-size: 13px;
+}
+
+.footer-submenu .submenu-title {
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.footer-btn a {
+	color: #000;
+	font-size: 13px;
+	padding: 10px 25px;
+	background: #fff;
+	display: inline-block;
+	border-radius: 30px;
+}
+
+.language-list {
+	list-style-type: none;
+	margin-bottom: 0;
+}
+
+.language-list * {
+	color: #84888C;
+	font-size: 13px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.footer .no-p {
+	padding-bottom: 5px;
+}
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+.dots {
+    position: absolute;
+    bottom: 43%;
+    width: 100%;
+}
+
+#success-head h2 {
+    margin-top: 50px;
+}
+
+
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+.dots {
+    position: absolute;
+    bottom: 7%;
+    width: 100%;
+}
+
+.review-container .text h2 {
+    color: #fff;
+    font-size: 10px;
+    margin-bottom: 0;
+    }
+.review-container .text h3 {
+    color: #fff;
+    font-size: 8px;
+}
+
+.review-container .text i {
+    color: #FFC107;
+    font-size: 6px;
+}
+
+.review-container .text {
+    top: 0;
+    left: 3px;
+    width: 90%;
+
+}
+
+.review-container .dot {
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 51%;
+    width: 68%;
+}
+
+.footer-btn a {
+    color: #000;
+    font-size: 11px;
+}
+
+#success-main {
+	display: block !important;
+}
+
+#success-head h2 {
+    margin-top: 50px;
+}
+
+.f-img {
+    padding-top: 0px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
