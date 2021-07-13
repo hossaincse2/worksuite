@@ -1,0 +1,59 @@
+
+                                .hero-primary {
+                                    position: relative;
+                                }
+                                .image-wrapper {
+                                    height: calc(100% - var(--nav-height));
+                                    position: absolute;
+                                    top: var(--nav-height);
+                                    width: 50%;
+                                    right: 0;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                }
+                                .image-container {
+                                    height: 100%;
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    position: relative;
+                                }
+
+                                #hero-bg-image,
+                                #hero-bg-image img {
+                                    height: 100%;
+                                    width: 100%;
+                                    object-fit: cover;
+                                }
+
+                                .hero-content {
+                                    z-index: 1;
+                                    position: relative;
+                                }
+                                @media (min-width: 1024px) {
+                                    .hero-primary {
+                                        height: auto;
+                                    }
+                                }
+                                @media (max-width: 1023px) {
+                                    .image-wrapper {
+                                        position: static;
+                                        height: 100%;
+                                        width: 100%;
+                                    }
+                                    .hero-description .button {
+                                        display: none;
+                                    }
+                                }
+                                @media (max-width: 425px) {
+                                    .hero-content {
+                                        height: auto;
+                                    }
+                                }
+
+                                  .hero-tertiary {
+                                    padding-bottom: 0;
+                                }
+                         
