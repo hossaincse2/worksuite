@@ -48,6 +48,7 @@ class SuperAdminFrontSettingController extends SuperAdminBaseController
         if($this->global->front_design == 1) {
             return view('super-admin.front-settings.new-theme.index', $this->data);
         }
+
         return view('super-admin.front-settings.index', $this->data);
     }
 

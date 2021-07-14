@@ -105,6 +105,7 @@ class HomeController extends FrontBaseController
         $this->packages = Package::where('default', 'no')->where('is_private', 0)->orderBy('sort', 'ASC')->get();
 
         $imageFeaturesCount = Feature::select('id', 'language_setting_id', 'type')->where(['language_setting_id' => $this->localeLanguage ? $this->localeLanguage->id : null, 'type' => 'image'])->count();
+        $appsFeaturesCount = Feature::select('id', 'language_setting_id', 'type')->where(['language_setting_id' => $this->localeLanguage ? $this->localeLanguage->id : null, 'type' => 'apps'])->count();
         $iconFeaturesCount = Feature::select('id', 'language_setting_id', 'type')->where(['language_setting_id' => $this->localeLanguage ? $this->localeLanguage->id : null, 'type' => 'icon'])->count();
         $frontClientsCount = FrontClients::select('id', 'language_setting_id')->where('language_setting_id', $this->localeLanguage ? $this->localeLanguage->id : null)->count();
         $testimonialsCount = Testimonials::select('id', 'language_setting_id')->where('language_setting_id', $this->localeLanguage ? $this->localeLanguage->id : null)->count();
@@ -112,6 +113,11 @@ class HomeController extends FrontBaseController
         $this->featureWithImages = Feature::where([
             'language_setting_id' => $imageFeaturesCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null,
             'type' => 'image'
+        ])->whereNull('front_feature_id')->get();
+
+        $this->featureWithApps = Feature::where([
+            'language_setting_id' => $appsFeaturesCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null,
+            'type' => 'apps'
         ])->whereNull('front_feature_id')->get();
 
         $this->featureWithIcons = Feature::where([

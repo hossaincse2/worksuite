@@ -30,13 +30,12 @@
                             <div class="row">
                                 <div class="column small-12 medium-12 large-5">
                                     <div class="hero-content">
-                                        <h1 class="supertitle dot">Property management system</h1>
-                                        <h2 class="h1">The hospitality system of the future</h2>
+                                        <h1 class="supertitle dot">{{ $trFrontDetail->header_title ?: $defaultTrFrontDetail->header_title }}</h1>
+                                        <h2 class="h1">{{ $trFrontDetail->header_title ?: $defaultTrFrontDetail->header_title }}</h2>
                                         <div class="hero-description">
                                             <div class="p-large">
                                                 <p>
-                                                    Mews is designed to simplify and automate all operations for modern hoteliers and their guests. From the booking engine to check-out, from front desk to revenue management, every process
-                                                    is easier, faster and more connected.
+                                                    {!! $trFrontDetail->header_description ?: $defaultTrFrontDetail->header_description !!}
                                                 </p>
                                             </div>
 
@@ -52,12 +51,11 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="image-wrapper">
                                 <div class="image-container">
                                     <picture id="hero-bg-image">
-                                        <source srcset="{{asset('saas/img/Homepage-Hero_1245x1014_v1-min.jpg')}}" media="(min-width: 1300px)" />
-                                        <img src="{{asset('saas/img/Homepage-Hero_810x660_v1-min.jpg')}}" alt="Homepage-Hero_1245x1014_v1-min" />
+                                        <source srcset="{{$trFrontDetail->image_url}}" media="(min-width: 1300px)" />
+                                        <img src="{{$trFrontDetail->image_url}}" alt="Homepage-Hero_1245x1014_v1-min" />
                                     </picture>
                                 </div>
                             </div>
@@ -71,31 +69,15 @@
                                     <p class="p-large text-center mb-30">Powering over 2,000 of the world's best hospitality brands. <a href="/en/customers" rel="noopener">See our customers.</a></p>
                                 </div>
                             </div>
-
                             <div class="row small-up-2 medium-up-3 large-up-6" id="logo-row">
-                                <div class="column flex-container align-center-middle logo-wrap">
-                                    <img src="{{asset('saas/img/C-Hotels.png?width=240&amp;height=240&amp;name=C-Hotels.png')}}" alt="C-Hotels" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
+                                @foreach($frontClients as $client)
+                                    @php
+                                        $client_img="user-uploads/front/client/".$client->image."?width=240&amp;height=240&amp;name=".$client->image
+                                    @endphp
+                                    <div class="column flex-container align-center-middle logo-wrap">
+                                    <img src="{{asset($client_img)}}" alt="{{$client->title}}" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
                                 </div>
-
-                                <div class="column flex-container align-center-middle logo-wrap">
-                                    <img src="{{asset('saas/img/Autocamp_.png?width=240&amp;height=240&amp;name=Autocamp_.png')}}" alt="Autocamp logo" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
-                                </div>
-
-                                <div class="column flex-container align-center-middle logo-wrap">
-                                    <img src="{{asset('saas/img/Tsogo_Sun.png?width=240&amp;height=240&amp;name=Tsogo%20Sun.png')}}" alt="Tsogo Sun logo" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
-                                </div>
-
-                                <div class="column flex-container align-center-middle logo-wrap">
-                                    <img src="{{asset('saas/img/The_Student_Hotel.png?width=240&amp;height=240&amp;name=The%20Student%20Hotel.png')}}" alt="The Student Hotel" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
-                                </div>
-
-                                <div class="column flex-container align-center-middle logo-wrap">
-                                    <img src="{{asset('saas/img/Your_Apartment.png?width=240&amp;height=240&amp;name=Your%20Apartment.png')}}" alt="Your Apartment" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
-                                </div>
-
-                                <div class="column flex-container align-center-middle logo-wrap">
-                                    <img src="{{asset('saas/img/The_Dylan.png?width=240&amp;height=240&amp;name=The%20Dylan_.png')}}'" alt="The Dylan logo" width="240" height="240" data-us-logo="img/The_Dylan.png" sizes="(max-width: 240px) 100vw, 240px" />
-                                </div>
+                                @endforeach
                             </div>
                         </section>
                     </div>
@@ -104,147 +86,37 @@
                             <div class="row small-row">
                                 <div class="column large-6 medium-12 small-12 flex-container flex-dir-column">
                                     <p class="supertitle dot">Product</p>
-                                    <h2 class="h3">Mews Hospitality Cloud</h2>
-                                    <p class="mb-60">Make your property remarkable with an ecosystem of hospitality solutions that maximize revenue and enhance the guest experience.</p>
-
+                                    <h2 class="h3">{{$trFrontDetail->feature_title}}</h2>
+                                    <p class="mb-60">{{ $trFrontDetail->feature_description }}</p>
                                     <ul class="preview-list mb-30 flex-container flex-dir-column">
-                                        <li class="flex-container preview-list-item active" data-index="1">
-                                            <img src="{{asset('saas/img/Operations.svg')}}" alt="Operations" height="400" width="400" />
+                                         @foreach($featureWithImages as $key => $value)
+                                            <li class="flex-container preview-list-item {{($loop->first)?'active':''}}"  data-index="{{$key}}">
+                                            <img src="{{($value->icon)?$value->icon:asset('saas/img/Guest_Journey.svg')}}" alt="{{$value->title}}" height="400" width="400" />
                                             <div class="flex-container flex-dir-column">
-                                                <p class="preview-title"><strong>Mews Operations</strong></p>
+                                                <p class="preview-title"><strong>{{$value->title}}</strong></p>
                                                 <div class="preview-info flex-container flex-dir-column">
-                                                    <p>The control centre for front office and back office staff, with a powerful system that uses smart automation to boost efficiency, grow revenue, and improve the guest experience.</p>
+                                                    <p>{!! $value->description !!}</p>
                                                     <a class="content-link" href="#">Learn more</a>
                                                 </div>
                                             </div>
-                                        </li>
-
-                                        <li class="flex-container preview-list-item" data-index="2">
-                                            <img src="{{asset('saas/img/Guest_Journey.svg')}}" alt="Guest Journey" height="400" width="400" />
-                                            <div class="flex-container flex-dir-column">
-                                                <p class="preview-title"><strong>Mews Guest Journey</strong></p>
-                                                <div class="preview-info flex-container flex-dir-column">
-                                                    <p>
-                                                        Put guests in control of their stay, from the Mews Booking Engine through to Self Service Kiosks and our Virtual Concierge, and provide an experience that’s memorable as well as
-                                                        modern.
-                                                    </p>
-                                                    <a class="content-link" href="#">Learn more</a>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="flex-container preview-list-item" data-index="3">
-                                            <img src="{{asset('saas/img/Payments.svg')}}" alt="Payments" height="400" width="400" />
-                                            <div class="flex-container flex-dir-column">
-                                                <p class="preview-title"><strong>Mews Payments</strong></p>
-                                                <div class="preview-info flex-container flex-dir-column">
-                                                    <p>A fully integrated payment system, with secure, instant payments at any part of the guest journey. Cut manual errors and transform conversations from transactional to meaningful.</p>
-                                                    <a class="content-link" href="#">Learn more</a>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="flex-container preview-list-item" data-index="4">
-                                            <img src="{{asset('saas/img/Business_Intelligence.svg')}}" alt="Business Intelligence" height="400" width="400" />
-                                            <div class="flex-container flex-dir-column">
-                                                <p class="preview-title"><strong>Mews Business Intelligence</strong></p>
-                                                <div class="preview-info flex-container flex-dir-column">
-                                                    <p>Visual dashboards with powerful, customizable reporting to present your property and guest data. Understand how you’re performing and where to improve.</p>
-                                                    <a class="content-link" href="#">Learn more</a>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="flex-container preview-list-item" data-index="5">
-                                            <img src="{{asset('saas/img/Marketplace.svg')}}" alt="Marketplace" height="400" width="400" />
-                                            <div class="flex-container flex-dir-column">
-                                                <p class="preview-title"><strong>Mews Marketplace</strong></p>
-                                                <div class="preview-info flex-container flex-dir-column">
-                                                    <p>Our cloud pms software integrates with hundreds of specialist hotel tech solutions that can help elevate your property.</p>
-                                                    <a class="content-link" href="#">Learn more</a>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="flex-container preview-list-item" data-index="6">
-                                            <img src="{{asset('saas/img/Open_API@2x8.png')}}" alt="Open API" height="400" width="400" />
-                                            <div class="flex-container flex-dir-column">
-                                                <p class="preview-title"><strong>Mews Open API</strong></p>
-                                                <div class="preview-info flex-container flex-dir-column">
-                                                    <p>Limitless connectivity and customization to integrate any bespoke or third-party software solutions that your property needs.</p>
-                                                    <a class="content-link" href="#">Learn more</a>
-                                                </div>
-                                            </div>
-                                        </li>
+                                          </li>
+                                        @endforeach
                                     </ul>
-
                                     <a class="button button--secondary align-self-start" href="#">Explore the product</a>
                                 </div>
                             </div>
                             <div class="preview-image-container bg-blue_grey-3">
                                 <div class="flex-container flex-dir-column align-center-middle" id="preview-image-wrap">
-                                    <picture class="preview-image active" data-index="1">
-                                        <source
-                                                srcset="
-                                                https://f.hubspotusercontent10.net/hubfs/5255565/_Project_Phoenix/images/Product%20renders/mews-operations.png,
-                                                https://f.hubspotusercontent10.net/hubfs/5255565/_Project_Phoenix/images/Product%20renders/Operations@2x-8.png 2x
-                                            "
-                                        />
-                                        <img src="{{asset('saas/img/mews-operations.png')}}" alt="Mews operations render" loading="lazy" />
+                                    @foreach($featureWithImages as $key => $value)
+                                        <picture class="preview-image {{($loop->first)?'active':''}}" data-index="{{$key}}">
+                                        <source srcset="{{$value->image_url}}"/>
+                                        <img src="{{$value->image_url}}" alt="{{$value->title}} render" loading="lazy" />
                                     </picture>
-
-                                    <picture class="preview-image" data-index="2">
-                                        <source
-                                                srcset="
-                                                https://f.hubspotusercontent10.net/hubfs/5255565/_Project_Phoenix/images/Product%20renders/mews-guest-journey%20.png,
-                                                https://f.hubspotusercontent10.net/hubfs/5255565/_Project_Phoenix/images/Product%20renders/Guest%20Journey@2x-8.png  2x
-                                            "
-                                        />
-                                        <img src="{{asset('saas/img/mews-guest-journey.png')}}" alt="Guest journey render" loading="lazy" />
-                                    </picture>
-
-                                    <picture class="preview-image" data-index="3">
-                                        <source
-                                                srcset="
-                                                https://f.hubspotusercontent10.net/hubfs/5255565/_Project_Phoenix/images/Product%20renders/mews-payments.png,
-                                                https://f.hubspotusercontent10.net/hubfs/5255565/_Project_Phoenix/images/Product%20renders/Payments@2x-8.png 2x
-                                            "
-                                        />
-                                        <img src="{{asset('saas/img/mews-payments.png')}}" alt="Mews payments render" loading="lazy" />
-                                    </picture>
-
-                                    <picture class="preview-image" data-index="4">
-                                        <source
-                                                srcset="
-                                                https://f.hubspotusercontent10.net/hubfs/5255565/_Project_Phoenix/images/Product%20renders/mews-analytics.png,
-                                                https://f.hubspotusercontent10.net/hubfs/5255565/_Project_Phoenix/images/Product%20renders/Analytics@2x-8.png 2x
-                                            "
-                                        />
-                                        <img src="{{asset('saas/img/mews-analytics.png')}}" alt="Analytics render" loading="lazy" />
-                                    </picture>
-
-                                    <picture class="preview-image" data-index="5">
-                                        <source srcset="img/mews-analytics.png, img/mews-analytics.png 2x" />
-                                        <img src="{{asset('saas/img/mews-marketplace.png')}}" alt="Mews marketplace render" loading="lazy" />
-                                    </picture>
-
-                                    <picture class="preview-image" data-index="6">
-                                        <source srcset="img/Open_API@2x8.png, img/Open_API@2x8.png 2x" />
-                                        <img src="{{asset('saas/img/Open_API@2x8.png')}}" alt="API render" loading="lazy" />
-                                    </picture>
-
+                                    @endforeach
                                     <ol class="preview-dots">
-                                        <li class="preview-dot active" data-index="1"></li>
-
-                                        <li class="preview-dot" data-index="2"></li>
-
-                                        <li class="preview-dot" data-index="3"></li>
-
-                                        <li class="preview-dot" data-index="4"></li>
-
-                                        <li class="preview-dot" data-index="5"></li>
-
-                                        <li class="preview-dot" data-index="6"></li>
+                                        @foreach($featureWithImages as $key => $value)
+                                            <li class="preview-dot {{($loop->first)?'active':''}}" data-index={{$key}}></li>
+                                        @endforeach
                                     </ol>
                                 </div>
                             </div>
@@ -256,35 +128,34 @@
                                 <div class="column large-1 medium-12 small-12" id="title-wrap">
                                     <p class="supertitle dot">Solutions</p>
                                     <h2 class="h4" id="title">
-                                        Rethink experiences,<br />
-                                        delight customers.
+                                        {{$trFrontDetail->favourite_apps_title}}<br />
                                     </h2>
                                 </div>
                                 <div class="column large-11 medium-12 small-12 flex-container" id="solutions-main">
-                                    <a class="solutions-tile" href="#">
+                                    @foreach($featureWithApps as $key=>$value)
+                                        <a class="solutions-tile" href="#">
                                         <div class="solutions-img-wrapper">
                                             <img
                                                     loading="lazy"
-                                                    src="{{asset('saas/img/Groups@1.5x.jpg?width=981&amp;height=1146&amp;name=Groups@1.5x.jpg')}}"
-                                                    alt="Groups@1.5x"
+                                                    src="{{$value->image_url}}"
+                                                    alt="{{$value->title}}"
                                                     width="981"
                                                     height="1146"
                                                     srcset="
-                                                    img/Groups@1.5x.jpg?width=491&amp;height=573&amp;name=Groups@1.5x.jpg    491w,
-                                                    img/Groups@1.5x.jpg?width=981&amp;height=1146&amp;name=Groups@1.5x.jpg   981w,
-                                                    img/Groups@1.5x.jpg?width=1472&amp;height=1719&amp;name=Groups@1.5x.jpg 1472w,
-                                                    img/Groups@1.5x.jpg?width=1962&amp;height=2292&amp;name=Groups@1.5x.jpg 1962w,
-                                                    img/Groups@1.5x.jpg?width=2453&amp;height=2865&amp;name=Groups@1.5x.jpg 2453w,
-                                                    img/Groups@1.5x.jpg?width=2943&amp;height=3438&amp;name=Groups@1.5x.jpg 2943w
-                                                "
+                                                    {{$value->image_url}}?width=491&amp;height=573&amp;name=Groups@1.5x.jpg    491w,
+                                                    {{$value->image_url}}?width=981&amp;height=1146&amp;name=Groups@1.5x.jpg   981w,
+                                                    {{$value->image_url}}?width=1472&amp;height=1719&amp;name=Groups@1.5x.jpg 1472w,
+                                                    {{$value->image_url}}?width=1962&amp;height=2292&amp;name=Groups@1.5x.jpg 1962w,
+                                                    {{$value->image_url}}?width=2453&amp;height=2865&amp;name=Groups@1.5x.jpg 2453w,
+                                                    {{$value->image_url}}?width=2943&amp;height=3438&amp;name=Groups@1.5x.jpg 2943w"
                                                     sizes="(max-width: 981px) 100vw, 981px"
                                             />
                                             <div class="solutions-info flex-container flex-dir-column">
                                                 <div class="solutions-title flex-container">
-                                                    <h3 class="h4">Groups</h3>
+                                                    <h3 class="h4">{{$value->title}}</h3>
                                                 </div>
                                                 <p class="mb-30">
-                                                    Give your hotel group an unfair advantage. Mews offers a highly scalable and secure platform, fast onboarding, intuitive UI, integrated payments and endless opportunities for innovation.
+                                                    {!! $value->description !!}
                                                 </p>
 
                                                 <p class="content-link">Learn more</p>
@@ -298,79 +169,7 @@
                                             </div>
                                         </div>
                                     </a>
-
-                                    <a class="solutions-tile" href="#">
-                                        <div class="solutions-img-wrapper">
-                                            <img
-                                                    loading="lazy"
-                                                    src="{{asset('saas/img/Independents@1.5x.jpg?width=981&amp;height=1146&amp;name=Independents@1.5x.jpg')}}"
-                                                    alt="Independents@1.5x"
-                                                    width="981"
-                                                    height="1146"
-                                                    srcset="
-                                                    img/Independents@1.5x.jpg?width=491&amp;height=573&amp;name=Independents@1.5x.jpg    491w,
-                                                    img/Independents@1.5x.jpg?width=981&amp;height=1146&amp;name=Independents@1.5x.jpg   981w,
-                                                    img/Independents@1.5x.jpg?width=1472&amp;height=1719&amp;name=Independents@1.5x.jpg 1472w,
-                                                    img/Independents@1.5x.jpg?width=1962&amp;height=2292&amp;name=Independents@1.5x.jpg 1962w,
-                                                    img/Independents@1.5x.jpg?width=2453&amp;height=2865&amp;name=Independents@1.5x.jpg 2453w,
-                                                    img/Independents@1.5x.jpg?width=2943&amp;height=3438&amp;name=Independents@1.5x.jpg 2943w
-                                                "
-                                                    sizes="(max-width: 981px) 100vw, 981px"
-                                            />
-                                            <div class="solutions-info flex-container flex-dir-column">
-                                                <div class="solutions-title flex-container">
-                                                    <h3 class="h4">Independents</h3>
-                                                </div>
-                                                <p class="mb-30">You’re one of a kind. Mews will help you to create a highly efficient hotel operation that maximizes every resource, elevates experience, and delights your guests.</p>
-
-                                                <p class="content-link">Learn more</p>
-                                            </div>
-                                            <div class="three-crosses">
-                                                <span></span>
-
-                                                <span></span>
-
-                                                <span></span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a class="solutions-tile" href="#">
-                                        <div class="solutions-img-wrapper">
-                                            <img
-                                                    loading="lazy"
-                                                    src="{{asset('saas/img/Independents@1.5x.jpg?width=981&amp;height=1146&amp;name=Independents@1.5x.jpg')}}"
-                                                    alt="Independents@1.5x"
-                                                    width="981"
-                                                    height="1146"
-                                                    srcset="
-                                                    img/Independents@1.5x.jpg?width=491&amp;height=573&amp;name=Independents@1.5x.jpg    491w,
-                                                    img/Independents@1.5x.jpg?width=981&amp;height=1146&amp;name=Independents@1.5x.jpg   981w,
-                                                    img/Independents@1.5x.jpg?width=1472&amp;height=1719&amp;name=Independents@1.5x.jpg 1472w,
-                                                    img/Independents@1.5x.jpg?width=1962&amp;height=2292&amp;name=Independents@1.5x.jpg 1962w,
-                                                    img/Independents@1.5x.jpg?width=2453&amp;height=2865&amp;name=Independents@1.5x.jpg 2453w,
-                                                    img/Independents@1.5x.jpg?width=2943&amp;height=3438&amp;name=Independents@1.5x.jpg 2943w
-                                                "
-                                                    sizes="(max-width: 981px) 100vw, 981px"
-                                            />
-                                            <div class="solutions-info flex-container flex-dir-column">
-                                                <div class="solutions-title flex-container">
-                                                    <h3 class="h4">Independents</h3>
-                                                </div>
-                                                <p class="mb-30">You’re one of a kind. Mews will help you to create a highly efficient hotel operation that maximizes every resource, elevates experience, and delights your guests.</p>
-
-                                                <p class="content-link">Learn more</p>
-                                            </div>
-                                            <div class="three-crosses">
-                                                <span></span>
-
-                                                <span></span>
-
-                                                <span></span>
-                                            </div>
-                                        </div>
-                                    </a>
-
+                                    @endforeach
                                 </div>
                             </div>
                         </section>

@@ -3,11 +3,9 @@
         <nav class="nav-main-wrap">
             <div class="row column">
                 <div class="nav-main">
-                    <div class="nav-logo">
-                        <a href="/en/">
-                            <img src="{{asset('saas/img/Mews_Logo.svg')}}" alt="Mews logo" width="150" height="19" />
-                        </a>
-                    </div>
+                    <a class="logo" href="{{ route('front.home') }}">
+                        <img class="logo-default"  src="{{ $setting->logo_front_url }}" alt="home"  style="max-height:35px"/>
+                    </a>
                     <div class="nav-menu" id="center-menu">
                         <ul class="">
                             <li role="menuitem" class="is-dropdown-submenu-parent" aria-haspopup="true" aria-label="Products">
@@ -33,14 +31,17 @@
                     </div>
                     <div class="nav-menu" id="icon-menu">
                         <ul>
+{{--                            @dd($settings->activeLanguages)--}}
                             <li role="menuitem" class="is-dropdown-submenu-parent">
-                                <a class="main-nav-link nav-swipe-link" id="languages"><img class="lang-flag" src="{{asset('saas/img/en.svg')}}" height="19" width="32" /></a>
+                                @php
+                                  $def_flag_img="saas/img/".$locale.".svg"
+                                @endphp
+                                <a class="main-nav-link nav-swipe-link" id="languages">
+                                    <img class="lang-flag" src="{{asset($def_flag_img)}}" height="19" width="32" /></a>
                             </li>
-
                             <li role="menuitem">
                                 <a class="main-nav-link nav-swipe-link" id="search"><img src="{{asset('saas/img/search_icon.svg')}}" alt="Website search icon" width="24" height="24" /></a>
                             </li>
-
                             <li role="menuitem">
                                 <a href="#" class="main-nav-link" id="login" target="_blank">Log in</a>
                             </li>
@@ -343,36 +344,19 @@
             </form>
             <p class="searchText opaque">Searching...</p>
         </div>
-
         <div class="menu-slide" id="nav-languages" data-name="languages">
             <ul class="lang-menu">
-                <li>
-                    <a class="lang-option nav-track" id="nav-language-DE" href="/de/">
-                        <img class="lang-flag" src="{{asset('saas/img/de.svg')}}" alt="Deutsch flag" height="23" width="38" />
-                        Deutsch
-                    </a>
-                </li>
-
-                <li>
-                    <a class="lang-option nav-track" id="nav-language-ES" href="/es/">
-                        <img class="lang-flag" src="{{asset('saas/img/es.svg')}}" alt="Español flag" height="23" width="38" />
-                        Español
-                    </a>
-                </li>
-
-                <li>
-                    <a class="lang-option nav-track" id="nav-language-FR" href="/fr/">
-                        <img class="lang-flag" src="{{asset('saas/img/fr.svg')}}" alt="Français flag" height="23" width="38" />
-                        Français
-                    </a>
-                </li>
-
-                <li>
-                    <a class="lang-option nav-track" id="nav-language-NL" href="/nl/">
-                        <img class="lang-flag" src="{{asset('saas/img/nl.svg')}}" alt="Nederlands flag" height="23" width="38" />
-                        Nederlands
-                    </a>
-                </li>
+                @foreach($languages as $lang)
+                    <li>
+                        @php
+                            $flag_img="saas/img/".$lang->language_code.".svg";
+                        @endphp
+                        <a class="lang-option nav-track" id="nav-language-{{$lang->language_code}}" href="/{{$lang->language_code}}/">
+                            <img class="lang-flag" src="{{asset($flag_img)}}" alt="" height="23" width="38" />
+                            {{$lang->language_name}}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
         </div>
 
