@@ -185,7 +185,7 @@
 
                                 </div>
                                 <div class="column large-6 medium-12 small-12" id="success-head">
-                                    <h2>Five-star Customer Success</h2>
+                                    <h2>Five Star</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br> eiusmod
                                     tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam.</p>
                                 </div>
@@ -193,100 +193,27 @@
                                 <div class="column large-5 medium-12 small-12 flex-container" id="solutions-main">
                                 </div>
 
-                            </div>
-
-                            <div class="row small-row">
-                                <div class="column large-1 medium-12 small-12">
-
-                                </div>
-                                <div class="column large-11 medium-12 small-12 flex-container" id="success-main">
-                                    <a class="success-tile" href="#">
-                                        <div class="s-text">
-                                            <i class="fas fa-cogs"></i>
-                                            <h4>On-boarding propertise</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
+                              </div>
+                            @foreach($featureWithIcons->chunk(4) as $feature_icon)
+                                <div class="row small-row">
+                                        <div class="column large-1 medium-12 small-12">
                                         </div>
-                                    </a>
-
-                                    <a class="success-tile" href="#">
-                                        <div class="s-text">
-                                            <i class="fas fa-university"></i>
-                                            <h4>On-boarding propertise</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
+                                            <div class="column large-11 medium-12 small-12 flex-container"
+                                                 id="success-main">
+                                                @foreach($feature_icon as $icon)
+                                                    <div class="col-md-3">
+                                                         <a class="success-tile" href="#">
+                                            <div class="s-text">
+                                            <i class="{{$icon->icon}}"></i>
+                                            <h4>{{$icon->title}}</h4>
+                                            <p>{{$icon->description}}</p>
+                                            </div>
+                                            </a>
+                                            </div>
+                                                @endforeach
                                         </div>
-                                    </a>
-
-                                    <a class="success-tile" href="#">
-                                        <div class="s-text">
-                                            <i class="fas fa-user-check"></i>
-                                            <h4>On-boarding propertise</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                                        </div>
-                                    </a>
-
-                                    <a class="success-tile" href="#">
-                                        <div class="s-text">
-                                            <i class="fas fa-shield-alt"></i>
-                                            <h4>On-boarding propertise</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                                        </div>
-                                    </a>
-
-
-
-                                </div>
-                            </div>
-
-                            <div class="row small-row">
-                                <div class="column large-1 medium-12 small-12">
-
-                                </div>
-                                <div class="column large-11 medium-12 small-12 flex-container" id="success-main">
-                                    <a class="success-tile" href="#">
-                                        <div class="s-text">
-                                            <i class="fas fa-cogs"></i>
-                                            <h4>On-boarding propertise</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                                        </div>
-                                    </a>
-
-                                    <a class="success-tile" href="#">
-                                        <div class="s-text">
-                                            <i class="fas fa-university"></i>
-                                            <h4>On-boarding propertise</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                                        </div>
-                                    </a>
-
-                                    <a class="success-tile" href="#">
-                                        <div class="s-text">
-                                            <i class="fas fa-user-check"></i>
-                                            <h4>On-boarding propertise</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                                        </div>
-                                    </a>
-
-                                    <a class="success-tile" href="#">
-                                        <div class="s-text">
-                                            <i class="fas fa-shield-alt"></i>
-                                            <h4>On-boarding propertise</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                                        </div>
-                                    </a>
-
-
-
-                                </div>
-                            </div>
-
+                               </div>
+                             @endforeach
                         </section>
                     </div>
 
