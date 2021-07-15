@@ -32,14 +32,16 @@
 
                     <div class="nav-menu" id="center-menu">
                         <ul class="">
-                            <li role="menuitem" class="is-dropdown-submenu-parent" aria-haspopup="true"
-                                aria-label="Products">
-                                <a href="{{ route('front.home') }}" class="main-nav-link nav-swipe-link" id="#" >{{ $frontMenu->home }}</a>
+{{--                            <li role="menuitem" class="is-dropdown-submenu-parent" aria-haspopup="true"--}}
+{{--                                aria-label="Products">--}}
+{{--                                <a href="{{ route('front.home') }}" class="main-nav-link nav-swipe-link" id="#" >{{ $frontMenu->home }}</a>--}}
+{{--                            </li>--}}
+                            <li role="menuitem">
+                                <a href="{{ route('front.home') }}" class="main-nav-link nav-track" id="#" >{{ $frontMenu->home }}</a>
                             </li>
 
-                            <li role="menuitem" class="is-dropdown-submenu-parent" aria-haspopup="true"
-                                aria-label="Solutions">
-                                <a href="{{ route('front.feature') }}" class="main-nav-link nav-swipe-link" id="#" >{{ $frontMenu->feature }}</a>
+                            <li role="menuitem">
+                                <a href="{{ route('front.feature') }}" class="main-nav-link nav-track" id="#" >{{ $frontMenu->feature }}</a>
                             </li>
 
                             <li role="menuitem">
@@ -47,12 +49,6 @@
                             </li>
                             <li role="menuitem">
                                 <a href="{{ route('front.contact') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->contact }}</a>
-                            </li>
-                            <li role="menuitem">
-                                <a href="{{ route('front.contact') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->get_start}}</a>
-                            </li>
-                            <li role="menuitem">
-                                <a href="{{ route('front.contact') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->contact_submit }}</a>
                             </li>
                             <li role="menuitem">
                                 <a href="{{ route('login') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->login}}</a>
