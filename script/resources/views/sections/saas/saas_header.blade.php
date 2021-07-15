@@ -50,9 +50,6 @@
                             <li role="menuitem">
                                 <a href="{{ route('front.contact') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->contact }}</a>
                             </li>
-                            <li role="menuitem">
-                                <a href="{{ route('login') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->login}}</a>
-                            </li>
                         </ul>
                     </div>
                     <div class="nav-menu" id="icon-menu">
@@ -69,7 +66,7 @@
                                 <a class="main-nav-link nav-swipe-link" id="search"><img src="{{asset('saas/img/search_icon.svg')}}" alt="Website search icon" width="24" height="24" /></a>
                             </li>
                             <li role="menuitem">
-                                <a href="#" class="main-nav-link" id="login" target="_blank">Log in</a>
+                                <a href="{{route('login')}}" class="main-nav-link" id="login" target="_blank">Log in</a>
                             </li>
                         </ul>
 
