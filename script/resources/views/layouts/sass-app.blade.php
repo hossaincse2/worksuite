@@ -34,9 +34,14 @@
     <link rel="stylesheet" href="{{ asset('saas/css/module_46107009897_Multi-preview_block.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_46219240077_Solutions_link_block_new.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_46437005576_Testimonial_carousel.min.css') }}" />
+
+    <link rel="stylesheet" href="{{asset('saas/css/module_45892087927__navigation_new.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('saas/css/module_33254481444_Hero_tertiary.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('saas/css/module_35270417163_Package_comparison.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('saas/css/module_35308497389_Comparison_table_complex.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('saas/css/module_33451252249_Benefits_and_features.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_33300649247_Image_CTA.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_35841017099_Cookie_management_centre.min.css') }}" />
-
     <link rel="stylesheet" href="{{ asset('saas/css/custom.css') }}" />
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -90,22 +95,61 @@
 <!-- END Header -->
 
     @if(\Illuminate\Support\Facades\Route::currentRouteName() != 'front.home' && \Illuminate\Support\Facades\Route::currentRouteName() != 'front.get-email-verification')
-        <section class="breadcrumb-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h2 class="text-uppercase mb-4">{{ ucfirst($pageTitle) }}</h2>
-                        <ul class="breadcrumb mb-0 justify-content-center">
-                            <li class="breadcrumb-item"><a href="#"> @lang('app.menu.home')</a></li>
-                            <li class="breadcrumb-item active">{{ ucfirst($pageTitle) }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+{{--        <section class="breadcrumb-section">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-12 text-center">--}}
+{{--                        <h2 class="text-uppercase mb-4">{{ ucfirst($pageTitle) }}</h2>--}}
+{{--                        <ul class="breadcrumb mb-0 justify-content-center">--}}
+{{--                            <li class="breadcrumb-item"><a href="#"> @lang('app.menu.home')</a></li>--}}
+{{--                            <li class="breadcrumb-item active">{{ ucfirst($pageTitle) }}</li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
 @endif
 @yield('content')
+    <div class="review-container">
+        <div class="slideshow-container">
 
+            <div class="mySlides fade">
+                <img src="{{asset('saas/img/CTAblock-50@0.5x.jpg')}}" style="width:100%">
+                <div class="text">
+                    <h2>Complete applicatie Nieuwe apps voor<br> en vilige terugkeer naar de werlplek</h2>
+                    <h3> - Marcel Lewis</h3>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{asset('saas/img/CTAblock-50@0.5x.jpg')}}" style="width:100%">
+                <div class="text">
+                    <h2>Lorem ipsum dolor sit detudzdae amet<br>.Aenean amet socada commodo sit.</h2>
+                    <h3> - Marcel Lewis</h3>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{asset('saas/img/CTAblock-50@0.5x.jpg')}}" style="width:100%">
+                <div class="text">
+                    <h2>Super geweldig software, wij kunnen<br> ons hele bedrijf ermee runnen</h2>
+                    <h3> - Bert</h3>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                </div>
+            </div>
+
+
+            <div class="dots" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+        </div>
+
+    </div>
 
 <!-- Cta -->
 {{--@include('saas.section.cta')--}}
@@ -121,6 +165,10 @@
 <!-- Scripts -->
 <script src="{{ asset('saas/js/project.js') }}"></script>
 <script src="{{ asset('saas/js/module_45892087927__navigation_new.min.js') }}"></script>
+<script src="{{ asset('saas/js/module_33254481444_Hero_tertiary.min.js') }}"></script>
+<script src="{{ asset('saas/js/module_35270417163_Package_comparison.min.js') }}"></script>
+<script src="{{ asset('saas/js/pricing.min.js') }}"></script>
+<script src="{{ asset('saas/js/module_35308497389_Comparison_table_complex.min.js') }}"></script>
 <script src="{{ asset('saas/js/module_33242552601_Hero_primary.min.js') }}"></script>
 <script src="{{ asset('saas/js/module_46107009897_Multi-preview_block.min.js') }}"></script>
 <script src="{{ asset('saas/js/module_46437005576_Testimonial_carousel.min.js') }}"></script>

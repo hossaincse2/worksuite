@@ -341,46 +341,7 @@
     </main>
 
 
-    <div class="review-container">
-        <div class="slideshow-container">
 
-            <div class="mySlides fade">
-                <img src="{{asset('saas/img/CTAblock-50@0.5x.jpg')}}" style="width:100%">
-                <div class="text">
-                    <h2>Complete applicatie Nieuwe apps voor<br> en vilige terugkeer naar de werlplek</h2>
-                    <h3> - Marcel Lewis</h3>
-                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                </div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="{{asset('saas/img/CTAblock-50@0.5x.jpg')}}" style="width:100%">
-                <div class="text">
-                    <h2>Lorem ipsum dolor sit detudzdae amet<br>.Aenean amet socada commodo sit.</h2>
-                    <h3> - Marcel Lewis</h3>
-                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                </div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="{{asset('saas/img/CTAblock-50@0.5x.jpg')}}" style="width:100%">
-                <div class="text">
-                    <h2>Super geweldig software, wij kunnen<br> ons hele bedrijf ermee runnen</h2>
-                    <h3> - Bert</h3>
-                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                </div>
-            </div>
-
-
-            <div class="dots" style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
-        </div>
-
-    </div>
 
 
 @endsection
