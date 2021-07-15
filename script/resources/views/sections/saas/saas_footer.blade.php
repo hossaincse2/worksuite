@@ -1,71 +1,73 @@
 <footer class="footer">
-
     <div>
         <div class="row small-row">
             <div class="column large-1 footer-submenu-wrapper">
             </div>
-
+{{--            @dd($footerSettings)--}}
             <div class="column large-10 medium-10 small-12 footer-submenu-wrapper">
                 <div class="footer-submenu">
                     <h3 class="h6 submenu-title">
-                        Artikel
+                        Others
                     </h3>
                     <ul class="submenu-list">
-                        <a href="#"><li>Wat is CRM</li></a>
+                        @foreach($footerSettings as $key=>$val)
+                            <a href="{{$val->external_link}}"><li>{{$val->name}}</li></a>
+                        @endforeach
+{{--                        <a href="#"><li>Wat is CRM</li></a>--}}
 
-                        <a href="#"><li>Projecten beheren</li></a>
+{{--                        <a href="#"><li>Projecten beheren</li></a>--}}
 
-                        <a href="#"><li>Urenregistratie</li></a>
+{{--                        <a href="#"><li>Urenregistratie</li></a>--}}
 
-                        <a href="#"><li>Rapportages</li></a>
+{{--                        <a href="#"><li>Rapportages</li></a>--}}
 
-                        <a href="#"><li>Klaten beheren</li></a>
+{{--                        <a href="#"><li>Klaten beheren</li></a>--}}
                     </ul>
                 </div>
 
-                <div class="footer-submenu">
-                    <h3 class="h6 submenu-title">
-                        Middelen
-                    </h3>
-                    <ul class="submenu-list">
-                        <a href="#"><li>Integraties</li></a>
+{{--                <div class="footer-submenu">--}}
+{{--                    <h3 class="h6 submenu-title">--}}
+{{--                        Middelen--}}
+{{--                    </h3>--}}
+{{--                    <ul class="submenu-list">--}}
+{{--                        <a href="#"><li>Integraties</li></a>--}}
 
-                        <a href="#"><li>Hoe Werkt het</li></a>
+{{--                        <a href="#"><li>Hoe Werkt het</li></a>--}}
 
-                        <a href="#"><li>Support an security</li></a>
+{{--                        <a href="#"><li>Support an security</li></a>--}}
 
-                    </ul>
-                </div>
+{{--                    </ul>--}}
+{{--                </div>--}}
 
-                <div class="footer-submenu">
-                    <h3 class="h6 submenu-title">
-                        Bedrijf
-                    </h3>
-                    <ul class="submenu-list">
-                        <a href="#"><li>Over ons</li></a>
+{{--                <div class="footer-submenu">--}}
+{{--                    <h3 class="h6 submenu-title">--}}
+{{--                        Bedrijf--}}
+{{--                    </h3>--}}
+{{--                    <ul class="submenu-list">--}}
+{{--                        <a href="#"><li>Over ons</li></a>--}}
 
-                        <a href="#"><li>Onze visle</li></a>
+{{--                        <a href="#"><li>Onze visle</li></a>--}}
 
-                        <a href="#"><li>Word partner</li></a>
+{{--                        <a href="#"><li>Word partner</li></a>--}}
 
-                        <a href="#"><li>Slimer werken</li></a>
-                    </ul>
-                </div>
+{{--                        <a href="#"><li>Slimer werken</li></a>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
 
-                <div class="footer-submenu">
-                    <h3 class="h6 submenu-title">
-                        Juridisch
-                    </h3>
-                    <ul class="submenu-list">
-                        <a href="#"><li>Algemene Voor waarden</li></a>
+{{--                <div class="footer-submenu">--}}
+{{--                    <h3 class="h6 submenu-title">--}}
+{{--                        Juridisch--}}
+{{--                    </h3>--}}
+{{--                    <ul class="submenu-list">--}}
+{{--                        <a href="#"><li>Algemene Voor waarden</li></a>--}}
 
-                        <a href="#"><li>Privacy policy</li></a>
+{{--                        <a href="#"><li>Privacy policy</li></a>--}}
 
-                        <a href="#"><li>Disclaimer</li></a>
+{{--                        <a href="#"><li>Disclaimer</li></a>--}}
 
-                        <a href="#"><li>Cookie policy</li></a>
-                    </ul>
-                </div>
+{{--                        <a href="#"><li>Cookie policy</li></a>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
 
             </div>
 
@@ -96,9 +98,10 @@
         <div class="column large-10 medium-10 small-12">
             <div class="text-center">
                 <ul class="language-list">
-                    <a href="#"><li>English</li></a>
-
-                    <a href="#"><li>Dutch</li></a>
+                    @foreach($languages as $lang)
+                        <a href="#"><li>{{$lang->language_name}}</li></a>
+                    @endforeach
+                </ul>
             </div>
         </div>
 
@@ -112,7 +115,7 @@
             <div class="column large-1 footer-submenu-wrapper">
             </div>
             <div class="column large-10 small-12  footer-submenu-wrapper border f-img">
-                <img src="img/Mews-Logo-White.svg" alt="Mews logo white" id="footer-logo-white" width="100" height="13" />
+                <img src="{{$setting->logo_front_url}}" alt="home" id="footer-logo-white" width="100" height="13" />
             </div>
             <div class="column large-1 footer-submenu-wrapper">
             </div>
