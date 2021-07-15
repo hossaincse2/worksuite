@@ -42,7 +42,6 @@
     <link rel="stylesheet" href="{{asset('saas/css/module_33451252249_Benefits_and_features.min.css')}}" />
 
     <link rel="stylesheet" href="{{ asset('saas/css/module_33247277592_Hero_secondary.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('saas/css/module_33451252249_Benefits_and_features.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_34793991899_Icon_text_row.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_33339471181_Testimonial_secondary.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_34959009542_Locations.min.css') }}" />

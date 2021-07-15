@@ -26,7 +26,7 @@
 
                             <div class="image-wrapper bg-grey1">
                                 <div class="image-container">
-                                    <img src="img/Partners-Hero.jpg?width=1660&amp;height=1352&amp;name=Partners-Hero.jpg" id="hero-bg-image" alt="Mews Partners" width="1660" height="1352" sizes="(max-width: 1660px) 100vw, 1660px" />
+                                    <img src="{{asset('saas/img/Partners-Hero.jpg?width=1660&amp;height=1352&amp;name=Partners-Hero.jpg')}}" id="hero-bg-image" alt="Mews Partners" width="1660" height="1352" sizes="(max-width: 1660px) 100vw, 1660px" />
                                 </div>
                             </div>
                         </section>
@@ -38,7 +38,7 @@
                                     <div class="fb-image-container">
                                         <img
                                                 loading="lazy"
-                                                src="img/Partners-Marketplace@0.5x.png?width=537&amp;height=449&amp;name=Partners-Marketplace@0.5x.png"
+                                                src="{{asset('saas/img/Partners-Marketplace@0.5x.png?width=537&amp;height=449&amp;name=Partners-Marketplace@0.5x.png')}}"
                                                 alt="Partners-Marketplace"
                                                 width="537"
                                                 height="449"
@@ -123,7 +123,7 @@
                                     <div class="fb-image-container">
                                         <img
                                                 loading="lazy"
-                                                src="img/Partnerships-BusinessReferrals@0.5x.jpg?width=538&amp;height=664&amp;name=Partnerships-BusinessReferrals@0.5x.jpg"
+                                                src="{{asset('saas/img/Partnerships-BusinessReferrals@0.5x.jpg?width=538&amp;height=664&amp;name=Partnerships-BusinessReferrals@0.5x.jpg')}}"
                                                 alt="BusinessReferrals"
                                                 width="538"
                                                 height="664"
@@ -203,7 +203,7 @@
                                     <div class="fb-image-container">
                                         <img
                                                 loading="lazy"
-                                                src="img/Partners-PersonalReferrals@0.5x.jpg?width=538&amp;height=664&amp;name=Partners-PersonalReferrals@0.5x.jpg"
+                                                src="{{asset('saas/img/Partners-PersonalReferrals@0.5x.jpg?width=538&amp;height=664&amp;name=Partners-PersonalReferrals@0.5x.jpg')}}"
                                                 alt="Partners-PersonalReferrals"
                                                 width="538"
                                                 height="664"
@@ -293,7 +293,7 @@
 
                             <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="img/wide_audience.svg" alt="wide_audience" />
+                                    <img class="white-icon" src="{{asset('saas/img/wide_audience.svg')}}" alt="wide_audience" />
                                     <p class="h4">A wide audience</p>
                                     <p>
                                         <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Reach thousands of Mews users and sell your product.</span></span>
@@ -301,7 +301,7 @@
                                 </div>
 
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="img/networking.svg" alt="networking" />
+                                    <img class="white-icon" src="{{asset('saas/img/networking.svg')}}" alt="networking" />
                                     <p class="h4">Networking</p>
                                     <p>
                                         <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Meet Mews’ Sales and Account Management teams to&nbsp;</span></span>
@@ -311,7 +311,7 @@
                                 </div>
 
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="img/exclusive_events.svg" alt="exclusive_events" />
+                                    <img class="white-icon" src="{{asset('saas/img/exclusive_events.svg')}}" alt="exclusive_events" />
                                     <p class="h4">Exclusive events</p>
                                     <p>
                                         <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Hang out with the cool kids of hospitality.</span></span>
@@ -319,7 +319,7 @@
                                 </div>
 
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="img/mews_marketing.svg" alt="mews_marketing" />
+                                    <img class="white-icon" src="{{asset('saas/img/community.svg')}}img/mews_marketing.svg" alt="mews_marketing" />
                                     <p class="h4">Mews marketing</p>
                                     <p>
                                         <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>I</span></span><span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>nvolve&nbsp;</span></span>
@@ -329,7 +329,7 @@
                                 </div>
 
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="img/simplicity.svg" alt="simplicity" />
+                                    <img class="white-icon" src="{{asset('saas/img/simplicity.svg')}}" alt="simplicity" />
                                     <p class="h4">Simplicity</p>
                                     <p>
                                         <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Submit leads or set up your listing in minutes</span></span>
@@ -338,7 +338,7 @@
                                 </div>
 
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="img/community.svg" alt="community" />
+                                    <img class="white-icon" src="{{asset('saas/img/community.svg')}}" alt="community" />
                                     <p class="h4">Community</p>
                                     <p>
                                         <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Connect with</span></span><span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>&nbsp;an engaged</span></span>
@@ -355,7 +355,7 @@
                                 <div class="column small-12 medium-6 large-6 testimonial-img-wrap">
                                     <p class="caption"><strong>Partner story</strong></p>
 
-                                    <img loading="lazy" src="img/pic-test-2.png?width=1074&amp;height=1119&amp;name=pic-test-2.png" alt="HotelRoom" width="1074" height="1119" sizes="(max-width: 1074px) 100vw, 1074px" />
+                                    <img loading="lazy" src="{{asset('saas/img/pic-test-2.png?width=1074&amp;height=1119&amp;name=pic-test-2.png')}}" alt="HotelRoom" width="1074" height="1119" sizes="(max-width: 1074px) 100vw, 1074px" />
                                 </div>
                                 <div class="column small-12 medium-6 large-5 large-offset-1 flex-container flex-dir-column">
                                     <p class="h4">
@@ -379,7 +379,7 @@
                             </div>
                             <div class="row small-row small-up-1 medium-up-2 large-up-2 justify-center">
                                 <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://g.page/mews-london?share" target="_blank"><img src="img/Partners-LondonMap-1.jpg" alt="Partners-LondonMap-1" /></a>
+                                    <a href="https://g.page/mews-london?share" target="_blank"><img src="{{asset('saas/img/Partners-LondonMap-1.jpg')}}" alt="Partners-LondonMap-1" /></a>
                                     <p class="h5">London</p>
                                     <p>
                                         <span>47-51 Great Suffolk Street<br /></span>
@@ -392,7 +392,7 @@
                                 </div>
 
                                 <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://goo.gl/maps/Y4FTnAg8YX4Dcump9" target="_blank"><img src="img/Partners-PragueMap.jpg" alt="Partners-PragueMap" /></a>
+                                    <a href="https://goo.gl/maps/Y4FTnAg8YX4Dcump9" target="_blank"><img src="{{asset('saas/img/Partners-PragueMap.jpg')}}" alt="Partners-PragueMap" /></a>
                                     <p class="h5">Prague</p>
                                     <p>
                                         <span>
@@ -405,7 +405,7 @@
                                 </div>
 
                                 <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://g.page/mews-amsterdam?share" target="_blank"><img src="img/Partners-AmsterdamMap.jpg" alt="Partners-AmsterdamMap" /></a>
+                                    <a href="https://g.page/mews-amsterdam?share" target="_blank"><img src="{{asset('saas/img/Partners-AmsterdamMap.jpg')}}" alt="Partners-AmsterdamMap" /></a>
                                     <p class="h5">Amsterdam</p>
                                     <p>
                                         <span>
@@ -418,7 +418,7 @@
                                 </div>
 
                                 <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://goo.gl/maps/MmgTpcfPBiUwQzoc9" target="_blank"><img src="img/Partners-NewYorkMap.jpg" alt="Partners-NewYorkMap" /></a>
+                                    <a href="https://goo.gl/maps/MmgTpcfPBiUwQzoc9" target="_blank"><img src="{{asset('saas/img/Partners-NewYorkMap.jpg')}}" alt="Partners-NewYorkMap" /></a>
                                     <p class="h5">New York</p>
                                     <p>
                                         <span>
@@ -432,7 +432,7 @@
 
                                 <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
                                     <a href="https://www.google.com/maps/place/Legeweg+157o,+8020+Oostkamp,+Belgium/@51.172127,3.2442442,16.5z/data=!4m5!3m4!1s0x47c3507cec9806ed:0x6907a150d0a65462!8m2!3d51.1724875!4d3.2477159">
-                                        <img src="img/Partners-BrugesMap.png" alt="Partners-BrugesMap" />
+                                        <img src="{{asset('saas/img/Partners-BrugesMap.png')}}" alt="Partners-BrugesMap" />
                                     </a>
                                     <p class="h5">Bruges</p>
                                     <p>
