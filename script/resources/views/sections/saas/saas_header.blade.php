@@ -51,12 +51,6 @@
                                 <a href="{{ route('front.contact') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->contact }}</a>
                             </li>
                             <li role="menuitem">
-                                <a href="{{ route('front.contact') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->get_start}}</a>
-                            </li>
-                            <li role="menuitem">
-                                <a href="{{ route('front.contact') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->contact_submit }}</a>
-                            </li>
-                            <li role="menuitem">
                                 <a href="{{ route('login') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->login}}</a>
                             </li>
                         </ul>
