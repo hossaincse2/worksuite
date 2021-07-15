@@ -40,6 +40,13 @@
     <link rel="stylesheet" href="{{asset('saas/css/module_35270417163_Package_comparison.min.css')}}" />
     <link rel="stylesheet" href="{{asset('saas/css/module_35308497389_Comparison_table_complex.min.css')}}" />
     <link rel="stylesheet" href="{{asset('saas/css/module_33451252249_Benefits_and_features.min.css')}}" />
+
+    <link rel="stylesheet" href="{{ asset('saas/css/module_33247277592_Hero_secondary.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('saas/css/module_33451252249_Benefits_and_features.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('saas/css/module_34793991899_Icon_text_row.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('saas/css/module_33339471181_Testimonial_secondary.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('saas/css/module_34959009542_Locations.min.css') }}" />
+
     <link rel="stylesheet" href="{{ asset('saas/css/module_33300649247_Image_CTA.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_35841017099_Cookie_management_centre.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/custom.css') }}" />
