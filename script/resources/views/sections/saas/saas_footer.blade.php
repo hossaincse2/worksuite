@@ -24,11 +24,11 @@
         <div class="column large-1">
         </div>
 
-        <div class="column large-10 medium-10 small-12">
-            <div class="footer-btn text-right">
-                <a href="#">Contact opnemen met de klantenservice</a>
-            </div>
-        </div>
+{{--        <div class="column large-10 medium-10 small-12">--}}
+{{--            <div class="footer-btn text-right">--}}
+{{--                <a href="#">Contact opnemen met de klantenservice</a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <div class="column large-1">
         </div>

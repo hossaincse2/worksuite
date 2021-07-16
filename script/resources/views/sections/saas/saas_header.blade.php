@@ -70,10 +70,10 @@
                             </li>
                         </ul>
 
-                        <a href="#" id="main-nav-btn" class="button button--primary show-for-large main-nav-link nav-track">Book a demo</a>
+                        <a href="/signup" id="main-nav-btn" class="button button--primary show-for-large main-nav-link nav-track">Register</a>
                     </div>
                     <div id="mobileNav">
-                        <a href="#" id="main-nav-btn" class="button button--primary hide-for-large main-nav-link nav-track">Book a demo</a>
+                        <a href="/signup" id="main-nav-btn" class="button button--primary hide-for-large main-nav-link nav-track">Register</a>
                         <div id="menuToggle">
                             <input type="checkbox" />
                             <span></span>
@@ -352,7 +352,7 @@
                                     </div>
                                 </div>
                                 <a href="#" class="main-nav-link mb-20" id="login" target="_blank">Log in</a>
-                                <a href="#" id="mob-menu-btn" class="button button--primary main-nav-link nav-track mb-30">Book a demo</a>
+                                <a href="/signup" id="mob-menu-btn" class="button button--primary main-nav-link nav-track mb-30">Register</a>
                             </div>
                         </div>
                     </div>

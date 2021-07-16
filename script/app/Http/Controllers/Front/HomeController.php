@@ -121,6 +121,7 @@ class HomeController extends FrontBaseController
             'type' => 'apps'
         ])->whereNull('front_feature_id')->get();
 
+
         $this->featureWithIcons = Feature::where([
             'language_setting_id' => $iconFeaturesCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null,
             'type' => 'icon'

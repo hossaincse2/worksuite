@@ -40,7 +40,7 @@
                                             </div>
 
                                             <a href="#" class="button button--primary">
-                                                Book a demo
+                                                Register
                                             </a>
                                         </div>
                                         <div class="three-crosses">
