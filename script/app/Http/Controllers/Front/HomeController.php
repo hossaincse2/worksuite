@@ -166,10 +166,9 @@ class HomeController extends FrontBaseController
     {
 
         $this->seoDetail = SeoDetail::where('page_name', 'feature')->first();
-
+        $testimonialsCount = Testimonials::select('id', 'language_setting_id')->where('language_setting_id', $this->localeLanguage ? $this->localeLanguage->id : null)->count();
         $this->pageTitle = isset($this->seoDetail) ? $this->seoDetail->seo_title : __('app.menu.features');
         $types = ['task', 'bills', 'team', 'apps'];
-
         foreach ($types as $type) {
             $featureCount = Feature::select('id', 'language_setting_id', 'type')->where(['language_setting_id' => $this->localeLanguage ? $this->localeLanguage->id : null, 'type' => $type])->count();
             $this->data['feature' . ucfirst(str_plural($type))] = Feature::where([
@@ -181,10 +180,15 @@ class HomeController extends FrontBaseController
         $frontClientsCount = FrontClients::select('id', 'language_setting_id')->where('language_setting_id', $this->localeLanguage ? $this->localeLanguage->id : null)->count();
         $this->frontClients = FrontClients::where('language_setting_id', $frontClientsCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null)->get();
         $iconFeaturesCount = Feature::select('id', 'language_setting_id', 'type')->where(['language_setting_id' => $this->localeLanguage ? $this->localeLanguage->id : null, 'type' => 'icon'])->count();
-
+        $this->testimonials = Testimonials::where('language_setting_id', $testimonialsCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null)->get();
         $this->frontFeatures = FrontFeature::with('features')->where([
             'language_setting_id' => $iconFeaturesCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null,
         ])->get();
+        $this->featureWithIcons = Feature::where([
+            'language_setting_id' => $iconFeaturesCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null,
+            'type' => 'icon'
+        ])->whereNull('front_feature_id')->get();
+        $this->benefit=FrontFeature::with('features')->where('id','=','2')->first();
 
         abort_if($this->setting->front_design != 1,403);
 
@@ -198,15 +202,21 @@ class HomeController extends FrontBaseController
         $this->packages  = Package::where('default', 'no')->where('is_private', 0)
             ->orderBy('sort', 'ASC')
             ->get();
-
+        $appsFeaturesCount = Feature::select('id', 'language_setting_id', 'type')->where(['language_setting_id' => $this->localeLanguage ? $this->localeLanguage->id : null, 'type' => 'apps'])->count();
         $frontFaqsCount = FrontFaq::select('id', 'language_setting_id')->where('language_setting_id', $this->localeLanguage ? $this->localeLanguage->id : null)->count();
-
+        $frontClientsCount = FrontClients::select('id', 'language_setting_id')->where('language_setting_id', $this->localeLanguage ? $this->localeLanguage->id : null)->count();
         $this->frontFaqs = FrontFaq::where('language_setting_id', $frontFaqsCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null)->get();
-
+        $testimonialsCount = Testimonials::select('id', 'language_setting_id')->where('language_setting_id', $this->localeLanguage ? $this->localeLanguage->id : null)->count();
         $this->packageFeaturesModuleData = Module::get();
 
         $this->packageFeatures   = $this->packageFeaturesModuleData->pluck('module_name')->toArray();
         $this->packageModuleData = $this->packageFeaturesModuleData->pluck('module_name', 'id')->all();
+        $this->testimonials = Testimonials::where('language_setting_id', $testimonialsCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null)->get();
+        $this->frontClients = FrontClients::where('language_setting_id', $frontClientsCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null)->get();
+        $this->featureWithApps = Feature::where([
+            'language_setting_id' => $appsFeaturesCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null,
+            'type' => 'apps'
+        ])->whereNull('front_feature_id')->get();
 
         $this->annualPlan = $this->packages->filter(function ($value, $key) {
             return $value->annual_status == 1;
@@ -242,7 +252,8 @@ class HomeController extends FrontBaseController
     {
         $this->seoDetail = SeoDetail::where('page_name', 'contact')->first();
         $this->pageTitle = $this->seoDetail ? $this->seoDetail->seo_title : __('app.menu.contact');
-
+        $testimonialsCount = Testimonials::select('id', 'language_setting_id')->where('language_setting_id', $this->localeLanguage ? $this->localeLanguage->id : null)->count();
+        $this->testimonials = Testimonials::where('language_setting_id', $testimonialsCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null)->get();
         abort_if($this->setting->front_design != 1,403);
 
         return view('saas.contact', $this->data);

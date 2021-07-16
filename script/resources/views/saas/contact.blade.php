@@ -14,10 +14,11 @@
                                 <div class="column small-12 medium-12 large-12">
                                     <div class="hero-content text-center flex-container flex-dir-column align-center">
                                         <h1>Contact us</h1>
-                                        <p class="h5">
-                                            Whatever your inquiry, we'd be happy to hear from you. <br />
-                                            Contact the Mews team and we’ll get back to you as fast as we can.
-                                        </p>
+                                        @if(!is_null($frontDetail->contact_html))
+                                            <p class="h5">
+                                           {!! $frontDetail->contact_html !!}
+                                           </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -48,36 +49,9 @@
 
                             <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img src="img/pin-icon.svg" alt="pin-icon" />
-                                    <p class="h4">Czech Republic</p>
-                                    <p>
-                                        Náměstí I. P. Pavlova 5<br />
-                                        120 00 Vinohrady
-                                    </p>
-                                    <p>
-                                        <a href="https://www.google.com/maps/place/Mews/@50.074992,14.429845,15z/data=!4m2!3m1!1s0x0:0x3e6516a6c67deb9c?sa=X&amp;ved=2ahUKEwjWzcK1097rAhWTrHEKHSPiDOIQ_BIwDXoECBYQCA" target="_blank">
-                                            View in Google Maps
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img src="img/pin-icon.svg" alt="pin-icon" />
-                                    <p class="h4">Netherlands</p>
-                                    <p>
-                                        <span>ScaleHub building, </span><span>Wibautstraat 137D</span><br />
-                                        <span>1097DN Amsterdam</span>
-                                    </p>
-                                    <p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609c26a0a78c5:0x316b80d29799e064?source=g.page.share" target="_blank">View in Google Maps</a></p>
-                                </div>
-
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img src="img/pin-icon.svg" alt="pin-icon" />
+{{--                                    <img src="img/pin-icon.svg" alt="pin-icon" />--}}
                                     <p class="h4">United Kingdom</p>
-                                    <p>
-                                        47-51 Great Suffolk Street<br />
-                                        London SE1 0BS
-                                    </p>
+                                    <p>{{ $frontDetail->address }}</p>
                                     <p>
                                         <a href="https://www.google.com/maps/place/Mews/@51.4763948,-0.1236168,12z/data=!4m8!1m2!2m1!1sMews+uk!3m4!1s0x487604ba07279627:0xea838c431eab386a!8m2!3d51.5033268!4d-0.1012135" target="_blank">
                                             View in Google Maps
@@ -86,41 +60,40 @@
                                 </div>
 
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img src="img/pin-icon.svg" alt="pin-icon" />
-                                    <p class="h4">Belgium</p>
-                                    <p>
-                                        <span>Legeweg 157-O</span><br />
-                                        <span>8020 Oostkamp</span>
-                                    </p>
-                                    <p><a href="https://goo.gl/maps/1AvTqxx3TwuVya2x9" target="_blank">View in Google Maps</a></p>
-                                </div>
-
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img src="img/pin-icon.svg" alt="pin-icon" />
-                                    <p class="h4">United States</p>
-                                    <p>
-                                        New York, 41 East 11th Street<br />
-                                        New York, NY 10003<br />
-                                        Support: <a href="tel:%20+1%20646-362-8536" rel="noopener">+1 646 362 8536</a>
-                                    </p>
-                                    <p><a href="https://goo.gl/maps/hkDCs9robtX2XwP36" target="_blank">View in Google Maps</a></p>
-                                </div>
-
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img src="img/pin-icon.svg" alt="pin-icon" />
-                                    <p class="h4">Australia</p>
-                                    <p>Support: <a href="tel:%20+61%202%207908%207983" rel="noopener">+61 2 7908 7983</a></p>
-                                </div>
-
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img src="img/man-icon.svg" alt="man-icon (1)" />
+{{--                                    <img src="img/man-icon.svg" alt="man-icon (1)" />--}}
                                     <p class="h4">Emergencies</p>
                                     <p>If you’re experiencing a critical problem, you can call us 24/7. You’ll be taken through a short series of steps to determine who’s best to talk to.</p>
-                                    <p>Support: <a href="tel:%20+420%20245%20501%20660">+420 245 501 660</a></p>
+                                    <p>Support: <a href="tel:%20+420%20245%20501%20660">{{ $frontDetail->phone }}</a></p>
                                 </div>
                             </div>
                         </section>
                     </div>
+                    <div class="review-container">
+          <div class="slideshow-container">
+            @foreach($testimonials as $key=>$val)
+                  <div class="mySlides fade">
+                    <img src="{{asset('saas/img/CTAblock-50@0.5x.jpg')}}" style="width:100%">
+                    <div class="text">
+                        <h2>{{$val->comment}}</h2>
+                        <h3> - {{$val->name}}</h3>
+                        @php
+                            $rating=$val->rating;
+                        @endphp
+                        <p>
+                            @for ($i = 1; $i <= $rating; $i++)
+                                <i class="fas fa-star"></i>
+                            @endfor
+                        </p>
+                    </div>
+                </div>
+              @endforeach
+            <div class="dots" style="text-align:center">
+                @foreach($testimonials as $key=>$val)
+                    <span class="dot" onclick="currentSlide({{$key}})"></span>
+                @endforeach
+            </div>
+        </div>
+         </div>
                 </span>
     </main>
 
@@ -151,19 +124,19 @@
         });
     </script>
     @if($global->google_recaptcha_status  && $global->google_captcha_version=="v3")
-    <script src="https://www.google.com/recaptcha/api.js?render={{ $global->google_recaptcha_key }}"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render={{ $global->google_recaptcha_key }}"></script>
 
-    <script>
-        setTimeout(function () {
+        <script>
+            setTimeout(function () {
 
-            grecaptcha.ready(function () {
-                grecaptcha.execute('{{ $global->google_recaptcha_key }}', {action: 'submit'}).then(function (token) {
-                    document.getElementById("recaptcha_token").value = token;
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('{{ $global->google_recaptcha_key }}', {action: 'submit'}).then(function (token) {
+                        document.getElementById("recaptcha_token").value = token;
+                    });
                 });
-            });
 
-        }, 3000);
+            }, 3000);
 
-    </script>
-@endif
+        </script>
+    @endif
 @endpush

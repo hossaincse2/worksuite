@@ -217,8 +217,7 @@
                         </section>
                     </div>
 
-
-                    <div id="hs_cos_wrapper_widget_1620657524146" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+    <div id="hs_cos_wrapper_widget_1620657524146" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="testimonial-carousel bg-blue_grey-2">
                             <div class="row small-row">
                                 <div class="column flex-container align-start">
@@ -339,8 +338,6 @@
 
                 </span>
     </main>
-
-
     <div class="review-container">
         <div class="slideshow-container">
             @foreach($testimonials as $key=>$val)
@@ -367,8 +364,6 @@
                 </div>
         </div>
     </div>
-
-
 @endsection
 @push('footer-script')
 {{--    <script>--}}

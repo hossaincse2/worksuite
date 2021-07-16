@@ -286,193 +286,255 @@
                         <section class="icon-text-section bg-black">
                             <div class="row small-row">
                                 <div class="column flex-container flex-dir-column align-center-middle text-center">
-                                    <h2 class="h3">Benefits of being a partner</h2>
-                                    <h5>If the warm glow of working with the most innovative hospitality solution isn’t enough, there are plenty of other reasons to become a partner.</h5>
+                                    <h2 class="h3">{{$benefit->title}}</h2>
+                                    <h5>{{$benefit->description}}</h5>
                                 </div>
                             </div>
-
-                            <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
+                            @foreach($benefit->features->chunk(3) as $feature_item)
+                                <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
+                                    @foreach($feature_item as $item)
+{{--                                        @dd($item->icon)--}}
+                                        <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
                                     <img class="white-icon" src="{{asset('saas/img/wide_audience.svg')}}" alt="wide_audience" />
-                                    <p class="h4">A wide audience</p>
+                                    <p class="h4">{{$item->title}}</p>
                                     <p>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Reach thousands of Mews users and sell your product.</span></span>
+                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>{!! html_entity_decode($item->description) !!}</span></span>
                                     </p>
-                                </div>
+                                  </div>
+                                    @endforeach
 
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="{{asset('saas/img/networking.svg')}}" alt="networking" />
-                                    <p class="h4">Networking</p>
-                                    <p>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Meet Mews’ Sales and Account Management teams to&nbsp;</span></span>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>generate&nbsp;</span></span><span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>leads</span></span>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>.</span></span>
-                                    </p>
-                                </div>
+                            </div>
+                            @endforeach
+{{--                                <div class="row small-row">--}}
+{{--                                        <div class="column large-1 medium-12 small-12">--}}
+{{--                                        </div>--}}
+{{--                                            <div class="column large-11 medium-12 small-12 flex-container"--}}
+{{--                                                 id="success-main">--}}
+{{--                                                @foreach($feature_icon as $icon)--}}
+{{--                                                    <div class="col-md-3">--}}
+{{--                                                         <a class="success-tile" href="#">--}}
+{{--                                            <div class="s-text">--}}
+{{--                                            <i class="{{$icon->icon}}"></i>--}}
+{{--                                            <h4>{{$icon->title}}</h4>--}}
+{{--                                            <p>{{$icon->description}}</p>--}}
+{{--                                            </div>--}}
+{{--                                            </a>--}}
+{{--                                            </div>--}}
+{{--                                                @endforeach--}}
+{{--                                        </div>--}}
+{{--                               </div>--}}
+{{--                            @endforeach--}}
+                        </section>
+                    </div>
+{{--                    <div id="hs_cos_wrapper_widget_1600183765340" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">--}}
+{{--                        <section class="testimonial-secondary bg-grey1">--}}
+{{--                            <div class="row small-row">--}}
+{{--                                <div class="column small-12 medium-6 large-6 testimonial-img-wrap">--}}
+{{--                                    <p class="caption"><strong>Partner story</strong></p>--}}
 
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="{{asset('saas/img/exclusive_events.svg')}}" alt="exclusive_events" />
-                                    <p class="h4">Exclusive events</p>
-                                    <p>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Hang out with the cool kids of hospitality.</span></span>
-                                    </p>
-                                </div>
+{{--                                    <img loading="lazy" src="{{asset('saas/img/pic-test-2.png?width=1074&amp;height=1119&amp;name=pic-test-2.png')}}" alt="HotelRoom" width="1074" height="1119" sizes="(max-width: 1074px) 100vw, 1074px" />--}}
+{{--                                </div>--}}
+{{--                                <div class="column small-12 medium-6 large-5 large-offset-1 flex-container flex-dir-column">--}}
+{{--                                    <p class="h4">--}}
+{{--                                        "At Pace we saw early that Mews was headed for industry leadership and we invested deeply in our partnership with them. Transformation happens through ecosystems and we are proud to be sharing the--}}
+{{--                                        stage with Mews."--}}
+{{--                                    </p>--}}
+{{--                                    <p class="h5 quote-name mb-0">--}}
+{{--                                        Jens Munch<br />--}}
+{{--                                        CEO, Pace--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </section>--}}
+{{--                    </div>--}}
+{{--                    <div id="hs_cos_wrapper_widget_1600184637785" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">--}}
+{{--                        <section class="locations-section">--}}
+{{--                            <div class="row small-row">--}}
+{{--                                <div class="column flex-container align-center-middle">--}}
+{{--                                    <h3 class="h2 text-center">Our offices</h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="row small-row small-up-1 medium-up-2 large-up-2 justify-center">--}}
+{{--                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">--}}
+{{--                                    <a href="https://g.page/mews-london?share" target="_blank"><img src="{{asset('saas/img/Partners-LondonMap-1.jpg')}}" alt="Partners-LondonMap-1" /></a>--}}
+{{--                                    <p class="h5">London</p>--}}
+{{--                                    <p>--}}
+{{--                                        <span>47-51 Great Suffolk Street<br /></span>--}}
+{{--                                        <span>--}}
+{{--                                            London <br />--}}
+{{--                                            SE1 0BS<br />--}}
+{{--                                            United Kingdom--}}
+{{--                                        </span>--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
 
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="{{asset('saas/img/community.svg')}}img/mews_marketing.svg" alt="mews_marketing" />
-                                    <p class="h4">Mews marketing</p>
-                                    <p>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>I</span></span><span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>nvolve&nbsp;</span></span>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>your brand in&nbsp;</span></span><span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>industry-leading&nbsp;</span></span>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>content.</span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'>&nbsp;</span>
-                                    </p>
-                                </div>
+{{--                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">--}}
+{{--                                    <a href="https://goo.gl/maps/Y4FTnAg8YX4Dcump9" target="_blank"><img src="{{asset('saas/img/Partners-PragueMap.jpg')}}" alt="Partners-PragueMap" /></a>--}}
+{{--                                    <p class="h5">Prague</p>--}}
+{{--                                    <p>--}}
+{{--                                        <span>--}}
+{{--                                            Náměstí I. P. Pavlova 5&nbsp;<br />--}}
+{{--                                            120 00 Vinohrady<br />--}}
+{{--                                            Prague<br />--}}
+{{--                                            Czech Republic--}}
+{{--                                        </span>--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
 
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="{{asset('saas/img/simplicity.svg')}}" alt="simplicity" />
-                                    <p class="h4">Simplicity</p>
-                                    <p>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Submit leads or set up your listing in minutes</span></span>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>.</span></span>
-                                    </p>
-                                </div>
+{{--                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">--}}
+{{--                                    <a href="https://g.page/mews-amsterdam?share" target="_blank"><img src="{{asset('saas/img/Partners-AmsterdamMap.jpg')}}" alt="Partners-AmsterdamMap" /></a>--}}
+{{--                                    <p class="h5">Amsterdam</p>--}}
+{{--                                    <p>--}}
+{{--                                        <span>--}}
+{{--                                            ScaleHub building<br />--}}
+{{--                                            Wibautstraat 137D<br />--}}
+{{--                                            1097DN Amsterdam<br />--}}
+{{--                                            The Netherlands--}}
+{{--                                        </span>--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
 
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon" src="{{asset('saas/img/community.svg')}}" alt="community" />
-                                    <p class="h4">Community</p>
-                                    <p>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>Connect with</span></span><span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>&nbsp;an engaged</span></span>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>&nbsp;and forward</span></span><span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>-</span></span>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>thinking</span></span><span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>&nbsp;group of peers.</span></span>
-                                    </p>
+{{--                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">--}}
+{{--                                    <a href="https://goo.gl/maps/MmgTpcfPBiUwQzoc9" target="_blank"><img src="{{asset('saas/img/Partners-NewYorkMap.jpg')}}" alt="Partners-NewYorkMap" /></a>--}}
+{{--                                    <p class="h5">New York</p>--}}
+{{--                                    <p>--}}
+{{--                                        <span>--}}
+{{--                                            41 East 11th Street<br />--}}
+{{--                                            New York<br />--}}
+{{--                                            NY 10003<br />--}}
+{{--                                            United States--}}
+{{--                                        </span>--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
+
+{{--                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">--}}
+{{--                                    <a href="https://www.google.com/maps/place/Legeweg+157o,+8020+Oostkamp,+Belgium/@51.172127,3.2442442,16.5z/data=!4m5!3m4!1s0x47c3507cec9806ed:0x6907a150d0a65462!8m2!3d51.1724875!4d3.2477159">--}}
+{{--                                        <img src="{{asset('saas/img/Partners-BrugesMap.png')}}" alt="Partners-BrugesMap" />--}}
+{{--                                    </a>--}}
+{{--                                    <p class="h5">Bruges</p>--}}
+{{--                                    <p>--}}
+{{--                                        <span>Legeweg 157-O</span><br />--}}
+{{--                                        <span>8020 Oostkamp</span>--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </section>--}}
+{{--                    </div>--}}
+
+                    <div id="hs_cos_wrapper_widget_1596719451716" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                        <section class="logo-section">
+                            <div class="row small-row">
+                                <div class="column large-12">
+                                    <p class="p-large text-center mb-30">Powering over 2,000 of the world's best hospitality brands. <a href="/en/customers" rel="noopener">See our customers.</a></p>
                                 </div>
+                            </div>
+                            <div class="row small-up-2 medium-up-3 large-up-6" id="logo-row">
+                                @foreach($frontClients as $client)
+                                    @php
+                                        $client_img="user-uploads/front/client/".$client->image."?width=240&amp;height=240&amp;name=".$client->image
+                                    @endphp
+                                    <div class="column flex-container align-center-middle logo-wrap">
+                                    <img src="{{asset($client_img)}}" alt="{{$client->title}}" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
+                                </div>
+                                @endforeach
                             </div>
                         </section>
                     </div>
-                    <div id="hs_cos_wrapper_widget_1600183765340" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                        <section class="testimonial-secondary bg-grey1">
-                            <div class="row small-row">
-                                <div class="column small-12 medium-6 large-6 testimonial-img-wrap">
-                                    <p class="caption"><strong>Partner story</strong></p>
+<div id="hs_cos_wrapper_widget_1620655550240" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                        <section class="customer-success pt-0">
 
-                                    <img loading="lazy" src="{{asset('saas/img/pic-test-2.png?width=1074&amp;height=1119&amp;name=pic-test-2.png')}}" alt="HotelRoom" width="1074" height="1119" sizes="(max-width: 1074px) 100vw, 1074px" />
+                            <div class="row small-row">
+                                <div class="column large-1 medium-12 small-12">
+
                                 </div>
-                                <div class="column small-12 medium-6 large-5 large-offset-1 flex-container flex-dir-column">
-                                    <p class="h4">
-                                        "At Pace we saw early that Mews was headed for industry leadership and we invested deeply in our partnership with them. Transformation happens through ecosystems and we are proud to be sharing the
-                                        stage with Mews."
-                                    </p>
-                                    <p class="h5 quote-name mb-0">
-                                        Jens Munch<br />
-                                        CEO, Pace
-                                    </p>
+                                <div class="column large-6 medium-12 small-12" id="success-head">
+                                    <h2>Five Star</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br> eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam.</p>
                                 </div>
-                            </div>
+
+                                <div class="column large-5 medium-12 small-12 flex-container" id="solutions-main">
+                                </div>
+
+                              </div>
+                            @foreach($featureWithIcons->chunk(4) as $feature_icon)
+                                <div class="row small-row">
+                                        <div class="column large-1 medium-12 small-12">
+                                        </div>
+                                            <div class="column large-11 medium-12 small-12 flex-container"
+                                                 id="success-main">
+                                                @foreach($feature_icon as $icon)
+                                                    <div class="col-md-3">
+                                                         <a class="success-tile" href="#">
+                                            <div class="s-text">
+                                            <i class="{{$icon->icon}}"></i>
+                                            <h4>{{$icon->title}}</h4>
+                                            <p>{{$icon->description}}</p>
+                                            </div>
+                                            </a>
+                                            </div>
+                                                @endforeach
+                                        </div>
+                               </div>
+                            @endforeach
                         </section>
                     </div>
-                    <div id="hs_cos_wrapper_widget_1600184637785" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                        <section class="locations-section">
-                            <div class="row small-row">
-                                <div class="column flex-container align-center-middle">
-                                    <h3 class="h2 text-center">Our offices</h3>
-                                </div>
-                            </div>
-                            <div class="row small-row small-up-1 medium-up-2 large-up-2 justify-center">
-                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://g.page/mews-london?share" target="_blank"><img src="{{asset('saas/img/Partners-LondonMap-1.jpg')}}" alt="Partners-LondonMap-1" /></a>
-                                    <p class="h5">London</p>
-                                    <p>
-                                        <span>47-51 Great Suffolk Street<br /></span>
-                                        <span>
-                                            London <br />
-                                            SE1 0BS<br />
-                                            United Kingdom
-                                        </span>
-                                    </p>
-                                </div>
-
-                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://goo.gl/maps/Y4FTnAg8YX4Dcump9" target="_blank"><img src="{{asset('saas/img/Partners-PragueMap.jpg')}}" alt="Partners-PragueMap" /></a>
-                                    <p class="h5">Prague</p>
-                                    <p>
-                                        <span>
-                                            Náměstí I. P. Pavlova 5&nbsp;<br />
-                                            120 00 Vinohrady<br />
-                                            Prague<br />
-                                            Czech Republic
-                                        </span>
-                                    </p>
-                                </div>
-
-                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://g.page/mews-amsterdam?share" target="_blank"><img src="{{asset('saas/img/Partners-AmsterdamMap.jpg')}}" alt="Partners-AmsterdamMap" /></a>
-                                    <p class="h5">Amsterdam</p>
-                                    <p>
-                                        <span>
-                                            ScaleHub building<br />
-                                            Wibautstraat 137D<br />
-                                            1097DN Amsterdam<br />
-                                            The Netherlands
-                                        </span>
-                                    </p>
-                                </div>
-
-                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://goo.gl/maps/MmgTpcfPBiUwQzoc9" target="_blank"><img src="{{asset('saas/img/Partners-NewYorkMap.jpg')}}" alt="Partners-NewYorkMap" /></a>
-                                    <p class="h5">New York</p>
-                                    <p>
-                                        <span>
-                                            41 East 11th Street<br />
-                                            New York<br />
-                                            NY 10003<br />
-                                            United States
-                                        </span>
-                                    </p>
-                                </div>
-
-                                <div class="column location-wrap flex-container flex-dir-column justify-top align-center text-center">
-                                    <a href="https://www.google.com/maps/place/Legeweg+157o,+8020+Oostkamp,+Belgium/@51.172127,3.2442442,16.5z/data=!4m5!3m4!1s0x47c3507cec9806ed:0x6907a150d0a65462!8m2!3d51.1724875!4d3.2477159">
-                                        <img src="{{asset('saas/img/Partners-BrugesMap.png')}}" alt="Partners-BrugesMap" />
-                                    </a>
-                                    <p class="h5">Bruges</p>
-                                    <p>
-                                        <span>Legeweg 157-O</span><br />
-                                        <span>8020 Oostkamp</span>
-                                    </p>
-                                </div>
-                            </div>
-
+                   <div class="review-container">
+          <div class="slideshow-container">
+            @foreach($testimonials as $key=>$val)
+                  <div class="mySlides fade">
+                    <img src="{{asset('saas/img/CTAblock-50@0.5x.jpg')}}" style="width:100%">
+                    <div class="text">
+                        <h2>{{$val->comment}}</h2>
+                        <h3> - {{$val->name}}</h3>
+                        @php
+                            $rating=$val->rating;
+                        @endphp
+                        <p>
+                            @for ($i = 1; $i <= $rating; $i++)
+                                <i class="fas fa-star"></i>
+                            @endfor
+                        </p>
                     </div>
+                </div>
+              @endforeach
+            <div class="dots" style="text-align:center">
+                @foreach($testimonials as $key=>$val)
+                    <span class="dot" onclick="currentSlide({{$key}})"></span>
+                @endforeach
+            </div>
+        </div>
+         </div>
                 </span>
     </main>
 @endsection
 @push('footer-script')
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
+{{--    <script>--}}
+{{--        var slideIndex = 1;--}}
+{{--        showSlides(slideIndex);--}}
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
+{{--        function plusSlides(n) {--}}
+{{--            showSlides(slideIndex += n);--}}
+{{--        }--}}
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
+{{--        function currentSlide(n) {--}}
+{{--            showSlides(slideIndex = n);--}}
+{{--        }--}}
 
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
-    </script>
+{{--        function showSlides(n) {--}}
+{{--            var i;--}}
+{{--            var slides = document.getElementsByClassName("mySlides");--}}
+{{--            var dots = document.getElementsByClassName("dot");--}}
+{{--            if (n > slides.length) {slideIndex = 1}--}}
+{{--            if (n < 1) {slideIndex = slides.length}--}}
+{{--            for (i = 0; i < slides.length; i++) {--}}
+{{--                slides[i].style.display = "none";--}}
+{{--            }--}}
+{{--            for (i = 0; i < dots.length; i++) {--}}
+{{--                dots[i].className = dots[i].className.replace(" active", "");--}}
+{{--            }--}}
+{{--            slides[slideIndex-1].style.display = "block";--}}
+{{--            dots[slideIndex-1].className += " active";--}}
+{{--        }--}}
+{{--    </script>--}}
 @endpush
