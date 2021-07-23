@@ -6,42 +6,49 @@
             <div class="column large-10 medium-10 small-12 footer-submenu-wrapper">
                 <div class="footer-submenu">
                     <h3 class="h6 submenu-title">
-                        Others
+                        Product
                     </h3>
                     <ul class="submenu-list">
                         @foreach($footerSettings as $key=>$val)
-                            <a href="@if(!is_null($val->external_link)) {{ $val->external_link }} @else {{ route('front.page', $val->slug) }} @endif"><li>{{$val->name}}</li></a>
+                            @if($val->type=='footer_section_1')
+                                <a href="@if(!is_null($val->external_link)) {{ $val->external_link }} @else {{ route('front.page', $val->slug) }} @endif"><li>{{$val->name}}</li></a>
+                            @endif
                         @endforeach
                     </ul>
                 </div>
                 <div class="footer-submenu">
                     <h3 class="h6 submenu-title">
-                        Others
+                        Resources
                     </h3>
                     <ul class="submenu-list">
                         @foreach($footerSettings as $key=>$val)
-                            <a href="@if(!is_null($val->external_link)) {{ $val->external_link }} @else {{ route('front.page', $val->slug) }} @endif"><li>{{$val->name}}</li></a>
+                            @if($val->type=='footer_section_2')
+                                <a href="@if(!is_null($val->external_link)) {{ $val->external_link }} @else {{ route('front.page', $val->slug) }} @endif"><li>{{$val->name}}</li></a>
+                            @endif
                         @endforeach
                     </ul>
                 </div>
                 <div class="footer-submenu">
                     <h3 class="h6 submenu-title">
-                        Pages
+                        Company
                     </h3>
                     <ul class="submenu-list">
-                        <a  href="{{ route('front.home') }}"><li>{{ $frontMenu->home }}</li></a>
-                        <a  href="{{ route('front.feature') }}"><li>{{ $frontMenu->feature }}</li></a>
-                        <a  href="{{ route('front.pricing') }}"><li>{{ $frontMenu->price }}</li></a>
-                        <a  href="{{ route('front.contact') }}"><li>{{ $frontMenu->contact }}</li></a>
+                        @foreach($footerSettings as $key=>$val)
+                            @if($val->type=='footer_section_3')
+                                <a href="@if(!is_null($val->external_link)) {{ $val->external_link }} @else {{ route('front.page', $val->slug) }} @endif"><li>{{$val->name}}</li></a>
+                            @endif
+                        @endforeach
                     </ul>
                 </div>
                 <div class="footer-submenu">
                     <h3 class="h6 submenu-title">
-                        Others
+                        Legal
                     </h3>
                     <ul class="submenu-list">
                         @foreach($footerSettings as $key=>$val)
-                            <a href="@if(!is_null($val->external_link)) {{ $val->external_link }} @else {{ route('front.page', $val->slug) }} @endif"><li>{{$val->name}}</li></a>
+                            @if($val->type=='footer_section_4')
+                                <a href="@if(!is_null($val->external_link)) {{ $val->external_link }} @else {{ route('front.page', $val->slug) }} @endif"><li>{{$val->name}}</li></a>
+                            @endif
                         @endforeach
                     </ul>
                 </div>

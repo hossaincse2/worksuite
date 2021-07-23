@@ -183,7 +183,7 @@
 
                                 </div>
                                 <div class="column large-6 medium-12 small-12" id="success-head">
-                                    <h2>Five Star Customer Success</h2>
+                                    <h2>{{$trFrontDetail->icon_title}}</h2>
 {{--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br> eiusmod--}}
 {{--                                    tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam.</p>--}}
                                 </div>

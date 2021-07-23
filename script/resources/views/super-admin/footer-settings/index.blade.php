@@ -87,6 +87,14 @@
                                                                 @lang('app.footer')
                                                             @elseif ($footerMenu->type == 'header')
                                                                 @lang('app.header')
+                                                            @elseif ($footerMenu->type == 'footer_section_1')
+                                                                footer section 1
+                                                            @elseif ($footerMenu->type == 'footer_section_2')
+                                                                footer section 2
+                                                            @elseif ($footerMenu->type == 'footer_section_3')
+                                                                footer section 3
+                                                            @elseif ($footerMenu->type == 'footer_section_4')
+                                                                footer section 4
                                                             @else
                                                                 @lang('app.both')
                                                             @endif

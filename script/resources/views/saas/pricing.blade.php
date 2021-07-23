@@ -37,41 +37,42 @@
                         </section>
                     </div>
                     <div id="hs_cos_wrapper_widget_1600858191674" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                        <section class="pricing-section bg-grey1">
-                            <div class="pricing-switches">
-                                <div class="row small-row">
-                                    <div class="column pricing-btn-wrapper flex-container justify-center" id="type-switch-wrapper">
-                                        <div class="toggle">
-                                            <input id="type-switch" type="checkbox" data-btn-type="pricingType" />
-                                            <label for="type-switch">
-                                                <div class="toggle__switch" data-checked="Rooms" data-unchecked="Beds"></div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="column pricing-btn-wrapper flex-container justify-end" id="bill-switch-wrapper">
-                                        <div class="toggle">
-                                            <input id="billing-switch" type="checkbox" data-btn-type="billingType" />
-                                            <label for="billing-switch">
-                                                <div class="toggle__switch switch_reverse" data-checked="Annually" data-unchecked="Monthly"></div>
-                                            </label>
-                                        </div>
-                                        <p id="discount-notice-wrap"><span id="discount-notice">(Save 10%)</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+{{--                        <section class="pricing-section bg-grey1">--}}
+{{--                            <div class="pricing-switches">--}}
+{{--                                <div class="row small-row">--}}
+{{--                                    <div class="column pricing-btn-wrapper flex-container justify-center" id="type-switch-wrapper">--}}
+{{--                                        <div class="toggle">--}}
+{{--                                            <input id="type-switch" type="checkbox" data-btn-type="pricingType" />--}}
+{{--                                            <label for="type-switch">--}}
+{{--                                                <div class="toggle__switch" data-checked="Rooms" data-unchecked="Beds"></div>--}}
+{{--                                            </label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="column pricing-btn-wrapper flex-container justify-end" id="bill-switch-wrapper">--}}
+{{--                                        <div class="toggle">--}}
+{{--                                            <input id="billing-switch" type="checkbox" data-btn-type="billingType" />--}}
+{{--                                            <label for="billing-switch">--}}
+{{--                                                <div class="toggle__switch switch_reverse" data-checked="Annually" data-unchecked="Monthly"></div>--}}
+{{--                                            </label>--}}
+{{--                                        </div>--}}
+{{--                                        <p id="discount-notice-wrap"><span id="discount-notice">(Save 10%)</span></p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </section>--}}
                         <section class="packages-section bg-grey1">
                             <div class="row small-row small-up-1 medium-up-2 large-up-4 align-start align-stretch">
-                                <div id="currency-wrapper" class="button button--secondary">
-                                    <select name="currency" id="select-currency" data-btn-type="currency">
-                                        <option value="" disabled selected>Change currency (€)</option>
-                                        <option value="euros">€ EUR</option>
-                                        <option value="usd">$ USD</option>
-                                        <option value="pounds">£ GBP</option>
-                                        <option value="aud">$ AUD</option>
-                                    </select>
-                                </div>
+{{--                                <div id="currency-wrapper" class="button button--secondary">--}}
+{{--                                    <select name="currency" id="select-currency" data-btn-type="currency">--}}
+{{--                                        <option value="" disabled selected>Change currency (€)</option>--}}
+{{--                                        <option value="euros">€ EUR</option>--}}
+{{--                                        <option value="usd">$ USD</option>--}}
+{{--                                        <option value="pounds">£ GBP</option>--}}
+{{--                                        <option value="aud">$ AUD</option>--}}
+{{--                                    </select>--}}
+{{--                                </div>--}}
                                 @foreach ($packages as $key => $item)
+                                    @if($item->is_free==true)
                                     <div class="column flex-container flex-dir-column price-type {{$item->name}}">
                                     <div class="price-details flex-container flex-dir-column">
 {{--                                        @if($key==1)--}}
@@ -117,20 +118,25 @@
                                         </ul>
                                     </div>
                                 </div>
+                                 @continue
+                                    @else
+                                        @break
+                                @endif
+
                                 @endforeach
                             </div>
                             <span id="smallprint-anchor"></span>
-                            <div class="row small-row mt-60">
-                                <div class="column flex-container flex-dir-column align-center-middle text-center">
-                                    <h3 class="h4">
-                                        <a href="#table" class="flex-container align-center">
-                                            Compare all features
-                                            <img src="img/arrow-primary.svg" />
-                                        </a>
-                                    </h3>
-                                    <small id="smallprint">*For the prices of training and consultations, one-time implementation packages apply. Please contact us for a price quote.</small>
-                                </div>
-                            </div>
+{{--                            <div class="row small-row mt-60">--}}
+{{--                                <div class="column flex-container flex-dir-column align-center-middle text-center">--}}
+{{--                                    <h3 class="h4">--}}
+{{--                                        <a href="#table" class="flex-container align-center">--}}
+{{--                                            Compare all features--}}
+{{--                                            <img src="img/arrow-primary.svg" />--}}
+{{--                                        </a>--}}
+{{--                                    </h3>--}}
+{{--                                    <small id="smallprint">*For the prices of training and consultations, one-time implementation packages apply. Please contact us for a price quote.</small>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </section>
                     </div>
                     <div id="hs_cos_wrapper_widget_1600950370162" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">

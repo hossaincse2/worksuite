@@ -41,7 +41,6 @@ class SuperAdminFeatureSettingController extends SuperAdminBaseController
         $this->frontDetail = TrFrontDetail::first();
         $this->activeLanguages = LanguageSetting::where('status', 'enabled')->orderBy('language_name', 'asc')->get();
         $this->frontFeatures = FrontFeature::all();
-
         return view('super-admin.feature-settings.index', $this->data);
     }
 
@@ -187,6 +186,10 @@ class SuperAdminFeatureSettingController extends SuperAdminBaseController
         elseif($request->type == 'apps'){
             $feature->favourite_apps_title  = $request->title;
             $feature->favourite_apps_detail = $request->detail;
+        }
+        elseif($request->type == 'icon'){
+            $feature->icon_title  = $request->title;
+            $feature->icon_description = $request->detail;
         }
         $feature->language_setting_id = $request->language_settings_id;
         $feature->save();

@@ -128,6 +128,10 @@
                                                     <option @if($footer->type == 'footer') selected @endif  value="footer">@lang('app.footer')</option>
                                                     <option @if($footer->type == 'header') selected @endif value="header">@lang('app.header')</option>
                                                     <option @if($footer->type == 'both') selected @endif value="both">@lang('app.both')</option>
+                                                    <option @if($footer->type == 'footer_section_1') selected @endif value="footer_section_1">footer section 1</option>
+                                                    <option @if($footer->type == 'footer_section_2') selected @endif value="footer_section_2">footer section 2</option>
+                                                    <option @if($footer->type == 'footer_section_3') selected @endif value="footer_section_3">footer section 3</option>
+                                                    <option @if($footer->type == 'footer_section_4') selected @endif value="footer_section_4">footer section 4</option>
                                                 </select>
                                             </div>
                                         </div>

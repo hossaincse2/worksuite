@@ -15,6 +15,8 @@
                     value="{{ $frontDetail->feature_title }}"
                 @elseif($type == 'team')
                     value="{{ $frontDetail->teamates_title }}"
+                @elseif($type == 'icon')
+                    value="{{ $frontDetail->icon_title }}"
                 @elseif($type == 'apps')
                     value="{{ $frontDetail->favourite_apps_title }}"
                 @endif
@@ -25,7 +27,7 @@
         <div class="col-sm-12 col-xs-12">
             <div class="form-group">
                 <label for="address">@lang('app.description')</label>
-
+{{--                @dd($frontDetail)--}}
                 @if($type == 'task')
                     <textarea class="form-control" id="detail" rows="5" name="detail">{{ $frontDetail->task_management_detail }}</textarea>
                 @elseif($type == 'bills')
@@ -34,6 +36,8 @@
                     <textarea class="form-control" id="detail" rows="5" name="detail">{{ $frontDetail->feature_description }}</textarea>
                 @elseif($type == 'team')
                     <textarea class="form-control" id="detail" rows="5" name="detail">{{ $frontDetail->teamates_detail }}</textarea>
+                @elseif($type == 'icon')
+                    <textarea class="form-control" id="detail" rows="5" name="detail">{{ $frontDetail->icon_description }}</textarea>
                 @elseif($type == 'apps')
                     <textarea class="form-control" id="detail" rows="5" name="detail">{{ $frontDetail->favourite_apps_detail }}</textarea>
                 @endif

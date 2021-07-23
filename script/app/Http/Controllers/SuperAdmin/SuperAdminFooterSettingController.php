@@ -119,7 +119,6 @@ class SuperAdminFooterSettingController extends SuperAdminBaseController
     {
         $videoType = $request->video_type;
         $footer = FooterMenu::findOrFail($id);
-
         $footer->language_setting_id = $request->language == 0 ? null : $request->language;
         $footer->name          = $request->title;
         $footer->description   = $request->description;

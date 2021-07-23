@@ -125,6 +125,10 @@
                                                     <option   value="footer">@lang('app.footer')</option>
                                                     <option value="header">@lang('app.header')</option>
                                                     <option value="both">@lang('app.both')</option>
+                                                    <option value="footer_section_1">footer section 1</option>
+                                                    <option value="footer_section_2">footer section 2</option>
+                                                    <option value="footer_section_3">footer section 3</option>
+                                                    <option value="footer_section_4">footer section 4</option>
                                                 </select>
                                             </div>
                                         </div>

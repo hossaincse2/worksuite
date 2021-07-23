@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="white-box">
-                                        @if($type !== 'icon')
+{{--                                        @if($type !== 'icon')--}}
                                             <h4>{{ucwords($type)}} @lang('app.section')</h4>
                                             <hr>
                                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -80,11 +80,10 @@
                                             <div class="tab-content" id="edit-form">
                                                 @include('super-admin.feature-settings.edit-form')
                                             </div>
-                                        @endif
+{{--                                        @endif--}}
                                         <br>
                                         <hr>
                                         <h3 class="box-title m-b-0">@lang('modules.feature.setting')</h3>
-
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
@@ -110,9 +109,7 @@
                                                 @forelse($features as $feature)
                                                     <tr>
                                                         <td>{{ ucwords($feature->title) }}</td>
-                                                        @if($type !== 'apps')
-                                                         <td>{!! $feature->description  !!}</td>
-                                                        @endif
+                                                        <td>{!! $feature->description  !!}</td>
                                                         <td>{{ $feature->language ? $feature->language->language_name : 'English' }}</td>
                                                         <td @if($feature->type != 'image' && $feature->type != 'apps') style="font-size: 27px" @endif>
                                                             @if($feature->type == 'image' || $feature->type == 'apps')
