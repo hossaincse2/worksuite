@@ -70,289 +70,36 @@
                             </li>
                         </ul>
 
-                        <a href="/signup" id="main-nav-btn" class="button button--primary show-for-large main-nav-link nav-track">Register</a>
+                        <a href="{{ route('front.signup.index') }}" id="main-nav-btn" class="button button--primary show-for-large main-nav-link nav-track">Register</a>
                     </div>
                     <div id="mobileNav">
-                        <a href="/signup" id="main-nav-btn" class="button button--primary hide-for-large main-nav-link nav-track">Register</a>
+                        <a href="{{ route('front.signup.index') }}" id="main-nav-btn" class="button button--primary hide-for-large main-nav-link nav-track">Register</a>
                         <div id="menuToggle">
                             <input type="checkbox" />
                             <span></span>
                             <span></span>
                             <div id="mob-menu">
-                                <a href="/en/" id="mob-home-link"><img src="img/arrow-black.svg" alt="Back to Home arrow" width="25" height="23" />Home</a>
-                                <div id="mob-menu-wrapper">
-                                    <div class="nav-submenu-item">
-                                        <p class="h6 main-nav-link submenu-title p-large">Products</p>
-
-                                        <ul class="mob-nav submenu-list">
-                                            <div class="mob-info">
-                                                <p class="mb-0"><strong>Mews Hospitality Cloud</strong></p>
-                                                <p class="mb-30">Make your property remarkable with an ecosystem of hospitality solutions that maximize revenue and enhance the guest experience</p>
-                                                <a class="button button--secondary nav-track" id="nav--btn" href="#">See all products</a>
-                                            </div>
-
-                                            <a class="nav-img-link nav-track flex-container" id="nav-mob-Operations" href="#">
-                                                <img
-                                                        srcset="img/Operations.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="Operations"
-                                                        loading="lazy"
-                                                        height="400"
-                                                        width="400"
-                                                />
-                                                <div class="flex-container flex-dir-column" style="margin-top: 5px;">
-                                                    <p class="mb-0"><strong>Mews Operations</strong></p>
-                                                    <p class="mb-0">The control centre for front office and back office staff with smart automation</p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container" id="nav-mob-GuestJourney" href="#">
-                                                <img
-                                                        srcset="img/Guest_Journey.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="Guest Journey"
-                                                        loading="lazy"
-                                                        height="400"
-                                                        width="400"
-                                                />
-                                                <div class="flex-container flex-dir-column" style="margin-top: 5px;">
-                                                    <p class="mb-0"><strong>Mews Guest Journey</strong></p>
-                                                    <p class="mb-0">A connected guest experience that’s memorable as well as modern</p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container" id="nav-mob-Payments" href="#">
-                                                <img
-                                                        srcset="img/Payments.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="Payments"
-                                                        loading="lazy"
-                                                        height="400"
-                                                        width="400"
-                                                />
-                                                <div class="flex-container flex-dir-column" style="margin-top: 5px;">
-                                                    <p class="mb-0"><strong>Mews Payments</strong></p>
-                                                    <p class="mb-0">Make every payment fast, secure and automatic</p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container" id="nav-mob-BI" href="#">
-                                                <img
-                                                        srcset="img/Business_Intelligence.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="Business Intelligence"
-                                                        loading="lazy"
-                                                        height="400"
-                                                        width="400"
-                                                />
-                                                <div class="flex-container flex-dir-column" style="margin-top: 5px;">
-                                                    <p class="mb-0"><strong>Mews Business Intelligence</strong></p>
-                                                    <p class="mb-0">Tools for better understanding your business</p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container" id="nav-mob-Marketplace" href="#">
-                                                <img
-                                                        srcset="img/Marketplace.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="Marketplace"
-                                                        loading="lazy"
-                                                        height="400"
-                                                        width="400"
-                                                />
-                                                <div class="flex-container flex-dir-column" style="margin-top: 5px;">
-                                                    <p class="mb-0"><strong>Mews Marketplace</strong></p>
-                                                    <p class="mb-0">Hospitality’s biggest marketplace of apps and integrations</p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container" id="nav-mob-API" href="#">
-                                                <img
-                                                        srcset="img/Open_API.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="Open API"
-                                                        loading="lazy"
-                                                        height="400"
-                                                        width="400"
-                                                />
-                                                <div class="flex-container flex-dir-column" style="margin-top: 5px;">
-                                                    <p class="mb-0"><strong>Mews Open API</strong></p>
-                                                    <p class="mb-0">The power to easily connect your tech to Mews</p>
-                                                </div>
-                                            </a>
-                                        </ul>
-                                    </div>
+                                 <div id="mob-menu-wrapper">
 
                                     <div class="nav-submenu-item">
-                                        <p class="h6 main-nav-link submenu-title p-large">Solutions</p>
+                                        <li role="menuitem">
+                                            <a href="{{ route('front.home') }}" class="main-nav-link nav-track" id="#" >{{ $frontMenu->home }}</a>
+                                        </li>
 
-                                        <ul class="mob-nav submenu-list">
-                                            <div class="mob-info">
-                                                <p class="mb-0"><strong>The right solution for your business</strong></p>
-                                                <p class="mb-0">One size does not fit all. Mews has a comprehensive platform designed for your specific business needs. Choose a solution to find out more</p>
-                                            </div>
+                                        <li role="menuitem">
+                                            <a href="{{ route('front.feature') }}" class="main-nav-link nav-track" id="#" >{{ $frontMenu->feature }}</a>
+                                        </li>
 
-                                            <a class="nav-img-link nav-track flex-container" id="nav-mob-Groups" href="#">
-                                                <img
-                                                        srcset="img/property-icon2.svg 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="property-icon2"
-                                                        loading="lazy"
-                                                        height="50"
-                                                        width="50"
-                                                />
-                                                <div class="flex-container flex-dir-column" style="margin-top: 5px;">
-                                                    <p class="mb-0"><strong>Group hotels and hostels</strong></p>
-                                                    <p class="mb-0">Technology that matches the ambition of your group. Mews is a PMS with serious scale and endless opportunities for innovation</p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container" id="nav-mob-Independents" href="#">
-                                                <img
-                                                        srcset="img/space-status-icon2.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="space-status-icon2"
-                                                        loading="lazy"
-                                                        height="50"
-                                                        width="50"
-                                                />
-                                                <div class="flex-container flex-dir-column" style="margin-top: 5px;">
-                                                    <p class="mb-0"><strong>Independent hotels and hostels</strong></p>
-                                                    <p class="mb-0">Your uniqueness is your competitive advantage. Create an efficient and dynamic operation so you can focus on your guests</p>
-                                                </div>
-                                            </a>
-                                        </ul>
-                                    </div>
-
-                                    <div class="nav-submenu-item">
-                                        <a href="#" class="main-nav-link nav-track" id="nav-customerStories">Customers</a>
-                                    </div>
-
-                                    <div class="nav-submenu-item">
-                                        <a href="#" class="main-nav-link nav-track" id="nav-Pricing">Pricing</a>
-                                    </div>
-
-                                    <div class="nav-submenu-item">
-                                        <p class="h6 main-nav-link submenu-title p-large">Resources</p>
-
-                                        <ul class="mob-nav submenu-list">
-                                            <div class="mob-info">
-                                                <p class="mb-0"><strong>Hospitality events, insights and inspiration</strong></p>
-                                                <p class="mb-0">Everything from industry trends and hotelier interviews to product releases and events. Explore your hospitality hub</p>
-                                            </div>
-
-                                            <a class="nav-img-link nav-track flex-container align-center" id="nav-mob-Webinars" href="#">
-                                                <img
-                                                        srcset="img/video-icon.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="video-icon"
-                                                        loading="lazy"
-                                                        height="26"
-                                                        width="25"
-                                                />
-                                                <div class="flex-container flex-dir-column">
-                                                    <p class="mb-0"><strong>Mews Webinars</strong></p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container align-center" id="nav-mob-Podcasts" href="#">
-                                                <img
-                                                        srcset="img/speech-icon.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="speech-icon"
-                                                        loading="lazy"
-                                                        height="26"
-                                                        width="25"
-                                                />
-                                                <div class="flex-container flex-dir-column">
-                                                    <p class="mb-0"><strong>Mews Podcasts</strong></p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container align-center" id="nav-mob-Events" href="#">
-                                                <img
-                                                        srcset="imgtwo-people-icon.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="two-people-icon"
-                                                        loading="lazy"
-                                                        height="26"
-                                                        width="25"
-                                                />
-                                                <div class="flex-container flex-dir-column">
-                                                    <p class="mb-0"><strong>Mews Events</strong></p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container align-center" id="nav-mob-Blog" href="#">
-                                                <img
-                                                        srcset="img/world-icon2.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="world-icon2"
-                                                        loading="lazy"
-                                                        height="26"
-                                                        width="25"
-                                                />
-                                                <div class="flex-container flex-dir-column">
-                                                    <p class="mb-0"><strong>Mews Blog</strong></p>
-                                                </div>
-                                            </a>
-
-                                            <a class="nav-img-link nav-track flex-container align-center" id="nav-mob-Developers" href="#">
-                                                <img
-                                                        srcset="img/interaction-icon.svg 613w, img/pixel.webp 1w"
-                                                        sizes="(min-width: 1024px) 1px, (max-width: 1023px) 613px"
-                                                        src="img/pixel.webp"
-                                                        alt="interaction-icon"
-                                                        loading="lazy"
-                                                        height="26"
-                                                        width="25"
-                                                />
-                                                <div class="flex-container flex-dir-column">
-                                                    <p class="mb-0"><strong>Developer resources</strong></p>
-                                                </div>
-                                            </a>
-                                        </ul>
-                                    </div>
-
-                                    <div class="nav-submenu-item">
-                                        <p class="h6 main-nav-link submenu-title p-large"><img class="lang-flag mr-20" src="img/en.svg" />English</p>
-                                        <ul class="mob-nav submenu-list">
-                                            <a class="lang-option nav-img-link flex-container lang-option nav-track" id="nav-mob-DE" href="/de/">
-                                                <img class="lang-flag" src="img/de.svg" alt="Deutsch flag" height="27" width="45" />
-                                                Deutsch
-                                            </a>
-
-                                            <a class="lang-option nav-img-link flex-container lang-option nav-track" id="nav-mob-ES" href="/es/">
-                                                <img class="lang-flag" src="img/es.svg" alt="Español flag" height="27" width="45" />
-                                                Español
-                                            </a>
-
-                                            <a class="lang-option nav-img-link flex-container lang-option nav-track" id="nav-mob-FR" href="/fr/">
-                                                <img class="lang-flag" src="img/fr.svg" alt="Français flag" height="27" width="45" />
-                                                Français
-                                            </a>
-
-                                            <a class="lang-option nav-img-link flex-container lang-option nav-track" id="nav-mob-NL" href="/nl/">
-                                                <img class="lang-flag" src="img/nl.svg" alt="Nederlands flag" height="27" width="45" />
-                                                Nederlands
-                                            </a>
-                                        </ul>
+                                        <li role="menuitem">
+                                            <a href="{{ route('front.pricing') }}" class="main-nav-link nav-track" id="nav-customerStories">{{ $frontMenu->price }}</a>
+                                        </li>
+                                        <li role="menuitem">
+                                            <a href="{{ route('front.contact') }}" class="main-nav-link nav-track" id="nav-Pricing" >{{ $frontMenu->contact }}</a>
+                                        </li>
                                     </div>
                                 </div>
-                                <a href="#" class="main-nav-link mb-20" id="login" target="_blank">Log in</a>
-                                <a href="/signup" id="mob-menu-btn" class="button button--primary main-nav-link nav-track mb-30">Register</a>
+                                <a href="{{ module_enabled('Subdomain')?route('front.workspace'):route('login') }}" class="main-nav-link mb-20" id="login" target="_blank">Log in</a>
+                                <a href="{{ route('front.signup.index') }}" id="mob-menu-btn" class="button button--primary main-nav-link nav-track mb-30">Register</a>
                             </div>
                         </div>
                     </div>

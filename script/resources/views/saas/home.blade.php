@@ -39,7 +39,7 @@
                                                 </p>
                                             </div>
 
-                                            <a href="#" class="button button--primary">
+                                            <a href="{{ route('front.signup.index') }}" class="button button--primary">
                                                 Register
                                             </a>
                                         </div>
@@ -85,13 +85,12 @@
                         <section class="preview-section bg-blue_grey-2">
                             <div class="row small-row">
                                 <div class="column large-6 medium-12 small-12 flex-container flex-dir-column">
-                                    <p class="supertitle dot">Product</p>
                                     <h2 class="h3">{{$trFrontDetail->feature_title}}</h2>
                                     <p class="mb-60">{{ $trFrontDetail->feature_description }}</p>
                                     <ul class="preview-list mb-30 flex-container flex-dir-column">
                                          @foreach($featureWithImages as $key => $value)
                                             <li class="flex-container preview-list-item {{($loop->first)?'active':''}}"  data-index="{{$key}}">
-                                            <img src="{{($value->icon)?$value->icon:asset('saas/img/Guest_Journey.svg')}}" alt="{{$value->title}}" height="400" width="400" />
+                                            <img src="{{ ($value->icon) ? $value->icon : asset('saas/img/Guest_Journey.svg')}}" alt="{{$value->title}}" height="400" width="400" />
                                             <div class="flex-container flex-dir-column">
                                                 <p class="preview-title"><strong>{{$value->title}}</strong></p>
                                                 <div class="preview-info flex-container flex-dir-column">
@@ -126,7 +125,6 @@
                         <section class="solutions-link">
                             <div class="row small-row">
                                 <div class="column large-1 medium-12 small-12" id="title-wrap">
-                                    <p class="supertitle dot">Solutions</p>
                                     <h2 class="h4" id="title">
                                         {{$trFrontDetail->favourite_apps_title}}<br />
                                     </h2>
@@ -185,9 +183,9 @@
 
                                 </div>
                                 <div class="column large-6 medium-12 small-12" id="success-head">
-                                    <h2>Five Star</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br> eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam.</p>
+                                    <h2>Five Star Customer Success</h2>
+{{--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br> eiusmod--}}
+{{--                                    tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam.</p>--}}
                                 </div>
 
                                 <div class="column large-5 medium-12 small-12 flex-container" id="solutions-main">
@@ -206,7 +204,7 @@
                                             <div class="s-text">
                                             <i class="{{$icon->icon}}"></i>
                                             <h4>{{$icon->title}}</h4>
-                                            <p>{{$icon->description}}</p>
+                                            <p>{!! $icon->description !!}</p>
                                             </div>
                                             </a>
                                             </div>

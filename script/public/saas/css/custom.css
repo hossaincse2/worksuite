@@ -206,7 +206,27 @@
 	padding-bottom: 5px;
 }
 
+.h1, h1 {
+    font-size: 3rem;
+}
+.image-wrapper {
+    height: calc(100% - 0%);
+    top: 0;
+}
 
+@media (min-width: 1024px){
+    .image-container {
+        height: calc(100% - 0%);
+        top: 0;
+    }
+}
+
+    @media print, screen and (min-width: 64em){
+        .hero-primary {
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+    }
 
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
