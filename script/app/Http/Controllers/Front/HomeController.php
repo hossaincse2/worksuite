@@ -189,7 +189,9 @@ class HomeController extends FrontBaseController
             'language_setting_id' => $iconFeaturesCount > 0 ? ($this->localeLanguage ? $this->localeLanguage->id : null) : null,
             'type' => 'icon'
         ])->whereNull('front_feature_id')->get();
-        $this->benefit=FrontFeature::with('features')->where('id','=','2')->first();
+        $this->benefit_section_one=FrontFeature::with('features')->where('id','=','1')->first();
+        $this->benefit_section_two=FrontFeature::with('features')->where('id','=','2')->first();
+        $this->benefit_section_three=FrontFeature::with('features')->where('id','=','3')->first();
 
         abort_if($this->setting->front_design != 1,403);
 
