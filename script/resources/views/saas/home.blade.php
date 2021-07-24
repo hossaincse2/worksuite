@@ -216,7 +216,7 @@
                     </div>
 
     <div id="hs_cos_wrapper_widget_1620657524146" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                        <section class="testimonial-carousel bg-blue_grey-2">
+                        <section class="testimonial-carousel bg-blue_grey-2 cta-block">
                             <div class="row small-row">
                                  <div class="float-left cta-heding">
                                     <h3 class="h3">Hospitality. Made better.</h3>
@@ -225,7 +225,7 @@
                                             processes."
                                         </p>
                                     </div>
-                                   <a class="button button--secondary align-self-end float-right" href="#" target="_blank">Read more</a>
+                                   <a class="button button--secondary align-self-end float-right" href="#" target="_blank">Get Started</a>
 
 
 

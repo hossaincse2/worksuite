@@ -213,7 +213,7 @@
     height: calc(100% - 0%);
     top: 0;
 }
-.testimonial-carousel .row:first-child {
+.cta-block .row:first-child {
      display: inline-block;
 }
 .cta-heding{
