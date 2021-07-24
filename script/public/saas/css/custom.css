@@ -213,7 +213,17 @@
     height: calc(100% - 0%);
     top: 0;
 }
-
+.testimonial-carousel .row:first-child {
+     display: inline-block;
+}
+.cta-heding{
+    width: 60%;
+    float: left;
+}
+a.button.button--secondary.align-self-end.float-right {
+    margin-top: 7%;
+    float: right;
+}
 @media (min-width: 1024px){
     .image-container {
         height: calc(100% - 0%);

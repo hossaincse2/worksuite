@@ -847,3 +847,7 @@ body {
     border-radius: 5 !important;
     box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
 }
+#carousel-count{
+    top: 4rem;
+    width: 93%;
+}

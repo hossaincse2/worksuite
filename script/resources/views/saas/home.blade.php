@@ -218,121 +218,18 @@
     <div id="hs_cos_wrapper_widget_1620657524146" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="testimonial-carousel bg-blue_grey-2">
                             <div class="row small-row">
-                                <div class="column flex-container align-start">
-                                    <h2 class="h3">Hospitality. Made better.</h2>
-                                    <div class="flex-container align-center" id="carousel-count">
-                                        <p class="mb-0" id="carousel-num-wrap"><span id="carousel-num">01</span> / 04</p>
-                                        <span class="carousel-arrow flex-container align-center-middle" id="carousel-left"><img src="{{asset('saas/img/chevron-coral.svg')}}" alt="Left arrow" /></span>
-                                        <span class="carousel-arrow flex-container align-center-middle" id="carousel-right"><img src="{{asset('saas/img/chevron-coral.svg')}}" alt="Right arrow" /></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row small-row" id="carousel-row">
-                                <div class="column large-10 medium-10 small-10 carousel-item flex-container active" data-index="1">
-                                    <a href="#" target="_blank">
-                                        <img
-                                                loading="lazy"
-                                                src="{{asset('saas/img/The_Dylan-min.jpg?width=650&amp;height=434&amp;name=The%20Dylan-min.jpg')}}"
-                                                alt="The Dylan-min"
-                                                width="650"
-                                                height="434"
-                                                srcset="
-                                                {{asset('saas/img/The_Dylan-min.jpg?width=325&amp;height=217&amp;name=The%20Dylan-min.jpg')}}    325w,
-                                                {{asset('img/The_Dylan-min.jpg?width=650&amp;height=434&amp;name=The%20Dylan-min.jpg')}}    650w,
-                                                {{asset('img/The_Dylan-min.jpg?width=975&amp;height=651&amp;name=The%20Dylan-min.jpg')}}    975w,
-                                                {{asset('img/The_Dylan-min.jpg?width=1300&amp;height=868&amp;name=The%20Dylan-min.jpg')}}  1300w,
-                                                {{asset('img/The_Dylan-min.jpg?width=1625&amp;height=1085&amp;name=The%20Dylan-min.jpg')}} 1625w,
-                                                {{asset('img/The_Dylan-min.jpg?width=1950&amp;height=1302&amp;name=The%20Dylan-min.jpg')}} 1950w
-                                            "
-                                                sizes="(max-width: 650px) 100vw, 650px"
-                                        />
-                                    </a>
-                                    <div class="flex-container flex-dir-column">
-                                        <p class="h5">
+                                 <div class="float-left cta-heding">
+                                    <h3 class="h3">Hospitality. Made better.</h3>
+                                    <p class="h5">
                                             "It's really important to change the mindset in hospitality and to let the old systems go. In the long run, you will gain more than you will lose in terms of revenue, guest experience and
                                             processes."
                                         </p>
-                                        <p>
-                                            <strong>
-                                                Carol Domacassé<br />
-                                                Reservations Manager, The Dylan Amsterdam
-                                            </strong>
-                                        </p>
-
-                                        <a class="button button--secondary align-self-start" href="#" target="_blank">Read more</a>
                                     </div>
-                                </div>
+                                   <a class="button button--secondary align-self-end float-right" href="#" target="_blank">Read more</a>
 
-                                <div class="column large-10 medium-10 small-10 carousel-item flex-container" data-index="2">
-                                    <a href="#" target="_blank">
-                                        <img loading="lazy" src="{{asset('saas/img/Machefert-min.jpg?width=650&amp;height=434&amp;name=Machefert-min.jpg')}}" alt="Machefert-min" width="650" height="434" sizes="(max-width: 650px) 100vw, 650px" />
-                                    </a>
-                                    <div class="flex-container flex-dir-column">
-                                        <p class="h5">
-                                            "Mews has saved us a lot of time and transformed the way we work on a number of levels. It's agile, connected, and open to innovation, so I can only highly recommend switching to this pms."
-                                        </p>
-                                        <p>
-                                            <strong>
-                                                Kevin Machefert<br />
-                                                Deputy CEO, Machefert Group
-                                            </strong>
-                                        </p>
 
-                                        <a class="button button--secondary align-self-start" href="#" target="_blank">
-                                            Read more
-                                        </a>
-                                    </div>
-                                </div>
 
-                                <div class="column large-10 medium-10 small-10 carousel-item flex-container" data-index="3">
-                                    <a href="#" target="_blank">
-                                        <img
-                                                loading="lazy"
-                                                src="{{asset('saas/img/The_Opera_Hotel-min.jpg?width=650&amp;height=434&amp;name=The%20Opera%20Hotel-min.jpg')}}"
-                                                alt="The Opera Hotel-min"
-                                                width="650"
-                                                height="434"
-                                                sizes="(max-width: 650px) 100vw, 650px"
-                                        />
-                                    </a>
-                                    <div class="flex-container flex-dir-column">
-                                        <p class="h5">
-                                            "Now we're walking around with our heads up and our tablets and we give our guests a personal experience. We greet them with positive energy, sit together and check them in with the iPad."
-                                        </p>
-                                        <p>
-                                            <strong>
-                                                Michael Böhler<br />
-                                                General Manager, The Opera Hotel
-                                            </strong>
-                                        </p>
-
-                                        <a class="button button--secondary align-self-start" href="#" target="_blank">Read more</a>
-                                    </div>
-                                </div>
-
-                                <div class="column large-10 medium-10 small-10 carousel-item flex-container" data-index="4">
-                                    <a href="#" target="_blank">
-                                        <img loading="lazy" src="{{asset('saas/img/Jo_joe-min.jpg?width=650&amp;height=434&amp;name=Jo%26Joe-min.jpg')}}" alt="Jo&amp;Joe-min" width="650" height="434" sizes="(max-width: 650px) 100vw, 650px" />
-                                    </a>
-                                    <div class="flex-container flex-dir-column">
-                                        <p class="h5">
-                                            "Mews is more than just a tech company; it's a mindset, and in the hotel industry this is a key value. The first time I met Mews, I realised they were perfect to build our brand and to work
-                                            together."
-                                        </p>
-                                        <p>
-                                            <strong>
-                                                Valentin Babilliot<br />
-                                                Head of Digital &amp; Distribution, JO&amp;JOE
-                                            </strong>
-                                        </p>
-
-                                        <a class="button button--secondary align-self-start" href="#" target="_blank">Read more</a>
-                                    </div>
-                                </div>
-
-                                <div class="column large-3 medium-2 small-2"></div>
                             </div>
-
 
                 </span>
     </main>
