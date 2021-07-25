@@ -27,6 +27,7 @@
     <meta name="msapplication-TileImage" content="{{ $setting->favicon_url }}">
     <meta name="theme-color" content="#ffffff">
     <!-- Styles -->
+{{--    <link type="text/css" rel="stylesheet" media="all" href="{{ asset('saas1/vendor/bootstrap/css/bootstrap.min.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('saas/css/main.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_45892087927__navigation_new.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('saas/css/module_33242552601_Hero_primary.min.css') }}" />

@@ -287,7 +287,7 @@
                             <div class="row small-row">
                                 <div class="column flex-container flex-dir-column align-center-middle text-center">
                                     <h2 class="h3">{{$benefit_section_one->title}}</h2>
-                                    <h5>{{$benefit_section_one->description}}</h5>
+                                    <h5>{!! $benefit_section_one->description !!}</h5>
                                 </div>
                             </div>
                             @foreach($benefit_section_one->features->chunk(3) as $feature_item)
@@ -308,11 +308,11 @@
                         </section>
                     </div>
                     <div id="hs_cos_wrapper_widget_1600183372411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                         <section class="icon-text-section bg-white">
+                         <section class="icon-text-section bg-black">
                             <div class="row small-row">
                                 <div class="column flex-container flex-dir-column align-center-middle text-center">
                                     <h2 class="h3">{{$benefit_section_two->title}}</h2>
-                                    <h5>{{$benefit_section_two->description}}</h5>
+                                    <h5>{!! $benefit_section_two->description !!}</h5>
                                 </div>
                             </div>
                             @foreach($benefit_section_two->features->chunk(3) as $feature_item)
@@ -336,7 +336,7 @@
                             <div class="row small-row">
                                 <div class="column flex-container flex-dir-column align-center-middle text-center">
                                     <h2 class="h3">{{$benefit_section_three->title}}</h2>
-                                    <h5>{{$benefit_section_three->description}}</h5>
+                                    <h5>{!! $benefit_section_three->description !!}</h5>
                                 </div>
                             </div>
                             @foreach($benefit_section_three->features->chunk(3) as $feature_item)
@@ -498,7 +498,7 @@
                                             <div class="s-text">
                                             <i class="{{$icon->icon}}"></i>
                                             <h4>{{$icon->title}}</h4>
-                                            <p>{{$icon->description}}</p>
+                                            <p>{!! $icon->description !!}</p>
                                             </div>
                                             </a>
                                             </div>

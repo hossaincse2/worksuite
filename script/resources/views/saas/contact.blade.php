@@ -8,7 +8,9 @@
                         data-hs-cos-general-type="widget_container"
                         data-hs-cos-type="widget_container"
                 >
-                    <div id="hs_cos_wrapper_widget_1599736587176" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                    <div id="hs_cos_wrapper_widget_1599736587176"
+                         class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=""
+                         data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="hero-tertiary">
                             <div class="row">
                                 <div class="column small-12 medium-12 large-12">
@@ -26,12 +28,17 @@
                         <link rel="stylesheet" type="text/css" href="css/hero.css">
                         </section>
                     </div>
-                    <div id="hs_cos_wrapper_widget_1599737373010" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                    <div id="hs_cos_wrapper_widget_1599737373010"
+                         class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=""
+                         data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="form-section">
                             <div class="row">
                                 <div class="column form flex-container flex-dir-column align-center-middle">
-                                    <span id="hs_cos_wrapper_widget_1599737373010_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form">
-                                        <h3 id="hs_cos_wrapper_form_417396500_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
+                                    <span id="hs_cos_wrapper_widget_1599737373010_"
+                                          class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style=""
+                                          data-hs-cos-general-type="widget" data-hs-cos-type="form">
+                                        <h3 id="hs_cos_wrapper_form_417396500_title" class="hs_cos_wrapper form-title"
+                                            data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
 
                                         <div id="hs_form_target_form_417396500"></div>
                                     </span>
@@ -39,7 +46,41 @@
                             </div>
                         </section>
                     </div>
-                    <div id="hs_cos_wrapper_widget_1599742989589" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                    <section class="form-section">
+                            <div class="row">
+                    <form method="POST" action="https://demo-saas.worksuite.biz/contact" accept-charset="UTF-8"
+                          id="contactUs"><input name="_token" type="hidden"
+                                                value="HC62j9xJD645GUylPs2yw6n1AfHrAZ9r8mAnfdFR">
+                    <div class="row">
+                        <div class="alert col-md-12 text-center" id="alert"></div>
+                    </div>
+                    <div class="row" id="contactUsBox">
+                        <div class="form-group mb-4 col-lg-6 col-12">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" id="name">
+                        </div>
+                        <div class="form-group mb-4 col-lg-6 col-12">
+                            <input type="email" class="form-control" placeholder="Your Email" name="email" id="email">
+                        </div>
+                        <div class="form-group mb-4 col-12">
+                            <textarea rows="6" name="message" class="form-control br-10" placeholder="Message"
+                                      id="message"></textarea>
+                        </div>
+
+                    <input type="hidden" name="recaptcha_token" id="recaptcha_token">
+                        <div class="col-12" style="margin-top: 12px;">
+                            <button type="button" class="btn btn-lg btn-custom mt-1" id="contact-submit"
+                                    style="font-family: Nunito, Bangla572, sans-serif;">
+                                Submit Enquiry
+                            </button>
+                        </div>
+                    </div>
+                    </form>
+                     </div>
+                   </section>
+
+                    <div id="hs_cos_wrapper_widget_1599742989589"
+                         class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=""
+                         data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="icon-text-section bg-grey1">
                             <div class="row small-row">
                                 <div class="column flex-container flex-dir-column align-center-middle text-center">
@@ -53,17 +94,11 @@
                                     <p class="h4">United Kingdom</p>
                                     <p>{{ $frontDetail->address }}</p>
                                     <p>
-                                        <a href="https://www.google.com/maps/place/Mews/@51.4763948,-0.1236168,12z/data=!4m8!1m2!2m1!1sMews+uk!3m4!1s0x487604ba07279627:0xea838c431eab386a!8m2!3d51.5033268!4d-0.1012135" target="_blank">
+                                        <a href="https://www.google.com/maps/place/Mews/@51.4763948,-0.1236168,12z/data=!4m8!1m2!2m1!1sMews+uk!3m4!1s0x487604ba07279627:0xea838c431eab386a!8m2!3d51.5033268!4d-0.1012135"
+                                           target="_blank">
                                             View in Google Maps
                                         </a>
                                     </p>
-                                </div>
-
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-{{--                                    <img src="img/man-icon.svg" alt="man-icon (1)" />--}}
-                                    <p class="h4">Emergencies</p>
-                                    <p>If you’re experiencing a critical problem, you can call us 24/7. You’ll be taken through a short series of steps to determine who’s best to talk to.</p>
-                                    <p>Support: <a href="tel:%20+420%20245%20501%20660">{{ $frontDetail->phone }}</a></p>
                                 </div>
                             </div>
                         </section>
