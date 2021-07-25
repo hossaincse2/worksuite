@@ -219,15 +219,12 @@
                         <section class="testimonial-carousel bg-blue_grey-2 cta-block">
                             <div class="row small-row">
                                  <div class="float-left cta-heding">
-                                    <h3 class="h3">Hospitality. Made better.</h3>
+                                    <h3 class="h3">{{$trFrontDetail->cta_title}}</h3>
                                     <p class="h5">
-                                            "It's really important to change the mindset in hospitality and to let the old systems go. In the long run, you will gain more than you will lose in terms of revenue, guest experience and
-                                            processes."
+                                           {{$trFrontDetail->cta_detail}}
                                         </p>
                                     </div>
                                    <a class="button button--secondary align-self-end float-right" href="#" target="_blank">Get Started</a>
-
-
 
                             </div>
 
