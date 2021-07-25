@@ -25,7 +25,7 @@
                                 </div>
                             </div>
 
-                        <link rel="stylesheet" type="text/css" href="css/hero.css">
+{{--                        <link rel="stylesheet" type="text/css" href="css/hero.css">--}}
                         </section>
                     </div>
                     <div id="hs_cos_wrapper_widget_1599737373010"
@@ -48,9 +48,11 @@
                     </div>
                     <section class="form-section">
                             <div class="row">
-                    <form method="POST" action="https://demo-saas.worksuite.biz/contact" accept-charset="UTF-8"
-                          id="contactUs"><input name="_token" type="hidden"
-                                                value="HC62j9xJD645GUylPs2yw6n1AfHrAZ9r8mAnfdFR">
+                    <form method="POST" action="#" accept-charset="UTF-8"
+                          id="contactUs">
+{{--                        <input name="_token" type="hidden"--}}
+{{--                                                value="HC62j9xJD645GUylPs2yw6n1AfHrAZ9r8mAnfdFR">--}}
+                        @csrf()
                     <div class="row">
                         <div class="alert col-md-12 text-center" id="alert"></div>
                     </div>
@@ -134,17 +136,16 @@
 
 @endsection
 @push('footer-script')
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         $('#contact-submit').click(function () {
-
-            @if($global->google_recaptcha_status =="v2")
-            if (grecaptcha.getResponse().length == 0) {
-                alert('Please click the reCAPTCHA checkbox');
-                return false;
-            }
-            @endif
-
-            $.easyAjax({
+{{--        @if($global->google_recaptcha_status =="v2")--}}
+{{--                if (grecaptcha.getResponse().length == 0){--}}
+{{--                    alert('Please click the reCAPTCHA checkbox');--}}
+{{--                    return false;--}}
+{{--                }--}}
+{{--        @endif--}}
+         $.ajax({
                 url: '{{route('front.contact-us')}}',
                 container: '#contactUs',
                 type: "POST",
@@ -160,18 +161,41 @@
     </script>
     @if($global->google_recaptcha_status  && $global->google_captcha_version=="v3")
         <script src="https://www.google.com/recaptcha/api.js?render={{ $global->google_recaptcha_key }}"></script>
-
         <script>
-            setTimeout(function () {
+            {{--setTimeout(function () {--}}
+            {{--    grecaptcha.ready(function () {--}}
+            {{--        grecaptcha.execute('{{ $global->google_recaptcha_key }}', {action: 'submit'}).then(function (token) {--}}
+            {{--            document.getElementById("recaptcha_token").value = token;--}}
+            {{--        });--}}
+            {{--    });--}}
 
-                grecaptcha.ready(function () {
-                    grecaptcha.execute('{{ $global->google_recaptcha_key }}', {action: 'submit'}).then(function (token) {
+            {{--}, 3000);--}}
+            // e.preventDefault();
+            // /function onClick(e) {
+                // e.preventDefault();
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('{{ $global->google_recaptcha_key }}', {action: 'submit'}).then(function(token) {
                         document.getElementById("recaptcha_token").value = token;
                     });
                 });
+           // / }
 
-            }, 3000);
-
+        </script>
+    @else
+        <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+        <script type="text/javascript">
+            // var ReCaptchaCallbackV3 = function() {
+            //     grecaptcha.ready(function() {
+            //         grecaptcha.execute("site_key").then(function(token) {
+            //             console.log("v3 Token: " + token);
+            //         });
+            //     });
+            // };
+            grecaptcha.ready(function() {
+                grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
+                    document.getElementById("recaptcha_token").value = token;
+                });
+            });
         </script>
     @endif
 @endpush

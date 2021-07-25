@@ -279,7 +279,7 @@ class HomeController extends FrontBaseController
 
     public function contactUs(ContactUsRequest $request)
     {
-        $this->recaptchaValidate($request);
+//        $this->recaptchaValidate($request);
         $this->pageTitle = 'app.menu.contact';
         $generatedBys = User::allSuperAdmin();
         $frontDetails = FrontDetail::first();
@@ -314,10 +314,8 @@ class HomeController extends FrontBaseController
     public function recaptchaValidate($request)
     {
         $global = global_settings();
-       
         if ($global->google_recaptcha_status) {
             $gRecaptchaResponseInput = 'g-recaptcha-response';
-            
             $gRecaptchaResponse = $global->google_captcha_version == "v2" ? $request->{$gRecaptchaResponseInput} : $request->get('recaptcha_token');
             $validateRecaptcha = $this->validateGoogleRecaptcha($gRecaptchaResponse);
             if (!$validateRecaptcha) {

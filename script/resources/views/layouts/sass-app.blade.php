@@ -180,7 +180,7 @@
 <script src="{{ asset('saas/js/module_46107009897_Multi-preview_block.min.js') }}"></script>
 <script src="{{ asset('saas/js/module_46437005576_Testimonial_carousel.min.js') }}"></script>
 <script src="{{ asset('saas/js/module_33300649247_Image_CTA.min.js') }}"></script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="{{ asset('saas/js/v2.js') }}"></script>
 
 <script type="text/javascript" id="hs-script-loader" async defer src="{{ asset('saas/js/5255565.js') }}"></script>
