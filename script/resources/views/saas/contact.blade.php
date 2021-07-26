@@ -93,7 +93,7 @@
                             <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
 {{--                                    <img src="img/pin-icon.svg" alt="pin-icon" />--}}
-                                    <p class="h4">United Kingdom</p>
+{{--                                    <p class="h4">United Kingdom</p>--}}
                                     <p>{{ $frontDetail->address }}</p>
                                     <p>
                                         <a href="https://www.google.com/maps/place/Mews/@51.4763948,-0.1236168,12z/data=!4m8!1m2!2m1!1sMews+uk!3m4!1s0x487604ba07279627:0xea838c431eab386a!8m2!3d51.5033268!4d-0.1012135"
