@@ -307,15 +307,19 @@
                              @endforeach
                         </section>
                     </div>
-                    <div id="hs_cos_wrapper_widget_1600183372411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                         <section class="icon-text-section bg-black">
+                    @foreach($feature_benefits as $key=>$item)
+                       @if($item->id==1)
+                           @continue
+                       @endif
+                        <div id="hs_cos_wrapper_widget_1600183372411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                         <section class="icon-text-section {{($loop->iteration%2==0)?'bg-black':'bg-white'}}">
                             <div class="row small-row">
                                 <div class="column flex-container flex-dir-column align-center-middle text-center">
-                                    <h2 class="h3">{{$benefit_section_two->title}}</h2>
-                                    <h5>{!! $benefit_section_two->description !!}</h5>
+                                    <h2 class="h3">{{$item->title}}</h2>
+                                    <h5>{!! $item->description !!}</h5>
                                 </div>
                             </div>
-                            @foreach($benefit_section_two->features->chunk(3) as $feature_item)
+                            @foreach($item->features->chunk(3) as $feature_item)
                                  <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
                                     @foreach($feature_item as $item)
                                          <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
@@ -331,31 +335,57 @@
                              @endforeach
                         </section>
                     </div>
-                    <div id="hs_cos_wrapper_widget_1600183372411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                         <section class="icon-text-section bg-white">
-                            <div class="row small-row">
-                                <div class="column flex-container flex-dir-column align-center-middle text-center">
-                                    <h2 class="h3">{{$benefit_section_three->title}}</h2>
-                                    <h5>{!! $benefit_section_three->description !!}</h5>
-                                </div>
-                            </div>
-                            @foreach($benefit_section_three->features->chunk(3) as $feature_item)
-                                 <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
-                                    @foreach($feature_item as $item)
-                                         {{--                                        @dd($item->icon)--}}
-                                         <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
-                                    <img class="white-icon_3" src="{{asset('saas/img/wide_audience.svg')}}" alt="wide_audience" />
-                                    <p class="h4">{{$item->title}}</p>
-                                    <p>
-                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>{!! html_entity_decode($item->description) !!}</span></span>
-                                    </p>
-                                  </div>
-                                     @endforeach
+                    @endforeach
 
-                            </div>
-                             @endforeach
-                        </section>
-                    </div>
+{{--                    <div id="hs_cos_wrapper_widget_1600183372411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">--}}
+{{--                         <section class="icon-text-section bg-black">--}}
+{{--                            <div class="row small-row">--}}
+{{--                                <div class="column flex-container flex-dir-column align-center-middle text-center">--}}
+{{--                                    <h2 class="h3">{{$benefit_section_two->title}}</h2>--}}
+{{--                                    <h5>{!! $benefit_section_two->description !!}</h5>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @foreach($benefit_section_two->features->chunk(3) as $feature_item)--}}
+{{--                                 <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">--}}
+{{--                                    @foreach($feature_item as $item)--}}
+{{--                                         <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">--}}
+{{--                                    <img class="white-icon_2" src="{{asset('saas/img/wide_audience.svg')}}" alt="wide_audience" />--}}
+{{--                                    <p class="h4">{{$item->title}}</p>--}}
+{{--                                    <p>--}}
+{{--                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>{!! html_entity_decode($item->description) !!}</span></span>--}}
+{{--                                    </p>--}}
+{{--                                  </div>--}}
+{{--                                     @endforeach--}}
+
+{{--                            </div>--}}
+{{--                             @endforeach--}}
+{{--                        </section>--}}
+{{--                    </div>--}}
+{{--                    <div id="hs_cos_wrapper_widget_1600183372411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">--}}
+{{--                         <section class="icon-text-section bg-white">--}}
+{{--                            <div class="row small-row">--}}
+{{--                                <div class="column flex-container flex-dir-column align-center-middle text-center">--}}
+{{--                                    <h2 class="h3">{{$benefit_section_three->title}}</h2>--}}
+{{--                                    <h5>{!! $benefit_section_three->description !!}</h5>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @foreach($benefit_section_three->features->chunk(3) as $feature_item)--}}
+{{--                                 <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">--}}
+{{--                                    @foreach($feature_item as $item)--}}
+{{--                                         --}}{{--                                        @dd($item->icon)--}}
+{{--                                         <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">--}}
+{{--                                    <img class="white-icon_3" src="{{asset('saas/img/wide_audience.svg')}}" alt="wide_audience" />--}}
+{{--                                    <p class="h4">{{$item->title}}</p>--}}
+{{--                                    <p>--}}
+{{--                                        <span data-contrast="auto" xml:lang="EN-GB" lang="EN-GB"><span>{!! html_entity_decode($item->description) !!}</span></span>--}}
+{{--                                    </p>--}}
+{{--                                  </div>--}}
+{{--                                     @endforeach--}}
+
+{{--                            </div>--}}
+{{--                             @endforeach--}}
+{{--                        </section>--}}
+{{--                    </div>--}}
 {{--                    <div id="hs_cos_wrapper_widget_1600183765340" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">--}}
 {{--                        <section class="testimonial-secondary bg-grey1">--}}
 {{--                            <div class="row small-row">--}}

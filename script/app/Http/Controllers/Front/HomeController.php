@@ -192,6 +192,7 @@ class HomeController extends FrontBaseController
         $this->benefit_section_one=FrontFeature::with('features')->where('id','=','1')->first();
         $this->benefit_section_two=FrontFeature::with('features')->where('id','=','2')->first();
         $this->benefit_section_three=FrontFeature::with('features')->where('id','=','3')->first();
+        $this->feature_benefits=FrontFeature::with('features')->get();
 
         abort_if($this->setting->front_design != 1,403);
 
