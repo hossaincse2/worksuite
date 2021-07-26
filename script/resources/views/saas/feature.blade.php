@@ -483,11 +483,6 @@
 
                     <div id="hs_cos_wrapper_widget_1596719451716" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="logo-section">
-                            <div class="row small-row">
-                                <div class="column large-12">
-                                    <p class="p-large text-center mb-30">Powering over 2,000 of the world's best hospitality brands. <a href="/en/customers" rel="noopener">See our customers.</a></p>
-                                </div>
-                            </div>
                             <div class="row small-up-2 medium-up-3 large-up-6" id="logo-row">
                                 @foreach($frontClients as $client)
                                     @php

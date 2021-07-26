@@ -240,11 +240,8 @@
                     <div id="hs_cos_wrapper_widget_1620655550240" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="solutions-link">
                             <div class="row small-row">
-                                <div class="column large-1 medium-12 small-12" id="title-wrap">
-                                    <p class="supertitle dot">Solutions</p>
-                                    <h2 class="h4" id="title">
-                                        {{$trFrontDetail->favourite_apps_title}}<br />
-                                    </h2>
+                                <div class="column large-12 medium-12 small-12" id="title-wrap">
+                                    <h2 style="font-size: 30px;">{{$trFrontDetail->favourite_apps_title}} </h2><br />
                                 </div>
                                 <div class="column large-11 medium-12 small-12 flex-container" id="solutions-main">
                                     @foreach($featureWithApps as $key=>$value)
@@ -275,13 +272,6 @@
 
                                                 <p class="content-link">Learn more</p>
                                             </div>
-                                            <div class="three-crosses">
-                                                <span></span>
-
-                                                <span></span>
-
-                                                <span></span>
-                                            </div>
                                         </div>
                                     </a>
                                     @endforeach
@@ -291,11 +281,6 @@
                     </div>
                      <div id="hs_cos_wrapper_widget_1596719451716" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="logo-section">
-                            <div class="row small-row">
-                                <div class="column large-12">
-                                    <p class="p-large text-center mb-30">Powering over 2,000 of the world's best hospitality brands. <a href="/en/customers" rel="noopener">See our customers.</a></p>
-                                </div>
-                            </div>
                             <div class="row small-up-2 medium-up-3 large-up-6" id="logo-row">
                                 @foreach($frontClients as $client)
                                     @php

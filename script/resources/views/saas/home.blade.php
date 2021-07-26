@@ -30,7 +30,7 @@
                             <div class="row">
                                 <div class="column small-12 medium-12 large-5">
                                     <div class="hero-content">
-                                        <h1 class="supertitle dot">{{ $trFrontDetail->header_title ?: $defaultTrFrontDetail->header_title }}</h1>
+{{--                                        <h1 class="supertitle dot">{{ $trFrontDetail->header_title ?: $defaultTrFrontDetail->header_title }}</h1>--}}
                                         <h2 class="h1">{{ $trFrontDetail->header_title ?: $defaultTrFrontDetail->header_title }}</h2>
                                         <div class="hero-description">
                                             <div class="p-large">
@@ -42,11 +42,6 @@
                                             <a href="{{ route('front.signup.index') }}" class="button button--primary">
                                                 Register
                                             </a>
-                                        </div>
-                                        <div class="three-crosses">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -64,11 +59,6 @@
                     </div>
                     <div id="hs_cos_wrapper_widget_1596719451716" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="logo-section">
-                            <div class="row small-row">
-                                <div class="column large-12">
-                                    <p class="p-large text-center mb-30">Powering over 2,000 of the world's best hospitality brands. <a href="/en/customers" rel="noopener">See our customers.</a></p>
-                                </div>
-                            </div>
                             <div class="row small-up-2 medium-up-3 large-up-6" id="logo-row">
                                 @foreach($frontClients as $client)
                                     @php
@@ -95,13 +85,13 @@
                                                 <p class="preview-title"><strong>{{$value->title}}</strong></p>
                                                 <div class="preview-info flex-container flex-dir-column">
                                                     <p>{!! $value->description !!}</p>
-                                                    <a class="content-link" href="#">Learn more</a>
+{{--                                                    <a class="content-link" href="#">Learn more</a>--}}
                                                 </div>
                                             </div>
                                           </li>
                                         @endforeach
                                     </ul>
-                                    <a class="button button--secondary align-self-start" href="#">Explore the product</a>
+{{--                                    <a class="button button--secondary align-self-start" href="#">Explore the product</a>--}}
                                 </div>
                             </div>
                             <div class="preview-image-container bg-blue_grey-3">
@@ -124,12 +114,10 @@
                     <div id="hs_cos_wrapper_widget_1620655550240" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="solutions-link">
                             <div class="row small-row">
-                                <div class="column large-1 medium-12 small-12" id="title-wrap">
-                                    <h2 class="h4" id="title">
-                                        {{$trFrontDetail->favourite_apps_title}}<br />
-                                    </h2>
+                                <div class="column large-12 medium-12 small-12" id="title-wrap">
+                                    <h2 style="font-size: 30px;">{{$trFrontDetail->favourite_apps_title}} </h2><br />
                                 </div>
-                                <div class="column large-11 medium-12 small-12 flex-container" id="solutions-main">
+                                <div class="column large-12 medium-12 small-12 flex-container" id="solutions-main">
                                     @foreach($featureWithApps as $key=>$value)
                                         <a class="solutions-tile" href="#">
                                         <div class="solutions-img-wrapper">
@@ -157,13 +145,6 @@
                                                 </p>
 
                                                 <p class="content-link">Learn more</p>
-                                            </div>
-                                            <div class="three-crosses">
-                                                <span></span>
-
-                                                <span></span>
-
-                                                <span></span>
                                             </div>
                                         </div>
                                     </a>

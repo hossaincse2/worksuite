@@ -62,8 +62,7 @@
                         <ul class="navbar-nav ml-auto">
                             @foreach($footerSettings as $footerSetting)
                             @if($footerSetting->type != 'header')
-                            <li class="nav-item active"><a class="nav-link"
-                                    href="@if(!is_null($footerSetting->external_link)) {{ $footerSetting->external_link }} @else {{ route('front.page', $footerSetting->slug) }} @endif">{{ $footerSetting->name }}</a>
+                            <li class="nav-item active"><a class="nav-link" href="@if(!is_null($footerSetting->external_link)) {{ $footerSetting->external_link }} @else {{ route('front.page', $footerSetting->slug) }} @endif">{{ $footerSetting->name }}</a>
                             </li>
                             @endif
                             @endforeach

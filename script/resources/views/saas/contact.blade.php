@@ -12,9 +12,9 @@
                          class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=""
                          data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="hero-tertiary">
-                            <div class="row">
+                            <div class="row contact-form">
                                 <div class="column small-12 medium-12 large-12">
-                                    <div class="hero-content text-center flex-container flex-dir-column align-center">
+                                    <div class="hero-content google_map text-center flex-container flex-dir-column align-center">
                                         <h1>Contact us</h1>
                                         @if(!is_null($frontDetail->contact_html))
                                             <p class="h5">
@@ -47,7 +47,7 @@
                         </section>
                     </div>
                     <section class="form-section">
-                            <div class="row">
+                            <div class="row contact-form">
                     <form method="POST" action="#" accept-charset="UTF-8"
                           id="contactUs">
 {{--                        <input name="_token" type="hidden"--}}
@@ -93,7 +93,7 @@
                             <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
                                 <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
 {{--                                    <img src="img/pin-icon.svg" alt="pin-icon" />--}}
-                                    <p class="h4">United Kingdom</p>
+{{--                                    <p class="h4">United Kingdom</p>--}}
                                     <p>{{ $frontDetail->address }}</p>
                                     <p>
                                         <a href="https://www.google.com/maps/place/Mews/@51.4763948,-0.1236168,12z/data=!4m8!1m2!2m1!1sMews+uk!3m4!1s0x487604ba07279627:0xea838c431eab386a!8m2!3d51.5033268!4d-0.1012135"

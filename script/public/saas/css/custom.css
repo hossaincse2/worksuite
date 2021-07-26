@@ -177,10 +177,20 @@
 .footer-submenu .submenu-title {
 	color: #fff;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 15px;
 	margin-bottom: 20px;
 }
-
+.contact-form{
+    text-align: center;
+    display: block;
+}
+.contact-form iframe{
+    width: 100%;
+}
+.google_map.hero-content p {
+    max-width: 800px;
+    border: 2px solid #4caf50;
+}
 .footer-btn a {
 	color: #000;
 	font-size: 13px;
@@ -214,7 +224,8 @@
     top: 0;
 }
 .cta-block .row:first-child {
-     display: inline-block;
+    display: block;
+    height: 224px;
 }
 .cta-heding{
     width: 60%;
@@ -268,7 +279,7 @@ a.button.button--secondary.align-self-end.float-right {
     padding-left: 15px;
 }
 .mb-4, .my-4 {
-    margin-bottom: 1.5rem!important;
+    margin-bottom: 1.5rem!important;.cta-block .row:first-child
 }
 .border {
     border: 0px solid #dee2e6!important;
