@@ -61,7 +61,7 @@
 {{--                            </div>--}}
 {{--                        </section>--}}
                         <section class="packages-section bg-grey1">
-                            <div class="row small-row small-up-1 medium-up-2 large-up-4 align-start align-stretch">
+                            <div class="row small-row small-up-1 medium-up-12 large-up-12 align-start align-stretch">
 {{--                                <div id="currency-wrapper" class="button button--secondary">--}}
 {{--                                    <select name="currency" id="select-currency" data-btn-type="currency">--}}
 {{--                                        <option value="" disabled selected>Change currency (€)</option>--}}
@@ -74,12 +74,38 @@
                                 @foreach ($packages as $key => $item)
                                     @if($item->is_free==true)
                                     <div class="column flex-container flex-dir-column price-type {{$item->name}}">
-                                    <div class="price-details flex-container flex-dir-column">
+                                    <div class="price-details row medium-up-10 large-up-10">
 {{--                                        @if($key==1)--}}
 {{--                                            @dd($item)--}}
 {{--                                        @endif--}}
-                                        <h3 class="h4 price-title text-center">{{$item->name}}</h3>
-                                        <p class="package-desc text-center">{{$item->description}}</p>
+                                        <h3 class="h4 price-title text-left">{{$item->name}}</h3>
+                                        <p class="package-desc text-left">{{$item->description}}</p>
+                                        <div class="price-info">
+                                        <p><strong>Get started with {{$item->name}}:</strong></p>
+                                        @php
+                                            $packageModules = (array)json_decode($item->module_in_package);
+                                            $count = 0;
+                                        @endphp
+                                            @foreach($packageFeatures as $packageFeature)
+                                                @if($count%6 == 0)
+                                                    <ul class="price-feat-list">
+                                                  @endif
+                                                             @if(in_array($packageFeature, $activeModule))
+                                                                @if(in_array($packageFeature, $packageModules))
+                                                                    <li>{{$packageFeature}}
+                                                                @else
+                                                                    <li>{{$packageFeature}}
+                                                                        @endif&nbsp;
+                                                                </li>
+                                                                @endif
+                                                      @php $count++; @endphp
+                                                    @if($count%6 == 0)
+                                                        </ul>
+                                                    @endif
+
+                                                   @endforeach
+
+                                    </div>
                                         <div class="price-wrapper text-center">
                                             @if($item->is_free==0)
                                                 <p class="h3" id="package-one-price-value">{{$item->monthly_price}}</p>
@@ -96,27 +122,10 @@
 {{--                                            <p>--}}
 {{--                                                <small>Minimum package is <span class="min-price" data-euros="€150" data-pounds="£150" data-usd="$200" data-aud="A$250">€150</span>/month</small>--}}
 {{--                                            </p>--}}
+                                            <a href="#" style="width: 22%;" class="button button--secondary price-cta" id="price-cta-1">Book demo</a>
                                         </div>
                                     </div>
-                                    <div class="price-info flex-container flex-dir-column">
-                                        <a href="#" class="button button--secondary price-cta" id="price-cta-1">Book demo</a>
-                                        <p><strong>Get started with {{$item->name}}:</strong></p>
-                                        @php
-                                            $packageModules = (array)json_decode($item->module_in_package);
-                                        @endphp
-                                        <ul class="price-feat-list">
-                                             @foreach($packageFeatures as $packageFeature)
-                                                @if(in_array($packageFeature, $activeModule))
-                                                      @if(in_array($packageFeature, $packageModules))
-                                                        <li>{{$packageFeature}}
-                                                        @else
-                                                        <li>{{$packageFeature}}
-                                                      @endif&nbsp;
-                                                    </li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
-                                    </div>
+
                                 </div>
                                  @continue
                                     @else
@@ -286,7 +295,8 @@
                                     @php
                                         $client_img="user-uploads/front/client/".$client->image."?width=240&amp;height=240&amp;name=".$client->image
                                     @endphp
-                                    <div class="column flex-container align-center-middle logo-wrap">
+                                    <div class="column align-center-middle ">
+                                         <h5 class="text-center">{{$client->title}}</h5>
                                     <img src="{{asset($client_img)}}" alt="{{$client->title}}" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
                                 </div>
                                 @endforeach

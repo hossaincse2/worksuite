@@ -488,7 +488,8 @@
                                     @php
                                         $client_img="user-uploads/front/client/".$client->image."?width=240&amp;height=240&amp;name=".$client->image
                                     @endphp
-                                    <div class="column flex-container align-center-middle logo-wrap">
+                                    <div class="column align-center-middle ">
+                                         <h5 class="text-center">{{$client->title}}</h5>
                                     <img src="{{asset($client_img)}}" alt="{{$client->title}}" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
                                 </div>
                                 @endforeach

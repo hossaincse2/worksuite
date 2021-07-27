@@ -319,6 +319,22 @@ a.button.button--secondary.align-self-end.float-right {
     line-height: 1.5;
     color: #ffffff;
 }
+.contact-info .fa:before {
+    color: #444444 !important;
+}
+.price-feat-list {
+    font-size: 14px;
+    line-height: 16.8px;
+    list-style: none;
+    float: left !important;
+    width: 22%;
+}
+.price-type {
+    height: 450px;
+}
+.feature-children .child .table-col-1 p {
+    padding-left: 10px;
+}
 @media (min-width: 768px){
       .contact-info {
         display: flex;
