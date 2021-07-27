@@ -29,7 +29,7 @@
                         </section>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="padding: 8px;">
                             <div class="contact-info">
                                 <div class="mobile-device"><span class="fa fa-home fa-fw style" style="font-family: &quot;Font Awesome 5 Free&quot;, Bangla892, sans-serif;"></span><span class="heading-info">Address</span>
                                     <div class="address-content">{{ $frontDetail->address }}</div>
@@ -87,7 +87,7 @@
 
                     <input type="hidden" name="recaptcha_token" id="recaptcha_token">
                         <div class="col-12" style="margin-top: 12px;">
-                            <button type="button" class="btn btn-lg btn-custom mt-1" id="contact-submit"
+                            <button type="button" class="btn-lg button button--primary mt-1" id="contact-submit"
                                     style="font-family: Nunito, Bangla572, sans-serif;">
                                 Submit Enquiry
                             </button>

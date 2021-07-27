@@ -189,7 +189,7 @@
     height: 450px;
     display: block;
     float: left;
-    border: 2px solid #4caf50 !important;
+    border: 0px solid #4caf50 !important;
 }
 .google_map.hero-content p {
     max-width: 800px;
@@ -335,6 +335,17 @@ a.button.button--secondary.align-self-end.float-right {
 .feature-children .child .table-col-1 p {
     padding-left: 10px;
 }
+.signup-heading{
+    font-weight: bolder;
+    font-size: 27px;;
+}
+@media print, screen and (min-width: 64em){
+    .hero-secondary {
+        padding-top: 200px;
+        padding-bottom: 44px;
+        min-height: 767px;
+    }
+}
 @media (min-width: 768px){
       .contact-info {
         display: flex;
@@ -414,6 +425,41 @@ textarea.form-control {
     margin-top: 50px;
 }
 
+
+}
+.price-cta{
+    width: 22%;
+}
+@media only screen and (max-width: 768px) {
+    .price-type {
+        height: auto;
+        display: block;
+    }
+    section.hero-tertiary.bg-grey1 {
+        min-height: 600px;
+    }
+.price-cta{
+    width: 100%;
+}
+    .cta-block .row:first-child {
+        display: block;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .price-feat-list {
+        width: 100%;
+    }
+    section {
+        padding: 1rem 0;
+    }
+    .mobile-device {
+        padding: 25px;
+    }
+    #contactUsBox{
+        padding-right: 0px;
+        margin: 0;
+    }
 
 }
 

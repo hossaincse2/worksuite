@@ -59,13 +59,19 @@
                     </div>
                     <div id="hs_cos_wrapper_widget_1596719451716" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="logo-section">
+                            <div class="row small-row">
+                                <div class="column large-12">
+                                    <h2>{{$trFrontDetail->client_title}}</h2>
+                                    <p>{{$trFrontDetail->client_detail}}</p>
+                                </div>
+                            </div>
                             <div class="row small-up-2 medium-up-3 large-up-6" id="logo-row">
                                 @foreach($frontClients as $client)
                                     @php
                                         $client_img="user-uploads/front/client/".$client->image."?width=240&amp;height=240&amp;name=".$client->image
                                     @endphp
                                     <div class="column align-center-middle ">
-                                         <h5 class="text-center">{{$client->title}}</h5>
+{{--                                         <h5 class="text-center">{{$client->title}}</h5>--}}
                                     <img src="{{asset($client_img)}}" alt="{{$client->title}}" width="240" height="240" sizes="(max-width: 240px) 100vw, 240px" />
                                 </div>
                                 @endforeach
