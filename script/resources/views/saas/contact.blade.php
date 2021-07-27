@@ -14,7 +14,7 @@
                         <section class="hero-tertiary">
                             <div class="row contact-form">
                                 <div class="column small-12 medium-12 large-12">
-                                    <div class="hero-content google_map text-center flex-container flex-dir-column align-center">
+                                    <div class="">
                                         <h1>Contact us</h1>
                                         @if(!is_null($frontDetail->contact_html))
                                             <p class="h5">
@@ -28,24 +28,41 @@
 {{--                        <link rel="stylesheet" type="text/css" href="css/hero.css">--}}
                         </section>
                     </div>
-                    <div id="hs_cos_wrapper_widget_1599737373010"
-                         class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=""
-                         data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                        <section class="form-section">
-                            <div class="row">
-                                <div class="column form flex-container flex-dir-column align-center-middle">
-                                    <span id="hs_cos_wrapper_widget_1599737373010_"
-                                          class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style=""
-                                          data-hs-cos-general-type="widget" data-hs-cos-type="form">
-                                        <h3 id="hs_cos_wrapper_form_417396500_title" class="hs_cos_wrapper form-title"
-                                            data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
-
-                                        <div id="hs_form_target_form_417396500"></div>
-                                    </span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="contact-info">
+                                <div class="mobile-device"><span class="fa fa-home fa-fw style" style="font-family: &quot;Font Awesome 5 Free&quot;, Bangla892, sans-serif;"></span><span class="heading-info">Address</span>
+                                    <div class="address-content">{{ $frontDetail->address }}</div>
                                 </div>
-                            </div>
-                        </section>
+
+                                <div class="mobile-device"><span class="fa fa-envelope fa-fw style" style="font-family: &quot;Font Awesome 5 Free&quot;, Bangla892, sans-serif;"></span><span class="heading-info">Email</span>
+                                    <div class="address-content">{{ $frontDetail->email }}</div>
+                                </div>
+                                                                    <div class="mobile-device"><span class="fa fa-phone fa-fw style" style="font-family: &quot;Font Awesome 5 Free&quot;, Bangla892, sans-serif;"></span><span class="heading-info">Phone</span>
+                                        <div class="address-content">{{ $frontDetail->phone }}</div>
+                                    </div>
+                                                            </div>
+
+                        </div>
                     </div>
+{{--                    <div id="hs_cos_wrapper_widget_1599737373010"--}}
+{{--                         class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=""--}}
+{{--                         data-hs-cos-general-type="widget" data-hs-cos-type="module">--}}
+{{--                        <section class="form-section">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="column form flex-container flex-dir-column align-center-middle">--}}
+{{--                                    <span id="hs_cos_wrapper_widget_1599737373010_"--}}
+{{--                                          class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style=""--}}
+{{--                                          data-hs-cos-general-type="widget" data-hs-cos-type="form">--}}
+{{--                                        <h3 id="hs_cos_wrapper_form_417396500_title" class="hs_cos_wrapper form-title"--}}
+{{--                                            data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>--}}
+
+{{--                                        <div id="hs_form_target_form_417396500"></div>--}}
+{{--                                    </span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </section>--}}
+{{--                    </div>--}}
                     <section class="form-section">
                             <div class="row contact-form">
                     <form method="POST" action="#" accept-charset="UTF-8"
@@ -80,31 +97,31 @@
                      </div>
                    </section>
 
-                    <div id="hs_cos_wrapper_widget_1599742989589"
-                         class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=""
-                         data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                        <section class="icon-text-section bg-grey1">
-                            <div class="row small-row">
-                                <div class="column flex-container flex-dir-column align-center-middle text-center">
-                                    <h2 class="h3">Locations</h2>
-                                </div>
-                            </div>
+{{--                    <div id="hs_cos_wrapper_widget_1599742989589"--}}
+{{--                         class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=""--}}
+{{--                         data-hs-cos-general-type="widget" data-hs-cos-type="module">--}}
+{{--                        <section class="icon-text-section bg-grey1">--}}
+{{--                            <div class="row small-row">--}}
+{{--                                <div class="column flex-container flex-dir-column align-center-middle text-center">--}}
+{{--                                    <h2 class="h3">Locations</h2>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
-                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">
+{{--                            <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">--}}
+{{--                                <div class="item-wrap column flex-container flex-dir-column justify-top align-center text-center">--}}
 {{--                                    <img src="img/pin-icon.svg" alt="pin-icon" />--}}
 {{--                                    <p class="h4">United Kingdom</p>--}}
-                                    <p>{{ $frontDetail->address }}</p>
-                                    <p>
-                                        <a href="https://www.google.com/maps/place/Mews/@51.4763948,-0.1236168,12z/data=!4m8!1m2!2m1!1sMews+uk!3m4!1s0x487604ba07279627:0xea838c431eab386a!8m2!3d51.5033268!4d-0.1012135"
-                                           target="_blank">
-                                            View in Google Maps
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
+{{--                                    <p>{{ $frontDetail->address }}</p>--}}
+{{--                                    <p>--}}
+{{--                                        <a href="https://www.google.com/maps/place/Mews/@51.4763948,-0.1236168,12z/data=!4m8!1m2!2m1!1sMews+uk!3m4!1s0x487604ba07279627:0xea838c431eab386a!8m2!3d51.5033268!4d-0.1012135"--}}
+{{--                                           target="_blank">--}}
+{{--                                            View in Google Maps--}}
+{{--                                        </a>--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </section>--}}
+{{--                    </div>--}}
                     <div class="review-container">
           <div class="slideshow-container">
             @foreach($testimonials as $key=>$val)

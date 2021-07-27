@@ -81,6 +81,36 @@
         {{--    z-index: 1000;--}}
         {{--    width: 100%;--}}
         {{--}--}}
+        {!! $frontDetail->custom_css_theme_two !!}
+        :root {
+            --main-color: {{ $frontDetail->primary_color }};
+            --main-home-background: {{ $frontDetail->light_color }};
+        }
+        .button--primary{
+            background-color: {{ $frontDetail->primary_color }} !important;
+        }
+        .active .preview-title strong{
+            color: {{ $frontDetail->primary_color }} !important;
+        }
+        .button--secondary {
+            background-color: transparent;
+            color: {{ $frontDetail->primary_color }} !important;
+            border: 2px solid {{ $frontDetail->primary_color }} !important;
+        }
+        .solutions-title .h4:after {
+            background-color: {{ $frontDetail->primary_color }} !important;
+        }
+        .button:hover {
+            background-color: {{ $frontDetail->primary_color }} !important;
+        }
+        .button--secondary:hover {
+            color: white !important;
+            border: 2px solid {{ $frontDetail->primary_color }} !important;
+            background-color: {{ $frontDetail->primary_color }} !important;
+        }
+        {{--.footer-submenu .submenu-list li:hover {--}}
+        {{--    color: {{ $frontDetail->primary_color }} !important;--}}
+        {{--}--}}
     </style>
 
     @foreach ($frontWidgets as $item)

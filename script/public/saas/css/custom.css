@@ -171,13 +171,13 @@
 
 .footer-submenu a, .footer-submenu * {
 	color: #fff;
-	font-size: 13px;
+	font-size: 16px;
 }
 
 .footer-submenu .submenu-title {
 	color: #fff;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 18px;
 	margin-bottom: 20px;
 }
 .contact-form{
@@ -185,7 +185,11 @@
     display: block;
 }
 .contact-form iframe{
-    width: 100%;
+    width: 1237px;
+    height: 450px;
+    display: block;
+    float: left;
+    border: 2px solid #4caf50 !important;
 }
 .google_map.hero-content p {
     max-width: 800px;
@@ -228,12 +232,18 @@
     height: 224px;
 }
 .cta-heding{
-    width: 60%;
-    float: left;
+    width: 100%;
 }
 a.button.button--secondary.align-self-end.float-right {
-    margin-top: 7%;
-    float: right;
+    margin: 0 auto;
+    text-align: center;
+    width: 20%;
+}
+.s-text h4 {
+    font-size: 16px;
+}
+.s-text p {
+    font-size: 14px;
 }
 .nav-menu#center-menu {
     justify-content: center;
@@ -286,6 +296,40 @@ a.button.button--secondary.align-self-end.float-right {
 }
 .footer .border {
     border-top: 1px solid #dee2e6!important;
+}
+ .contact-info {
+    background-color: #212121;
+    padding: 25px 0 5px 0;
+    border-radius: 10px;
+    margin-top: 10px !important;
+}
+.contact-info .fa-home {
+    font-size: 20px;
+}
+.contact-info .heading-info {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+.contact-info .address-content {
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #ffffff;
+}
+@media (min-width: 768px){
+      .contact-info {
+        display: flex;
+        padding: 25px 0 25px 0 !important;
+        margin: 0 auto;
+    }
+    .contact-info .mobile-device {
+        margin: 0 auto;
+        text-align: left;
+    }
+
 }
 @media (min-width: 992px){
     .col-12 {
