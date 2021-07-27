@@ -170,6 +170,8 @@
                 messagePosition: "inline",
                 success: function (response) {
                     if (response.status === 'success') {
+                        $('#alert').html("<div class='alert alert-error'>"+response.message+"</div>");
+                        $('#alert').show();
                         $('#contactUsBox').remove();
                     }
                 }
