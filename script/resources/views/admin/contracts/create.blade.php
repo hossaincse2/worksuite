@@ -34,8 +34,6 @@
             <div class="panel panel-inverse">
                 <div class="panel panel-inverse">
                     <div class="panel-heading"> @lang('app.add') @lang('app.menu.contract')</div>
-
-
                     <div class="panel-wrapper collapse in" aria-expanded="true">
                         <div class="panel-body">
                         {!! Form::open(['id'=>'createContract','class'=>'ajax-form','method'=>'POST']) !!}
@@ -134,7 +132,7 @@
                                             </div>
                                         </div>
                               </div>
-                              <div class="row">
+                            <div class="row">
                                 <div class="col-md-3">
                                         <div class="form-group">
                                             <label>@lang('modules.lead.mobile')</label>
@@ -160,7 +158,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                            <div class="row">
                                 <div class="col-md-3 ">
                                         <div class="form-group">
                                             <label>@lang('modules.stripeCustomerAddress.country')</label>
@@ -174,7 +172,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                            <div class="row">
                                     <div class="col-xs-12">
                                         <div class="form-group">
                                             <label class="control-label">@lang('modules.contracts.summary')</label>

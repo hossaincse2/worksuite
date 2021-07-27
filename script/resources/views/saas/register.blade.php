@@ -96,8 +96,6 @@
 @push('footer-script')
         <script>
             $('#save-form').click(function () {
-
-
                 $.ajax({
                     url: '{{route('front.signup.store')}}',
                     container: '.form-section',
@@ -107,14 +105,24 @@
                     success: function (response) {
                         if (response.status == 'success') {
                             $('#form-box').remove();
+                            $('#alert').html("<div class='alert alert-success'>" + response.message + "</div>");
+                            $('#alert').show();
                         } else if (response.status == 'fail') {
+                            $('#alert').html("<div class='alert alert-error'>" + response.message + "</div>");
+                            $('#alert').show();
                             @if($global->google_recaptcha_status)
                             grecaptcha.reset();
                             @endif
-
+                        } else {
+                            $('#alert').html("<div class='alert alert-error'>" + response.message + "</div>");
+                            $('#alert').show();
                         }
-                    }
-                })
+                    },
+                    error: function (response) {// this are default for ajax errors
+                        $('#alert').html("<div class='alert alert-success'>" + JSON.parse(response.responseText).message + "</div>");
+                        $('#alert').show();
+                    },
+                });
             });
         </script>
 @endpush

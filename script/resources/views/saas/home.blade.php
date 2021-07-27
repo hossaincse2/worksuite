@@ -213,8 +213,10 @@
                                    <a class="button button--secondary align-self-end float-right" href="#" target="_blank">Get Started</a>
 
                             </div>
+                        </section>
+    </div>
 
-                </span>
+     </span>
     </main>
     <div class="review-container">
         <div class="slideshow-container">

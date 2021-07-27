@@ -538,6 +538,20 @@
                             @endforeach
                         </section>
                     </div>
+                    <div id="hs_cos_wrapper_widget_1620657524146" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+                        <section class="testimonial-carousel bg-blue_grey-2 cta-block">
+                            <div class="row small-row">
+                                 <div class="float-left cta-heding">
+                                    <h3 class="h3">{{$trFrontDetail->cta_title}}</h3>
+                                    <p class="h5">
+                                           {{$trFrontDetail->cta_detail}}
+                                        </p>
+                                    </div>
+                                   <a class="button button--secondary align-self-end float-right" href="#" target="_blank">Get Started</a>
+
+                            </div>
+                        </section>
+    </div>
                    <div class="review-container">
           <div class="slideshow-container">
             @foreach($testimonials as $key=>$val)
