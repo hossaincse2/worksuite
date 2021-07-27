@@ -514,12 +514,10 @@
                               </div>
                             @foreach($featureWithIcons->chunk(4) as $feature_icon)
                                 <div class="row small-row">
-                                        <div class="column large-1 medium-12 small-12">
-                                        </div>
-                                            <div class="column large-11 medium-12 small-12 flex-container"
-                                                 id="success-main">
+                                       <div class="column large-12 medium-12 small-12 flex-container"
+                                            id="success-main">
                                                 @foreach($feature_icon as $icon)
-                                                    <div class="col-md-3">
+                                               <div class="col-md-3">
                                                          <a class="success-tile" href="#">
                                             <div class="s-text">
                                             <i class="{{$icon->icon}}"></i>
@@ -528,7 +526,7 @@
                                             </div>
                                             </a>
                                             </div>
-                                                @endforeach
+                                           @endforeach
                                         </div>
                                </div>
                             @endforeach
