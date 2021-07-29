@@ -57,143 +57,79 @@
 
     <div class="row">
         <div class="col-xs-12">
+
             <div class="panel panel-inverse">
                 <div class="panel-heading"> @lang('modules.invoices.addInvoice')</div>
                 <div class="panel-wrapper collapse in" aria-expanded="true">
                     <div class="panel-body">
                         {!! Form::open(['id'=>'storePayments','class'=>'ajax-form','method'=>'POST']) !!}
                         <div class="form-body">
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">@lang('modules.accountSettings.companyLogo')</label>
-                                        <div class="col-xs-12">
-                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                <div class="fileinput-new thumbnail"
-                                                     style="width: 250px; height: 80px;">
-                                                    <img src="{{ $company->logo_url }}" alt=""/>
-                                                </div>
-                                                <div class="fileinput-preview fileinput-exists thumbnail"
-                                                     style="max-width: 250px; max-height: 80px;"></div>
-                                                <div>
-                                <span class="btn btn-info btn-file">
-                                    <span class="fileinput-new"> @lang('app.selectImage') </span>
-                                    <span class="fileinput-exists"> @lang('app.change') </span>
-                                    <input type="file" name="logo" id="logo"> </span>
-                                                    <a href="javascript:;" class="btn btn-danger fileinput-exists"
-                                                       data-dismiss="fileinput"> @lang('app.remove') </a>
-                                                </div>
+                                        <label class="control-label">@lang('app.invoice') #</label>
+                                        <div>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><span class="invoicePrefix" data-prefix="{{ $invoiceSetting->invoice_prefix }}">{{ $invoiceSetting->invoice_prefix }}</span>#<span class="noOfZero" data-zero="{{ $invoiceSetting->invoice_digit }}">{{ $zero }}</span></div>
+                                                <input type="text"  class="form-control readonly-background" readonly name="invoice_number" id="invoice_number" value="@if(is_null($lastInvoice))1 @else{{ ($lastInvoice) }}@endif">
                                             </div>
-
                                         </div>
                                     </div>
+
                                 </div>
+                                @if(in_array('projects', $modules))
+                                <div class="col-md-4">
 
-                                    <div class="col-md-8">
+                                    <div class="form-group" >
+                                        <label class="control-label">@lang('app.project')
+                                            <a class="mytooltip" href="javascript:void(0)">
+                                                <i class="fa fa-info-circle"></i>
+                                                <span class="tooltip-content5">
+                                                        <span class="tooltip-text3">
+                                                            <span class="tooltip-inner2">
+                                                                @lang('modules.invoices.projectWithClient')
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                            </a>
+                                        </label>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Sales">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Rimland 12">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="012345677">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Amsterdam">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Holland">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="1010okk">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-
-                                            </div>
-                                            <div class="col-md-6">
-                                                <select class="form-control form-control-sm">
-                                                    <option>Country</option>
+                                            <div class="col-xs-12">
+                                                <select class="select2 form-control " onchange="getCompanyName()" data-placeholder="Choose Project" id="project_id" name="project_id">
+                                                    <option value="">--</option>
+                                                    @foreach($projects as $project)
+                                                        <option
+                                                        value="{{ $project->id }}">{{ ucwords($project->project_name) }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
+                                    </div>
 
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="TAX Name">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="TAX Number">
+                                </div>
+                                @endif
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" id="companyClientName">@lang('app.client_name')</label>
+                                        <div class="row">
+                                            <div class="col-xs-12" id="client_company_div">
+                                                <div class="input-icon">
+                                                    <input type="text" readonly class="form-control" name="" id="company_name" value="">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                </div>
+
                             </div>
-                            <br/>
-                            <br/>
+
                             <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Billed To</label>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="First Name">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Last Name">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Company Name">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Street Address">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Street Address 2">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="City">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="State">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control form-control-sm" type="text" placeholder="ZIP Code">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <select class="form-control form-control-sm">
-                                                    <option>Country</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Date of Issue</label>
+                                <div class="col-md-4">
+
+                                    <div class="form-group" >
+                                        <label class="control-label">@lang('modules.invoices.invoiceDate')</label>
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <div class="input-icon">
@@ -202,115 +138,32 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group" >
-                                        <label class="control-label"> Due Date </label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
-                                <div class="col-md-3">
+
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label">Invoice Number</label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="inv_number" value="">
-                                                </div>
-                                            </div>
+                                        <label class="control-label">@lang('app.dueDate')</label>
+                                        <div class="input-icon">
+                                            <input type="text" class="form-control" name="due_date" id="due_date" value="{{ Carbon\Carbon::today()->addDays($invoiceSetting->due_after)->format($global->date_format) }}">
                                         </div>
                                     </div>
+
+                                </div>
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label">Reference</label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="ref" value="">
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <label class="control-label">@lang('modules.invoices.currency')</label>
+                                        <select class="form-control select2" name="currency_id" id="currency_id">
+                                            @foreach($currencies as $currency)
+                                                <option value="{{ $currency->id }}" @if($global->currency_id == $currency->id) selected @endif>{{ $currency->currency_symbol.' ('.$currency->currency_code.')' }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
+
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group" >
-                                        <label class="control-label">Amount Due (EUR)</label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="amount_due" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
-{{--                            <div class="row">--}}
 
-{{--                                <div class="col-md-3">--}}
-{{--                                    <div class="form-group" >--}}
-{{--                                        <label class="control-label">Date Of Issue</label>--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-xs-12">--}}
-{{--                                                <div class="input-icon">--}}
-{{--                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-md-3">--}}
-{{--                                    <div class="form-group" >--}}
-{{--                                        <label class="control-label">Invoice Number</label>--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-xs-12">--}}
-{{--                                                <div class="input-icon">--}}
-{{--                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="row">--}}
-{{--                                <div class="col-md-4">--}}
-{{--                                    <div class="form-group" >--}}
-{{--                                        <label class="control-label">@lang('modules.invoices.invoiceDate')</label>--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-xs-12">--}}
-{{--                                                <div class="input-icon">--}}
-{{--                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-
-{{--                                <div class="col-md-4">--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label class="control-label">@lang('app.dueDate')</label>--}}
-{{--                                        <div class="input-icon">--}}
-{{--                                            <input type="text" class="form-control" name="due_date" id="due_date" value="{{ Carbon\Carbon::today()->addDays($invoiceSetting->due_after)->format($global->date_format) }}">--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                                <div class="col-md-4">--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label class="control-label">@lang('modules.invoices.currency')</label>--}}
-{{--                                        <select class="form-control select2" name="currency_id" id="currency_id">--}}
-{{--                                            @foreach($currencies as $currency)--}}
-{{--                                                <option value="{{ $currency->id }}" @if($global->currency_id == $currency->id) selected @endif>{{ $currency->currency_symbol.' ('.$currency->currency_code.')' }}</option>--}}
-{{--                                            @endforeach--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -337,6 +190,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                            @if(count($fields) > 0)
                             <h3 class="box-title">@lang('modules.projects.otherInfo')</h3>
                             <div class="row">
                                 @foreach($fields as $field)
@@ -372,7 +227,7 @@
 
                                             @elseif($field->type == 'checkbox')
                                             <div class="mt-checkbox-inline custom-checkbox checkbox-{{$field->id}}">
-                                                <input type="hidden" name="custom_fields_data[{{$field->name.'_'.$field->id}}]"
+                                                <input type="hidden" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" 
                                                 id="{{$field->name.'_'.$field->id}}" value=" ">
                                                 @foreach($field->values as $key => $value)
                                                     <label class="mt-checkbox mt-checkbox-outline">
@@ -392,7 +247,9 @@
                                         </div>
                                     </div>
                                 @endforeach
+
                             </div>
+                        @endif
 
                             <hr>
                             @if(in_array('products', $modules))
