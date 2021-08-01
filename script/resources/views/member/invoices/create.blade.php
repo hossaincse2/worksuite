@@ -803,16 +803,16 @@
                 {
                     if(typeof (taxList[itemTaxName[i]]) === 'undefined'){
                         if (discountedAmount > 0) {
-                            taxList[itemTaxName[i]] = ((parseFloat(itemTax[i])/100)*parseFloat(discountedAmount));                         
+                            taxList[itemTaxName[i]] = ((parseFloat(itemTax[i])/100)*parseFloat(discountedAmount));
                         } else {
                             taxList[itemTaxName[i]] = ((parseFloat(itemTax[i])/100)*parseFloat(amount));
                         }
                     }
                     else{
                         if (discountedAmount > 0) {
-                            taxList[itemTaxName[i]] = parseFloat(taxList[itemTaxName[i]]) + ((parseFloat(itemTax[i])/100)*parseFloat(discountedAmount));   
+                            taxList[itemTaxName[i]] = parseFloat(taxList[itemTaxName[i]]) + ((parseFloat(itemTax[i])/100)*parseFloat(discountedAmount));
                             console.log(taxList[itemTaxName[i]]);
-                         
+
                         } else {
                             taxList[itemTaxName[i]] = parseFloat(taxList[itemTaxName[i]]) + ((parseFloat(itemTax[i])/100)*parseFloat(amount));
                         }
@@ -839,7 +839,7 @@
         $('.sub-total').html(decimalupto2(subtotal).toFixed(2));
         $('.sub-total-field').val(decimalupto2(subtotal));
 
-        
+
 
         if(discountValue != ''){
             if(discountType == 'percent'){

@@ -1,0 +1,194 @@
+.invoice {
+    position: relative;
+    width: 780px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    color: #000;
+    page-break-after: always;
+    border: 1px solid #cdd4d9;
+    box-shadow: 2px 2px 0 rgb(6 41 66 / 10%);
+}
+.simpleTemplate {
+    padding: 50px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 18px;
+}
+.btn-custome-save{
+    background-color: #36A900 !important;
+    color: #fff!important;
+    border: 2px solid transparent!important;
+    transition: background-color .15s;
+}
+.btn-custome-cancel{
+    border: 2px solid transparent!important;
+    transition: background-color .15s;
+}
+
+.media-desktop .heading-3 {
+    margin-bottom: 12px;
+}
+.heading-3, .heading-3-no-margin, .heading-3-no-text-transform {
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #50697B;
+}
+.media-desktop .heading-3, .media-desktop .heading-3-no-margin, .media-desktop .heading-3-no-text-transform {
+    font-size: 14px;
+    line-height: 18px;
+}
+.meta-pane-panel-list {
+    border-top: 1px solid #cdd4d9;
+}
+.meta-pane-group {
+    padding: 20px 0;
+    border-bottom: 1px solid #cdd4d9;
+}
+.meta-pane-link {
+    display: block;
+    cursor: pointer;
+    transition: color .15s ease-in-out;
+    color: #062942;
+}
+.u-media, .u-media-body {
+    overflow: hidden;
+    zoom: 1;
+}
+.entity-setting-icon {
+    position: relative;
+    margin: 0 10px;
+    width: 24px;
+    text-align: center;
+}
+.businessCard--static, .businessCard-avatar, .category-icon, .client-project-name, .clientEvent-icon-container, .u-float--left, .u-media-imageLeft {
+    float: left;
+}
+.u-media-imageRight {
+    float: right;
+}
+.media-desktop small {
+    font-size: 14px;
+    line-height: 18px;
+}
+.entity-setting-description {
+    color: #50697B;
+    white-space: initial;
+}
+span.meta-pane-panel-header-text.u-media-body {
+    font-size: 13px;
+}
+.entity-setting-icon {
+    position: relative;
+    margin: 0 10px;
+    width: 24px;
+    text-align: center;
+}
+ol, ul {
+    list-style: none;
+}
+.meta-pane-panel-list{
+    padding: 0;
+}
+.media-desktop small {
+    font-size: 14px;
+    line-height: 18px;
+}
+.entity-setting-status {
+    text-transform: uppercase;
+    margin: 0 10px;
+    color: #124892;
+    font-weight: 800;
+}
+.datepicker .pika-next:before, .icon--chevronRight:before {
+    content: "";
+    font-size: 1.15em;
+}
+.onlinePayments-smallIcons .onlinePayments-creditCardLogo {
+    width: 27px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 1px 0;
+}
+.entity-setting-description {
+    color: #50697B;
+    white-space: initial;
+}
+.fa-fw {
+    width: 20px!important;
+    display: inline-block!important;
+    text-align: left!important;
+    padding-top: 7px;
+    font-size: 17px;
+}
+.simpleTemplate .invoice-logo {
+    position: relative;
+    min-width: 250px;
+    max-width: 300px;
+    min-height: 150px;
+    max-height: 200px;
+}
+.simpleTemplate .invoice-logoUploadButton {
+    color: #062942;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.button-ghost {
+    background-color: transparent;
+    border: 2px dashed #cdd4d9;
+}
+.classicTemplate .invoice-logoDeleteButton .link, .classicTemplate .invoice-logoUploadInstructions, .entityCommentCircle .circle-image, .fbImageCarousel-previewImage, .fileThumbnail-image, .logoTheme-banner .invoice-bannerUploadInstructions, .modernTemplate .invoice-bannerUploadInstructions, .setupModal-banner .invoice-bannerUploadInstructions, .simpleTemplate .invoice-logoDeleteButton .link, .simpleTemplate .invoice-logoUploadInstructions, .timeReviewCalendar-onboardingTipContainer, .u-center, .unauthenticatedDialog-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.button-ghost:focus, .button-ghost:hover {
+    background: #f2f8fd;
+    color: #062942;
+}
+.simpleTemplate .invoice-logoUploadButton .category-icon--accounts--asset, .simpleTemplate .invoice-logoUploadButton .category-icon--accounts--cogs, .simpleTemplate .invoice-logoUploadButton .category-icon--accounts--equity, .simpleTemplate .invoice-logoUploadButton .category-icon--accounts--expense, .simpleTemplate .invoice-logoUploadButton .category-icon--accounts--income, .simpleTemplate .invoice-logoUploadButton .category-icon--accounts--liability, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--advertising, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--car-truck-expenses, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--contractors, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--educationand-training, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--employee-benefits, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--meals-entertainment, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--office-expenses-postage, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--other-expenses, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--personal, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--professional-services, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--rentor-lease, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--split, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--sub-category, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--supplies, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--travel, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--uncategorized, .simpleTemplate .invoice-logoUploadButton .category-icon--expense--utilities, .simpleTemplate .invoice-logoUploadButton .category-icon--other-income--advertising, .simpleTemplate .invoice-logoUploadButton .category-icon--other-income--checkout-links, .simpleTemplate .invoice-logoUploadButton .category-icon--other-income--in-person-sales, .simpleTemplate .invoice-logoUploadButton .category-icon--other-income--invoices, .simpleTemplate .invoice-logoUploadButton .category-icon--other-income--online-sales, .simpleTemplate .invoice-logoUploadButton .category-icon--other-income--other, .simpleTemplate .invoice-logoUploadButton .category-icon--other-income--rentals, .simpleTemplate .invoice-logoUploadButton .icon, .simpleTemplate .invoice-logoUploadButton .icon--category, .simpleTemplate .invoice-logoUploadButton .report-iconContainer, .simpleTemplate .invoice-logoUploadButton .uploadFileIcon, .simpleTemplate .invoice-logoUploadButton .welcome-icon {
+    transform: rotate(-27deg);
+    position: absolute;
+    left: 20px;
+    font-size: 190px;
+    opacity: .1;
+}
+.simpleTemplate .form-controls {
+    background-color: #fff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    height: 25px !important;
+    box-shadow: none;
+    font-size: 12px !important;
+    color: #565656;
+    transition: all 300ms linear 0s;
+    margin-bottom: 4px;
+}
+.form-controls:hover{
+    background-color: #f2f8fd;
+    border-radius: 1px;
+    box-shadow: 0 0 0 2px #f2f8fd, 0 0 0 2px #cdd4d9;
+}
+.display-inline input.form-controls {
+    float: left;
+    width: 39%;
+}
+.display-inline2 input.form-controls {
+    float: left;
+    width: 30%;
+}
+.display-inline3 input.form-controls {
+    float: left;
+    width: 50%;
+}
+.simpleTemplate .invoice-total {
+    font-size: 36px;
+    line-height: 36px;
+}

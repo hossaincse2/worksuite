@@ -13,11 +13,10 @@
                             <div class="row">
                                 <div class="column small-12 medium-12 large-6">
                                     <div class="hero-content">
-                                        <h1 class="h2">Become a partner</h1>
+                                        <h1 class="h2">{{$benefit_section_one->title}}</h1>
                                         <div class="hero-description">
                                             <div class="p-large">
-                                                Our mission is to shape the future of hospitality, and we need you. Join a trusted, global network of Mews partners to advocate for change in our industry and be a part of the world’s largest
-                                                network of integrated hospitality apps.
+                                               {!! $benefit_section_one->description !!}
                                             </div>
                                         </div>
                                     </div>
@@ -33,263 +32,17 @@
                     </div>
                     <div id="hs_cos_wrapper_widget_1600183250126" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                         <section class="features-benefits bg-white">
-{{--                            <div class="row small-row">--}}
-{{--                                <div class="fb-image-wrap column small-12 small-order-2 large-5 large-order-1">--}}
-{{--                                    <div class="fb-image-container">--}}
-{{--                                        <img--}}
-{{--                                                loading="lazy"--}}
-{{--                                                src="{{asset('saas/img/Partners-Marketplace@0.5x.png?width=537&amp;height=449&amp;name=Partners-Marketplace@0.5x.png')}}"--}}
-{{--                                                alt="Partners-Marketplace"--}}
-{{--                                                width="537"--}}
-{{--                                                height="449"--}}
-{{--                                                sizes="(max-width: 537px) 100vw, 537px"--}}
-{{--                                        />--}}
-{{--                                        <p class="fb-caption"></p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
 
-{{--                                <div class="fb-text-wrap flex-container flex-dir-column column small-12 small-order-1 large-6 large-order-2 large-offset-1">--}}
-{{--                                    <div class="fb-title-container flex-container flex-dir-column">--}}
-{{--                                        <h2 class="h3 fb-title">Integration partnerships</h2>--}}
-{{--                                        <div class="h5">--}}
-{{--                                            <a href="/en/products/marketplace" rel="noopener">Mews Marketplace</a> is the largest collection of hospitality integrations – if your solution isn't on the app store, it’s time to fix that.--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="flex-container justify-start align-start feature-container">--}}
-{{--                                        <div class="fb-feature large">--}}
-{{--                                            <h3 class="p"><strong>What you get</strong></h3>--}}
-{{--                                            <p>Your solution will be seen by the thousands of hoteliers who use Mews Marketplace, with easy access to purchase the integration.</p>--}}
-{{--                                        </div>--}}
-
-{{--                                        <div class="fb-feature large">--}}
-{{--                                            <h3 class="p"><strong>What you need to do</strong></h3>--}}
-{{--                                            <p>--}}
-{{--                                                Once we have your details, we’ll send you information about our APIs and how to test in our demo environment. Integrations are certified in a 30-minute call, and after you pass, you’ll get a--}}
-{{--                                                profile on Mews Marketplace that everyone can see.--}}
-{{--                                            </p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="flex-container justify-start align-start button-wrap">--}}
-{{--                                        <a class="button button--secondary popup popup-form" data-form="hsForm_7f8f2208-5e9d-47e2-9a54-8fca2356e552">--}}
-{{--                                            Get started--}}
-{{--                                        </a>--}}
-
-{{--                                        <div class="form-modal hide">--}}
-{{--                                            <div class="form form-light form-white-wrap align-start">--}}
-{{--                                                <div class="close-modal">--}}
-{{--                                                    <svg--}}
-{{--                                                            version="1.1"--}}
-{{--                                                            xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                                            xmlns:xlink="http://www.w3.org/1999/xlink"--}}
-{{--                                                            x="0"--}}
-{{--                                                            y="0"--}}
-{{--                                                            viewbox="0 0 32 32"--}}
-{{--                                                            style="enable-background: new 0 0 32 32;"--}}
-{{--                                                            xml:space="preserve"--}}
-{{--                                                            width="24"--}}
-{{--                                                            height="24"--}}
-{{--                                                    >--}}
-{{--                                                        <g id="icon-x-close">--}}
-{{--                                                            <path--}}
-{{--                                                                    d="M30.3448276,31.4576271 C29.9059965,31.4572473 29.4852797,31.2855701 29.1751724,30.980339 L0.485517241,2.77694915 C-0.122171278,2.13584324 -0.104240278,1.13679247 0.52607603,0.517159487 C1.15639234,-0.102473494 2.17266813,-0.120100579 2.82482759,0.477288136 L31.5144828,28.680678 C31.9872448,29.1460053 32.1285698,29.8453523 31.8726333,30.4529866 C31.6166968,31.0606209 31.0138299,31.4570487 30.3448276,31.4576271 Z"--}}
-{{--                                                                    id="Shape"--}}
-{{--                                                                    fill="#000"--}}
-{{--                                                            ></path>--}}
-{{--                                                            <path--}}
-{{--                                                                    d="M1.65517241,31.4576271 C0.986170142,31.4570487 0.383303157,31.0606209 0.127366673,30.4529866 C-0.12856981,29.8453523 0.0127551942,29.1460053 0.485517241,28.680678 L29.1751724,0.477288136 C29.8273319,-0.120100579 30.8436077,-0.102473494 31.473924,0.517159487 C32.1042403,1.13679247 32.1221713,2.13584324 31.5144828,2.77694915 L2.82482759,30.980339 C2.51472031,31.2855701 2.09400353,31.4572473 1.65517241,31.4576271 Z"--}}
-{{--                                                                    id="Shape"--}}
-{{--                                                                    fill="#000"--}}
-{{--                                                            ></path>--}}
-{{--                                                        </g>--}}
-{{--                                                    </svg>--}}
-{{--                                                </div>--}}
-{{--                                                <p class="text-primary mb-0"><strong>Become an integration Partner</strong></p>--}}
-{{--                                                <span id="hs_cos_wrapper_widget_1600183250126_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form">--}}
-{{--                                                    <h3 id="hs_cos_wrapper_form_47840906_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>--}}
-
-{{--                                                    <div id="hs_form_target_form_47840906"></div>--}}
-{{--                                                </span>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="overlay"></div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="row small-row">--}}
-{{--                                <div class="fb-image-wrap column small-12 small-order-2 large-5 large-order-2 large-offset-1">--}}
-{{--                                    <div class="fb-image-container">--}}
-{{--                                        <img--}}
-{{--                                                loading="lazy"--}}
-{{--                                                src="{{asset('saas/img/Partnerships-BusinessReferrals@0.5x.jpg?width=538&amp;height=664&amp;name=Partnerships-BusinessReferrals@0.5x.jpg')}}"--}}
-{{--                                                alt="BusinessReferrals"--}}
-{{--                                                width="538"--}}
-{{--                                                height="664"--}}
-{{--                                                sizes="(max-width: 538px) 100vw, 538px"--}}
-{{--                                        />--}}
-{{--                                        <p class="fb-caption caption-right"></p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                                <div class="fb-text-wrap flex-container flex-dir-column column small-12 small-order-1 large-6 large-order-1">--}}
-{{--                                    <div class="fb-title-container flex-container flex-dir-column">--}}
-{{--                                        <h2 class="h3 fb-title">Business referrals</h2>--}}
-{{--                                        <div class="h5">By enrolling in our partnership program, your business would join many of our industry’s leading brands.</div>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="flex-container justify-start align-start feature-container">--}}
-{{--                                        <div class="fb-feature large">--}}
-{{--                                            <h3 class="p"><strong>What you get</strong></h3>--}}
-{{--                                            <p>You’ll get 10% commission on&nbsp;the contracted value of every successful referral, and a&nbsp;front seat on the journey to the future of hospitality.&nbsp;</p>--}}
-{{--                                        </div>--}}
-
-{{--                                        <div class="fb-feature large">--}}
-{{--                                            <h3 class="p"><strong>What you need to do</strong></h3>--}}
-{{--                                            <p>Fill in the form with the relevant information about your business and the Mews Partnerships team will reach out to talk through the next steps.</p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="flex-container justify-start align-start button-wrap">--}}
-{{--                                        <a class="button button--secondary popup popup-form" data-form="hsForm_2fde8f30-9475-410e-9c29-83fc01fe3c9e">--}}
-{{--                                            Become a referrer--}}
-{{--                                        </a>--}}
-
-{{--                                        <div class="form-modal hide">--}}
-{{--                                            <div class="form form-light form-white-wrap align-start">--}}
-{{--                                                <div class="close-modal">--}}
-{{--                                                    <svg--}}
-{{--                                                            version="1.1"--}}
-{{--                                                            xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                                            xmlns:xlink="http://www.w3.org/1999/xlink"--}}
-{{--                                                            x="0"--}}
-{{--                                                            y="0"--}}
-{{--                                                            viewbox="0 0 32 32"--}}
-{{--                                                            style="enable-background: new 0 0 32 32;"--}}
-{{--                                                            xml:space="preserve"--}}
-{{--                                                            width="24"--}}
-{{--                                                            height="24"--}}
-{{--                                                    >--}}
-{{--                                                        <g id="icon-x-close">--}}
-{{--                                                            <path--}}
-{{--                                                                    d="M30.3448276,31.4576271 C29.9059965,31.4572473 29.4852797,31.2855701 29.1751724,30.980339 L0.485517241,2.77694915 C-0.122171278,2.13584324 -0.104240278,1.13679247 0.52607603,0.517159487 C1.15639234,-0.102473494 2.17266813,-0.120100579 2.82482759,0.477288136 L31.5144828,28.680678 C31.9872448,29.1460053 32.1285698,29.8453523 31.8726333,30.4529866 C31.6166968,31.0606209 31.0138299,31.4570487 30.3448276,31.4576271 Z"--}}
-{{--                                                                    id="Shape"--}}
-{{--                                                                    fill="#000"--}}
-{{--                                                            ></path>--}}
-{{--                                                            <path--}}
-{{--                                                                    d="M1.65517241,31.4576271 C0.986170142,31.4570487 0.383303157,31.0606209 0.127366673,30.4529866 C-0.12856981,29.8453523 0.0127551942,29.1460053 0.485517241,28.680678 L29.1751724,0.477288136 C29.8273319,-0.120100579 30.8436077,-0.102473494 31.473924,0.517159487 C32.1042403,1.13679247 32.1221713,2.13584324 31.5144828,2.77694915 L2.82482759,30.980339 C2.51472031,31.2855701 2.09400353,31.4572473 1.65517241,31.4576271 Z"--}}
-{{--                                                                    id="Shape"--}}
-{{--                                                                    fill="#000"--}}
-{{--                                                            ></path>--}}
-{{--                                                        </g>--}}
-{{--                                                    </svg>--}}
-{{--                                                </div>--}}
-{{--                                                <p class="text-primary mb-0"><strong>Become a referrer</strong></p>--}}
-{{--                                                <span id="hs_cos_wrapper_widget_1600183250126_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form">--}}
-{{--                                                    <h3 id="hs_cos_wrapper_form_127058112-1624538729308_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>--}}
-
-{{--                                                    <div id="hs_form_target_form_127058112-1624538729308"></div>--}}
-{{--                                                </span>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="overlay"></div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="row small-row">--}}
-{{--                                <div class="fb-image-wrap column small-12 small-order-2 large-5 large-order-1">--}}
-{{--                                    <div class="fb-image-container">--}}
-{{--                                        <img--}}
-{{--                                                loading="lazy"--}}
-{{--                                                src="{{asset('saas/img/Partners-PersonalReferrals@0.5x.jpg?width=538&amp;height=664&amp;name=Partners-PersonalReferrals@0.5x.jpg')}}"--}}
-{{--                                                alt="Partners-PersonalReferrals"--}}
-{{--                                                width="538"--}}
-{{--                                                height="664"--}}
-{{--                                                sizes="(max-width: 538px) 100vw, 538px"--}}
-{{--                                        />--}}
-{{--                                        <p class="fb-caption"></p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                                <div class="fb-text-wrap flex-container flex-dir-column column small-12 small-order-1 large-6 large-order-2 large-offset-1">--}}
-{{--                                    <div class="fb-title-container flex-container flex-dir-column">--}}
-{{--                                        <h2 class="h3 fb-title">Personal referrals</h2>--}}
-{{--                                        <div class="h5">Every person has the power to make a difference. If you know a property who would benefit from moving to Mews, just let us know.</div>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="flex-container justify-start align-start feature-container">--}}
-{{--                                        <div class="fb-feature large">--}}
-{{--                                            <h3 class="p"><strong>What you get</strong></h3>--}}
-{{--                                            <p>For every&nbsp;successful&nbsp;referral that you send&nbsp;us, you&nbsp;get&nbsp;€300. It’s that simple. All you need to do is deliver – we’ll sign and seal.&nbsp;</p>--}}
-{{--                                        </div>--}}
-
-{{--                                        <div class="fb-feature large">--}}
-{{--                                            <h3 class="p"><strong>What you need to do</strong></h3>--}}
-{{--                                            <p>--}}
-{{--                                                You don’t need to enrol in anything – just send us the details of the person you’re referring via the form on this page, and we’ll contact you when you’re due a reward. You’ll also get a--}}
-{{--                                                personal referral code to make things even easier for next time.--}}
-{{--                                            </p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="flex-container justify-start align-start button-wrap">--}}
-{{--                                        <a class="button button--secondary popup popup-form" data-form="hsForm_c9343597-c586-4b3f-8a68-96c84c586e20">--}}
-{{--                                            Refer a Property--}}
-{{--                                        </a>--}}
-
-{{--                                        <div class="form-modal hide">--}}
-{{--                                            <div class="form form-light form-white-wrap align-start">--}}
-{{--                                                <div class="close-modal">--}}
-{{--                                                    <svg--}}
-{{--                                                            version="1.1"--}}
-{{--                                                            xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                                            xmlns:xlink="http://www.w3.org/1999/xlink"--}}
-{{--                                                            x="0"--}}
-{{--                                                            y="0"--}}
-{{--                                                            viewbox="0 0 32 32"--}}
-{{--                                                            style="enable-background: new 0 0 32 32;"--}}
-{{--                                                            xml:space="preserve"--}}
-{{--                                                            width="24"--}}
-{{--                                                            height="24"--}}
-{{--                                                    >--}}
-{{--                                                        <g id="icon-x-close">--}}
-{{--                                                            <path--}}
-{{--                                                                    d="M30.3448276,31.4576271 C29.9059965,31.4572473 29.4852797,31.2855701 29.1751724,30.980339 L0.485517241,2.77694915 C-0.122171278,2.13584324 -0.104240278,1.13679247 0.52607603,0.517159487 C1.15639234,-0.102473494 2.17266813,-0.120100579 2.82482759,0.477288136 L31.5144828,28.680678 C31.9872448,29.1460053 32.1285698,29.8453523 31.8726333,30.4529866 C31.6166968,31.0606209 31.0138299,31.4570487 30.3448276,31.4576271 Z"--}}
-{{--                                                                    id="Shape"--}}
-{{--                                                                    fill="#000"--}}
-{{--                                                            ></path>--}}
-{{--                                                            <path--}}
-{{--                                                                    d="M1.65517241,31.4576271 C0.986170142,31.4570487 0.383303157,31.0606209 0.127366673,30.4529866 C-0.12856981,29.8453523 0.0127551942,29.1460053 0.485517241,28.680678 L29.1751724,0.477288136 C29.8273319,-0.120100579 30.8436077,-0.102473494 31.473924,0.517159487 C32.1042403,1.13679247 32.1221713,2.13584324 31.5144828,2.77694915 L2.82482759,30.980339 C2.51472031,31.2855701 2.09400353,31.4572473 1.65517241,31.4576271 Z"--}}
-{{--                                                                    id="Shape"--}}
-{{--                                                                    fill="#000"--}}
-{{--                                                            ></path>--}}
-{{--                                                        </g>--}}
-{{--                                                    </svg>--}}
-{{--                                                </div>--}}
-{{--                                                <p class="text-primary mb-0"><strong>Refer a Property</strong></p>--}}
-{{--                                                <span id="hs_cos_wrapper_widget_1600183250126_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form">--}}
-{{--                                                    <h3 id="hs_cos_wrapper_form_544843979-1624538729310_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>--}}
-
-{{--                                                    <div id="hs_form_target_form_544843979-1624538729310"></div>--}}
-{{--                                                </span>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="overlay"></div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
                         </section>
                     </div>
                     <div id="hs_cos_wrapper_widget_1600183372411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
                          <section class="icon-text-section bg-white">
-                            <div class="row small-row">
-                                <div class="column flex-container flex-dir-column align-center-middle text-center">
-                                    <h2 class="h3">{{$benefit_section_one->title}}</h2>
-                                    <h5>{!! $benefit_section_one->description !!}</h5>
-                                </div>
-                            </div>
+{{--                            <div class="row small-row">--}}
+{{--                                <div class="column flex-container flex-dir-column align-center-middle text-center">--}}
+{{--                                    <h2 class="h3"></h2>--}}
+{{--                                    <h5></h5>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             @foreach($benefit_section_one->features->chunk(3) as $feature_item)
                                  <div class="row small-row small-up-1 medium-up-2 large-up-3 justify-center">
                                     @foreach($feature_item as $item)

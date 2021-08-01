@@ -252,6 +252,16 @@ a.button.button--secondary.align-self-end.float-right {
 .parent.active~.feature-children .child .table-cell {
     max-height: 105px;
 }
+.complex-table {
+    display: block;
+    /* grid-template-columns: 50% repeat(3,1fr); */
+    /* grid-column-gap: 0px; */
+    /* grid-row-gap: 0px; */
+    /* margin-top: 90px; */
+}
+.table-title-wrap, .table-feature, .sub-feature, .feature-children {
+    display: block;
+}
 .btn {
     font-family: 'Nunito', sans-serif;
     text-transform: capitalize;

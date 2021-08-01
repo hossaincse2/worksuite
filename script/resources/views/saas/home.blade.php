@@ -122,7 +122,8 @@
                         <section class="solutions-link">
                             <div class="row small-row">
                                 <div class="column large-12 medium-12 small-12" id="title-wrap">
-                                    <h2 style="font-size: 30px;">{{$trFrontDetail->favourite_apps_title}} </h2><br />
+                                    <h2 style="font-size: 30px;margin-bottom: 0px;">{{ $trFrontDetail->favourite_apps_title}} </h2><br />
+                                    <p class="mb-60">{{ $trFrontDetail->favourite_apps_detail }}</p>
                                 </div>
                                 <div class="column large-12 medium-12 small-12 flex-container" id="solutions-main">
                                     @foreach($featureWithApps as $key=>$value)

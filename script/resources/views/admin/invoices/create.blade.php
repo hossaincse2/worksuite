@@ -28,7 +28,9 @@
 <link rel="stylesheet" href="{{ asset('plugins/bower_components/switchery/dist/switchery.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/select2/select2.min.css') }}">
 
+
 <style>
+
     .dropdown-content {
         width: 250px;
         max-height: 250px;
@@ -51,6 +53,7 @@
         width: 200px !important;
     }
 </style>
+<link rel="stylesheet" href="{{ asset('css/hossain.css') }}">
 @endpush
 
 @section('content')
@@ -62,562 +65,512 @@
                 <div class="panel-wrapper collapse in" aria-expanded="true">
                     <div class="panel-body">
                         {!! Form::open(['id'=>'storePayments','class'=>'ajax-form','method'=>'POST']) !!}
-                        <div class="form-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">@lang('modules.accountSettings.companyLogo')</label>
-                                        <div class="col-xs-12">
-                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                <div class="fileinput-new thumbnail"
-                                                     style="width: 250px; height: 80px;">
-                                                    <img src="{{ $company->logo_url }}" alt=""/>
-                                                </div>
-                                                <div class="fileinput-preview fileinput-exists thumbnail"
-                                                     style="max-width: 250px; max-height: 80px;"></div>
-                                                <div>
-                                <span class="btn btn-info btn-file">
-                                    <span class="fileinput-new"> @lang('app.selectImage') </span>
-                                    <span class="fileinput-exists"> @lang('app.change') </span>
-                                    <input type="file" name="logo" id="logo"> </span>
-                                                    <a href="javascript:;" class="btn btn-danger fileinput-exists"
-                                                       data-dismiss="fileinput"> @lang('app.remove') </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Sales">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Rimland 12">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="012345677">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Amsterdam">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Holland">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="1010okk">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-
-                                            </div>
-                                            <div class="col-md-6">
-                                                <select class="form-control form-control-sm">
-                                                    <option>Country</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="TAX Name">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="TAX Number">
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            <br/>
-                            <br/>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Billed To</label>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="First Name">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Last Name">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Company Name">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Street Address">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control form-control-sm" type="text" placeholder="Street Address 2">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="City">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-sm" type="text" placeholder="State">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control form-control-sm" type="text" placeholder="ZIP Code">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <select class="form-control form-control-sm">
-                                                    <option>Country</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Date of Issue</label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" >
-                                        <label class="control-label"> Due Date </label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Invoice Number</label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="inv_number" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Reference</label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="ref" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group" >
-                                        <label class="control-label">Amount Due (EUR)</label>
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" name="issue_date" id="amount_due" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h2 class="pull-left">New Invoice </h2>
+                                <div class="pull-right">
+                                    <a class="btn btn-default btn-custome-cancel" href="#">Cancel</a>
+                                    <a class="btn btn-success btn-custome-save" href="#">Save</a>
+                                    <a class="btn btn-success btn-custome-save" href="#">Send To..</a>
                                 </div>
                             </div>
-{{--                            <div class="row">--}}
-
-{{--                                <div class="col-md-3">--}}
-{{--                                    <div class="form-group" >--}}
-{{--                                        <label class="control-label">Date Of Issue</label>--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-xs-12">--}}
-{{--                                                <div class="input-icon">--}}
-{{--                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-md-3">--}}
-{{--                                    <div class="form-group" >--}}
-{{--                                        <label class="control-label">Invoice Number</label>--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-xs-12">--}}
-{{--                                                <div class="input-icon">--}}
-{{--                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="row">--}}
-{{--                                <div class="col-md-4">--}}
-{{--                                    <div class="form-group" >--}}
-{{--                                        <label class="control-label">@lang('modules.invoices.invoiceDate')</label>--}}
-{{--                                        <div class="row">--}}
-{{--                                            <div class="col-xs-12">--}}
-{{--                                                <div class="input-icon">--}}
-{{--                                                    <input type="text" class="form-control" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-
-{{--                                <div class="col-md-4">--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label class="control-label">@lang('app.dueDate')</label>--}}
-{{--                                        <div class="input-icon">--}}
-{{--                                            <input type="text" class="form-control" name="due_date" id="due_date" value="{{ Carbon\Carbon::today()->addDays($invoiceSetting->due_after)->format($global->date_format) }}">--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                                <div class="col-md-4">--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label class="control-label">@lang('modules.invoices.currency')</label>--}}
-{{--                                        <select class="form-control select2" name="currency_id" id="currency_id">--}}
-{{--                                            @foreach($currencies as $currency)--}}
-{{--                                                <option value="{{ $currency->id }}" @if($global->currency_id == $currency->id) selected @endif>{{ $currency->currency_symbol.' ('.$currency->currency_code.')' }}</option>--}}
-{{--                                            @endforeach--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="control-label">@lang('modules.invoices.showShippingAddress')
-                                            <a class="mytooltip" href="javascript:void(0)">
-                                                <i class="fa fa-info-circle"></i>
-                                                <span class="tooltip-content5">
-                                                        <span class="tooltip-text3">
-                                                            <span class="tooltip-inner2">
-                                                                @lang('modules.invoices.showShippingAddressInfo')
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                            </a>
-                                        </label>
-                                        <div class="switchery-demo">
-                                            <input type="checkbox" id="show_shipping_address" name="show_shipping_address" class="js-switch " data-color="#00c292" data-secondary-color="#f96262" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div id="shippingAddress">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <h3 class="box-title">@lang('modules.projects.otherInfo')</h3>
-                            <div class="row">
-                                @foreach($fields as $field)
-                                    <div class="col-md-3">
-                                        <label>{{ ucfirst($field->label) }}</label>
-                                        <div class="form-group">
-                                            @if( $field->type == 'text')
-                                                <input type="text" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" class="form-control" placeholder="{{$field->label}}" value="{{$editUser->custom_fields_data['field_'.$field->id] ?? ''}}">
-                                            @elseif($field->type == 'password')
-                                                <input type="password" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" class="form-control" placeholder="{{$field->label}}" value="{{$editUser->custom_fields_data['field_'.$field->id] ?? ''}}">
-                                            @elseif($field->type == 'number')
-                                                <input type="number" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" class="form-control" placeholder="{{$field->label}}" value="{{$editUser->custom_fields_data['field_'.$field->id] ?? ''}}">
-
-                                            @elseif($field->type == 'textarea')
-                                                <textarea name="custom_fields_data[{{$field->name.'_'.$field->id}}]" class="form-control" id="{{$field->name}}" cols="3">{{$editUser->custom_fields_data['field_'.$field->id] ?? ''}}</textarea>
-
-                                            @elseif($field->type == 'radio')
-                                                <div class="radio-list">
-                                                    @foreach($field->values as $key=>$value)
-                                                        <label class="radio-inline @if($key == 0) p-0 @endif">
-                                                            <div class="radio radio-info">
-                                                                <input type="radio" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" id="optionsRadios{{$key.$field->id}}" value="{{$value}}" @if(isset($editUser) && $editUser->custom_fields_data['field_'.$field->id] == $value) checked @elseif($key==0) checked @endif>>
-                                                                <label for="optionsRadios{{$key.$field->id}}">{{$value}}</label>
-                                                            </div>
-                                                        </label>
-                                                    @endforeach
+                        <div class="col-md-9">
+                            <div class="form-body invoice simpleTemplate">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div id="ember147" class="u-skewer-item invoice-logo entity-hideEmpty ember-view">
+                                            <div class="invoice-logoUploadButton button-ghost invoice-nonPrinting invoice-nonPrinting--ui">
+                                                <div class="invoice-logoUploadInstructions js-upload-logo-instructions">
+                                                    <i class="icon icon--picture"></i>
+                                                    Drag your logo here,<br> or <span class="link">select a file</span>
                                                 </div>
-                                            @elseif($field->type == 'select')
-                                                {!! Form::select('custom_fields_data['.$field->name.'_'.$field->id.']',
-                                                        $field->values,
-                                                        isset($editUser)?$editUser->custom_fields_data['field_'.$field->id]:'',['class' => 'form-control gender'])
-                                                !!}
-
-                                            @elseif($field->type == 'checkbox')
-                                            <div class="mt-checkbox-inline custom-checkbox checkbox-{{$field->id}}">
-                                                <input type="hidden" name="custom_fields_data[{{$field->name.'_'.$field->id}}]"
-                                                id="{{$field->name.'_'.$field->id}}" value=" ">
-                                                @foreach($field->values as $key => $value)
-                                                    <label class="mt-checkbox mt-checkbox-outline">
-                                                        <input name="{{$field->name.'_'.$field->id}}[]"
-                                                               type="checkbox" onchange="checkboxChange('checkbox-{{$field->id}}', '{{$field->name.'_'.$field->id}}')" value="{{$value}}"> {{$value}}
-                                                        <span></span>
-                                                    </label>
-                                                @endforeach
                                             </div>
-                                            @elseif($field->type == 'date')
-                                                <input type="text" class="form-control date-picker" size="16" name="custom_fields_data[{{$field->name.'_'.$field->id}}]"
-                                                    value="{{ isset($editUser->dob)?Carbon\Carbon::parse($editUser->dob)->format('Y-m-d'):Carbon\Carbon::now()->format($global->date_format)}}">
-                                            @endif
-                                            <div class="form-control-focus"> </div>
-                                            <span class="help-block"></span>
-
+                                            <!---->
+{{--                                            <input accept="image/png, image/jpg, image/jpeg, image/gif" id="ember148" class="ember-text-field u-hide js-droppable-image-file-input ember-view" type="file">--}}
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
 
-                            <hr>
-                            @if(in_array('products', $modules))
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group m-b-10 product-select" id="product-select">
-                                        <select id="selectProduct" name="select"  data-placeholder="Select a product">
-                                            <option></option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            @endif
-
-                            <div class="row">
-
-                                <div class="col-xs-12  visible-md visible-lg">
-
-                                    <div class="@if($invoiceSetting->hsn_sac_code_show) col-md-3 @else col-md-4 @endif font-bold" style="padding: 8px 15px">
-                                        @lang('modules.invoices.item')
-                                    </div>
-
-                                    @if($invoiceSetting->hsn_sac_code_show)
-                                        <div class="col-md-1 font-bold" style="padding: 8px 15px">
-                                            @lang('modules.invoices.hsnSacCode')
-                                        </div>
-                                    @endif
-
-                                    <div class="col-md-1 font-bold" style="padding: 8px 15px">
-                                        @lang('modules.invoices.qty')
-                                    </div>
-
-                                    <div class="col-md-2 font-bold" style="padding: 8px 15px">
-                                        @lang('modules.invoices.unitPrice')
-                                    </div>
-
-                                    <div class="col-md-2 font-bold" style="padding: 8px 15px">
-                                        @lang('modules.invoices.tax') <a href="javascript:;" id="tax-settings" ><i class="ti-settings text-info"></i></a>
-                                    </div>
-
-                                    <div class="col-md-2 text-center font-bold" style="padding: 8px 15px">
-                                        @lang('modules.invoices.amount')
-                                    </div>
-
-                                    <div class="col-md-1" style="padding: 8px 15px">
-                                        &nbsp;
-                                    </div>
-
-                                </div>
-
-                                <div id="sortable">
-                                    <div class="col-xs-12 item-row margin-top-5">
-
-                                        <div class="col-md-3">
+                                        <div class="col-md-7">
                                             <div class="row">
-                                                <div class="form-group">
-                                                    <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.item')</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-addon"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></div>
-                                                        <input type="text" class="form-control item_name" name="item_name[]">
+                                                <div class="col-md-6 text-right">
+                                                    <div class="myText">Sols</div>
+                                                    <div class="myText">012345677</div>
+                                                </div>
+                                                <div class="col-md-6 text-right">
+                                                    <div class="myText">Rimland 12</div>
+                                                    <div class="myText">Amsterdam, Holland</div>
+                                                    <div class="myText">1010okk</div>
+                                                    <div class="myText">Bangladesh</div>
+                                                    <div class="display-inline3">
+                                                        <input class="form-controls text-right" type="text" placeholder="Tax Name">
+                                                        <input class="form-controls text-right" type="text" placeholder="Tax Number">
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <textarea name="item_summary[]" class="form-control" placeholder="@lang('app.description')" rows="2"></textarea>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        @if($invoiceSetting->hsn_sac_code_show)
-                                            <div class="col-md-1">
-                                                <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.hsnSacCode')</label>
-                                                <input type="text" class="form-control" name="hsn_sac_code[]" >
-
-                                            </div>
-                                        @endif
-
-                                        <div class="col-md-1">
-
-                                            <div class="form-group">
-                                                <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.qty')</label>
-                                                <input type="number" min="1" class="form-control quantity" value="1" name="quantity[]" >
-                                            </div>
-
-
-                                        </div>
-
-                                        <div class="col-md-2">
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.unitPrice')</label>
-                                                    <input type="text"  class="form-control cost_per_item" name="cost_per_item[]" value="0" >
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-2">
-
-                                            <div class="form-group">
-                                                <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.type')</label>
-                                                <select id="multiselect" name="taxes[0][]"  multiple="multiple" class="selectpicker form-control type">
-                                                    @foreach($taxes as $tax)
-                                                        <option data-rate="{{ $tax->rate_percent }}" value="{{ $tax->id }}">{{ $tax->tax_name }}: {{ $tax->rate_percent }}%</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-2 border-dark  text-center">
-                                            <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.amount')</label>
-
-                                            <p class="form-control-static"><span class="amount-html">0.00</span></p>
-                                            <input type="hidden" class="amount" name="amount[]" value="0">
-                                        </div>
-
-                                        <div class="col-md-1 text-right visible-md visible-lg">
-                                            <button type="button" class="btn remove-item btn-circle btn-danger"><i class="fa fa-remove"></i></button>
-                                        </div>
-                                        <div class="col-md-1 hidden-md hidden-lg">
-                                            <div class="row">
-                                                <button type="button" class="btn btn-circle remove-item btn-danger"><i class="fa fa-remove"></i> @lang('app.remove')</button>
                                             </div>
                                         </div>
-
-                                    </div>
                                 </div>
+                                <br/>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Billed To</label> <br>
+                                            <div class="display-inline">
+                                                <input class="form-controls" type="text" placeholder="First Name" autocomplete="off">
+                                                <input class="form-controls" type="text" placeholder="Last Name" autocomplete="off">
+                                            </div>
 
-
-                                <div class="col-xs-12 m-t-5">
-                                    <button type="button" class="btn btn-info" id="add-item"><i class="fa fa-plus"></i> @lang('modules.invoices.addItem')</button>
-                                </div>
-
-                                <div class="col-xs-12 ">
-
-
-                                    <div class="row">
-                                        <div class="col-md-offset-9 col-xs-6 col-md-1 text-right p-t-10" >@lang('modules.invoices.subTotal')</div>
-
-                                        <p class="form-control-static col-xs-6 col-md-2" >
-                                            <span class="sub-total">0.00</span>
-                                        </p>
-
-
-                                        <input type="hidden" class="sub-total-field" name="sub_total" value="0">
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-offset-9 col-md-1 text-right p-t-10">
-                                            @lang('modules.invoices.discount')
-                                        </div>
-                                        <div class="form-group col-xs-6 col-md-1" >
-                                            <input type="number" min="0" value="0" name="discount_value" class="form-control discount_value">
-                                        </div>
-                                        <div class="form-group col-xs-6 col-md-1" >
-                                            <select class="form-control" name="discount_type" id="discount_type">
-                                                <option value="percent">%</option>
-                                                <option value="fixed">@lang('modules.invoices.amount')</option>
+                                            <input class="form-controls" type="text" placeholder="Company Name">
+                                            <input class="form-controls" type="text" placeholder="Street Address">
+                                            <input class="form-controls" type="text" placeholder="Street Address 2">
+                                            <div class="display-inline2">
+                                                <input class="form-controls" type="text" placeholder="City">
+                                                <input class="form-controls" type="text" placeholder="State">
+                                            </div>
+                                            <input class="form-controls" type="text" placeholder="ZIP Code">
+                                            <select class="form-controls">
+                                                <option>Country</option>
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Date of Issue</label>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="input-icon">
+                                                        <input type="text" class="form-controls" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" >
+                                            <label class="control-label"> Due Date </label>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="input-icon">
+                                                        <input type="text" class="form-controls" name="issue_date" id="invoice_date" value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Invoice Number</label>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="input-icon">
+                                                        <input type="text" class="form-controls" name="issue_date" id="inv_number" value="00500001">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Reference</label>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="input-icon">
+                                                        <input type="text" class="form-controls" name="issue_date" id="ref" value="" placeholder="Enter value (e.g. PO #)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group" >
+                                            <label class="control-label">Amount Due (EUR)</label>
+                                            <div class="invoice-value invoice-total u-noWrap ">
+                                                €0.00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-4">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <label class="control-label">@lang('modules.invoices.showShippingAddress')--}}
+{{--                                                <a class="mytooltip" href="javascript:void(0)">--}}
+{{--                                                    <i class="fa fa-info-circle"></i>--}}
+{{--                                                    <span class="tooltip-content5">--}}
+{{--                                                            <span class="tooltip-text3">--}}
+{{--                                                                <span class="tooltip-inner2">--}}
+{{--                                                                    @lang('modules.invoices.showShippingAddressInfo')--}}
+{{--                                                                </span>--}}
+{{--                                                            </span>--}}
+{{--                                                        </span>--}}
+{{--                                                </a>--}}
+{{--                                            </label>--}}
+{{--                                            <div class="switchery-demo">--}}
+{{--                                                <input type="checkbox" id="show_shipping_address" name="show_shipping_address" class="js-switch " data-color="#00c292" data-secondary-color="#f96262" />--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-8">--}}
+{{--                                        <div id="shippingAddress">--}}
 
-                                    <div class="row m-t-5" id="invoice-taxes">
-                                        <div class="col-md-offset-9 col-md-1 text-right p-t-10">
-                                            @lang('modules.invoices.tax')
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                <h3 class="box-title">@lang('modules.projects.otherInfo')</h3>
+                                <div class="row">
+                                    @foreach($fields as $field)
+                                        <div class="col-md-3">
+                                            <label>{{ ucfirst($field->label) }}</label>
+                                            <div class="form-group">
+                                                @if( $field->type == 'text')
+                                                    <input type="text" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" class="form-control" placeholder="{{$field->label}}" value="{{$editUser->custom_fields_data['field_'.$field->id] ?? ''}}">
+                                                @elseif($field->type == 'password')
+                                                    <input type="password" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" class="form-control" placeholder="{{$field->label}}" value="{{$editUser->custom_fields_data['field_'.$field->id] ?? ''}}">
+                                                @elseif($field->type == 'number')
+                                                    <input type="number" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" class="form-control" placeholder="{{$field->label}}" value="{{$editUser->custom_fields_data['field_'.$field->id] ?? ''}}">
+
+                                                @elseif($field->type == 'textarea')
+                                                    <textarea name="custom_fields_data[{{$field->name.'_'.$field->id}}]" class="form-control" id="{{$field->name}}" cols="3">{{$editUser->custom_fields_data['field_'.$field->id] ?? ''}}</textarea>
+
+                                                @elseif($field->type == 'radio')
+                                                    <div class="radio-list">
+                                                        @foreach($field->values as $key=>$value)
+                                                            <label class="radio-inline @if($key == 0) p-0 @endif">
+                                                                <div class="radio radio-info">
+                                                                    <input type="radio" name="custom_fields_data[{{$field->name.'_'.$field->id}}]" id="optionsRadios{{$key.$field->id}}" value="{{$value}}" @if(isset($editUser) && $editUser->custom_fields_data['field_'.$field->id] == $value) checked @elseif($key==0) checked @endif>>
+                                                                    <label for="optionsRadios{{$key.$field->id}}">{{$value}}</label>
+                                                                </div>
+                                                            </label>
+                                                        @endforeach
+                                                    </div>
+                                                @elseif($field->type == 'select')
+                                                    {!! Form::select('custom_fields_data['.$field->name.'_'.$field->id.']',
+                                                            $field->values,
+                                                            isset($editUser)?$editUser->custom_fields_data['field_'.$field->id]:'',['class' => 'form-control gender'])
+                                                    !!}
+
+                                                @elseif($field->type == 'checkbox')
+                                                <div class="mt-checkbox-inline custom-checkbox checkbox-{{$field->id}}">
+                                                    <input type="hidden" name="custom_fields_data[{{$field->name.'_'.$field->id}}]"
+                                                    id="{{$field->name.'_'.$field->id}}" value=" ">
+                                                    @foreach($field->values as $key => $value)
+                                                        <label class="mt-checkbox mt-checkbox-outline">
+                                                            <input name="{{$field->name.'_'.$field->id}}[]"
+                                                                   type="checkbox" onchange="checkboxChange('checkbox-{{$field->id}}', '{{$field->name.'_'.$field->id}}')" value="{{$value}}"> {{$value}}
+                                                            <span></span>
+                                                        </label>
+                                                    @endforeach
+                                                </div>
+                                                @elseif($field->type == 'date')
+                                                    <input type="text" class="form-control date-picker" size="16" name="custom_fields_data[{{$field->name.'_'.$field->id}}]"
+                                                        value="{{ isset($editUser->dob)?Carbon\Carbon::parse($editUser->dob)->format('Y-m-d'):Carbon\Carbon::now()->format($global->date_format)}}">
+                                                @endif
+                                                <div class="form-control-focus"> </div>
+                                                <span class="help-block"></span>
+
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                                <hr>
+                                @if(in_array('products', $modules))
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group m-b-10 product-select" id="product-select">
+                                            <select id="selectProduct" name="select"  data-placeholder="Select a product">
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+
+                                <div class="row">
+
+                                    <div class="col-xs-12  visible-md visible-lg">
+
+                                        <div class="@if($invoiceSetting->hsn_sac_code_show) col-md-3 @else col-md-4 @endif font-bold" style="padding: 8px 15px">
+                                            @lang('modules.invoices.item')
                                         </div>
 
-                                        <p class="form-control-static col-xs-6 col-md-2" >
-                                            <span class="tax-percent">0.00</span>
-                                        </p>
+{{--                                        @if($invoiceSetting->hsn_sac_code_show)--}}
+{{--                                            <div class="col-md-1 font-bold" style="padding: 8px 15px">--}}
+{{--                                                @lang('modules.invoices.hsnSacCode')--}}
+{{--                                            </div>--}}
+{{--                                        @endif--}}
+
+                                        <div class="col-md-1 font-bold" style="padding: 8px 15px">
+                                            @lang('modules.invoices.qty')
+                                        </div>
+
+                                        <div class="col-md-2 font-bold" style="padding: 8px 15px">
+                                            @lang('modules.invoices.unitPrice')
+                                        </div>
+
+                                        <div class="col-md-2 font-bold" style="padding: 8px 15px">
+                                            @lang('modules.invoices.tax') <a href="javascript:;" id="tax-settings" ><i class="ti-settings text-info"></i></a>
+                                        </div>
+
+                                        <div class="col-md-2 text-center font-bold" style="padding: 8px 15px">
+                                            @lang('modules.invoices.amount')
+                                        </div>
+
+                                        <div class="col-md-1" style="padding: 8px 15px">
+                                            &nbsp;
+                                        </div>
+
                                     </div>
 
-                                    <div class="row m-t-5 font-bold">
-                                        <div class="col-md-offset-9 col-md-1 col-xs-6 text-right p-t-10" >@lang('modules.invoices.total')</div>
+                                    <div id="sortable">
+                                        <div class="col-xs-12 item-row margin-top-5">
 
-                                        <p class="form-control-static col-xs-6 col-md-2" >
-                                            <span class="total">0.00</span>
-                                        </p>
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                        <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.item')</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-addon"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></div>
+                                                            <input type="text" class="form-control item_name" name="item_name[]">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea name="item_summary[]" class="form-control" placeholder="@lang('app.description')" rows="2"></textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            @if($invoiceSetting->hsn_sac_code_show)
+                                                <div class="col-md-1">
+                                                    <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.hsnSacCode')</label>
+                                                    <input type="text" class="form-control" name="hsn_sac_code[]" >
+
+                                                </div>
+                                            @endif
+
+                                            <div class="col-md-1">
+
+                                                <div class="form-group">
+                                                    <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.qty')</label>
+                                                    <input type="number" min="1" class="form-control quantity" value="1" name="quantity[]" >
+                                                </div>
 
 
-                                        <input type="hidden" class="total-field" name="total" value="0">
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                        <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.unitPrice')</label>
+                                                        <input type="text"  class="form-control cost_per_item" name="cost_per_item[]" value="0" >
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-2">
+
+                                                <div class="form-group">
+                                                    <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.type')</label>
+                                                    <select id="multiselect" name="taxes[0][]"  multiple="multiple" class="selectpicker form-control type">
+                                                        @foreach($taxes as $tax)
+                                                            <option data-rate="{{ $tax->rate_percent }}" value="{{ $tax->id }}">{{ $tax->tax_name }}: {{ $tax->rate_percent }}%</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-2 border-dark  text-center">
+                                                <label class="control-label hidden-md hidden-lg">@lang('modules.invoices.amount')</label>
+
+                                                <p class="form-control-static"><span class="amount-html">0.00</span></p>
+                                                <input type="hidden" class="amount" name="amount[]" value="0">
+                                            </div>
+
+                                            <div class="col-md-1 text-right visible-md visible-lg">
+                                                <button type="button" class="btn remove-item btn-circle btn-danger"><i class="fa fa-remove"></i></button>
+                                            </div>
+                                            <div class="col-md-1 hidden-md hidden-lg">
+                                                <div class="row">
+                                                    <button type="button" class="btn btn-circle remove-item btn-danger"><i class="fa fa-remove"></i> @lang('app.remove')</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
 
+
+                                    <div class="col-xs-12 m-t-5">
+                                        <button type="button" class="btn btn-info" id="add-item"><i class="fa fa-plus"></i> @lang('modules.invoices.addItem')</button>
+                                    </div>
+
+                                    <div class="col-xs-12 ">
+
+
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-xs-6 col-md-5 text-right p-t-10" >@lang('modules.invoices.subTotal')</div>
+
+                                            <p class="form-control-static col-xs-6 col-md-2" >
+                                                <span class="sub-total">0.00</span>
+                                            </p>
+
+
+                                            <input type="hidden" class="sub-total-field" name="sub_total" value="0">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-5 text-right p-t-10">
+                                                @lang('modules.invoices.discount')
+                                            </div>
+                                            <div class="form-group col-xs-6 col-md-2" >
+                                                <input type="number" min="0" value="0" name="discount_value" class="form-control discount_value">
+                                            </div>
+                                            <div class="form-group col-xs-6 col-md-2" >
+                                                <select class="form-control" name="discount_type" id="discount_type">
+                                                    <option value="percent">%</option>
+                                                    <option value="fixed">@lang('modules.invoices.amount')</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row m-t-5" id="invoice-taxes">
+                                            <div class="col-md-offset-3 col-md-5 text-right p-t-10">
+                                                @lang('modules.invoices.tax')
+                                            </div>
+
+                                            <p class="form-control-static col-xs-6 col-md-2" >
+                                                <span class="tax-percent">0.00</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="row m-t-5 font-bold">
+                                            <div class="col-md-offset-3 col-md-5 col-xs-6 text-right p-t-10" >@lang('modules.invoices.total')</div>
+
+                                            <p class="form-control-static col-xs-6 col-md-2" >
+                                                <span class="total">0.00</span>
+                                            </p>
+
+
+                                            <input type="hidden" class="total-field" name="total" value="0">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-12">
+
+                                        <div class="form-group" >
+                                            <label class="control-label">@lang('app.note')</label>
+                                            <textarea class="form-control" name="note" id="note" rows="5"></textarea>
+                                        </div>
+
+                                    </div>
                                 </div>
 
+
+
                             </div>
-
-                            <div class="col-xs-12">
-
-                                <div class="form-group" >
-                                    <label class="control-label">@lang('app.note')</label>
-                                    <textarea class="form-control" name="note" id="note" rows="5"></textarea>
+                            <div class="form-actions" style="margin-top: 70px">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="dropup">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                @lang('app.save') <span class="caret"></span>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu">
+                                                <li>
+                                                    <a href="javascript:;" class="save-form" data-type="save">
+                                                        <i class="fa fa-save"></i> @lang('app.save')
+                                                    </a>
+                                                </li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <a href="javascript:;" class="save-form" data-type="draft">
+                                                        <i class="fa fa-file"></i> @lang('app.saveDraft')
+                                                    </a>
+                                                </li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <a href="javascript:void(0);" class="save-form" data-type="send">
+                                                        <i class="fa fa-send"></i> @lang('app.saveSend')
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
-
                         </div>
-                        <div class="form-actions" style="margin-top: 70px">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="dropup">
-                                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            @lang('app.save') <span class="caret"></span>
-                                        </button>
-                                        <ul role="menu" class="dropdown-menu">
-                                            <li>
-                                                <a href="javascript:;" class="save-form" data-type="save">
-                                                    <i class="fa fa-save"></i> @lang('app.save')
-                                                </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="javascript:;" class="save-form" data-type="draft">
-                                                    <i class="fa fa-file"></i> @lang('app.saveDraft')
-                                                </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="javascript:void(0);" class="save-form" data-type="send">
-                                                    <i class="fa fa-send"></i> @lang('app.saveSend')
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="col-md-3">
+                                <h2>Settings</h2>
+                                <h4 class="heading-3 u-media">
+                                  <span class="meta-pane-panel-header-text u-media-body">
+                                    For This Invoice
+                                  </span>
+                                </h4>
+                                <ul class="meta-pane-panel-list js-for-invoice-settings">
+                                    <li class="meta-pane-group ">
+                                        <a href="#" role="link" tabindex="0" class="u-media meta-pane-link entity-setting-item" data-ember-action="" data-ember-action-539="539">
+                                            <div class="u-media-imageLeft entity-setting-icon">
+                                                <i class="ti-desktop fa-fw"></i>
+                                            </div>
+                                            <div class="u-media-imageRight">
+                                                <small class="entity-setting-status js-pay-online-yesno">
+                                                    NO
+                                                </small>
+                                                <i class="ti-angle-right fa-fw"></i>
+                                            </div>
+                                            <div class="u-media-body">
+                                                <h3 class="js-pane-pay-online">Accept Online Payments</h3>
+                                                <small class="entity-setting-description">
+                                                    Let clients pay you online
+                                                    <div id="ember542" class="onlinePayments-smallIcons ember-view">  <img src="{{asset('img/visa-icon.svg')}}" class="onlinePayments-creditCardLogo" alt="Visa">
+
+                                                        <img src="{{asset('img/mastercard-icon.svg')}}" class="onlinePayments-creditCardLogo" alt="MasterCard">
+
+                                                        <!---->
+                                                        <img src="{{asset('img/amex-icon.svg')}}" class="onlinePayments-creditCardLogo" alt="American Express">
+
+                                                        <img src="{{asset('img/applepay-icon.svg')}}" class="onlinePayments-creditCardLogo" alt="Apple Pay">
+
+                                                        <!----></div>
+                                                </small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="meta-pane-group ">
+                                        <a href="#" role="link" tabindex="0" class="u-media meta-pane-link entity-setting-item" data-ember-action="" data-ember-action-543="543">
+                                            <div class="u-media-imageLeft entity-setting-icon">
+                                                <i class="ti-brush-alt fa-fw"></i>
+                                            </div>
+                                            <div class="u-media-imageRight">
+                                                <!-- no status for invoice template -->
+                                                <small class="entity-setting-status">
+                                                </small>
+                                                <i class="ti-angle-right fa-fw"></i>
+                                            </div>
+                                            <div class="u-media-body">
+                                                <h3 class="js-pane-customize-style">
+                                                    Customize Invoice Style
+                                                </h3>
+                                                <small class="entity-setting-description js-templates-status">
+                                                    Change Template, Color, and Font
+                                                </small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="meta-pane-group">
+                                        <a href="#" role="link" tabindex="0" class="u-media meta-pane-link entity-setting-item" data-ember-action="" data-ember-action-546="546">
+                                            <div class="u-media-imageLeft entity-setting-icon">
+                                                <i class="ti-reload fa-fw"></i>
+                                            </div>
+                                            <div class="u-media-imageRight">
+                                                <i class="ti-angle-right fa-fw"></i>
+                                            </div>
+                                            <div class="u-media-body">
+                                                <h3 class="js-pane-make-recurring">Make Recurring</h3>
+                                                <small class="entity-setting-description">
+                                                    Bill your clients automatically
+                                                </small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         {!! Form::close() !!}
@@ -660,6 +613,7 @@
 <script src="{{ asset('plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('plugins/bower_components/switchery/dist/switchery.min.js') }}"></script>
 <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
+<script src="{{ asset('js/invoice.js') }}"></script>
 
 <script>
     function checkboxChange(parentClass, id){

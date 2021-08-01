@@ -210,30 +210,13 @@
                                                         <div class="table-cell table-col-1 table-body-cell">
                                                             <p class="mb-0">{{$val->question}}</p>
                                                         </div>
-                                                        <div class="table-cell table-col-2 table-body-cell">
-{{--                                                            <img src="img/tick-icon.svg" alt="tick-icon" class="tick" />--}}
-                                                        </div>
-                                                        <div class="table-cell table-col-3 table-body-cell">
-{{--                                                            <img src="img/tick-icon.svg" alt="tick-icon" class="tick" />--}}
-                                                        </div>
-                                                        <div class="table-cell table-col-4 table-body-cell">
-{{--                                                            <img src="img/tick-icon.svg" alt="tick-icon" class="tick" />--}}
-                                                        </div>
+
                                                     </div>
 
                                                          <div class="feature-children">
                                                         <div class="table-row child">
                                                             <div class="table-cell table-col-1 table-body-cell" data-collapsed="true">
                                                                 <p class="mb-2">{!!html_entity_decode($val->answer)!!}</p>
-                                                            </div>
-                                                            <div class="table-cell table-col-2 table-body-cell" data-collapsed="true">
-{{--                                                                <img src="img/tick-icon.svg" alt="tick-icon" class="tick" />--}}
-                                                            </div>
-                                                            <div class="table-cell table-col-3 table-body-cell" data-collapsed="true">
-{{--                                                                <img src="img/tick-icon.svg" alt="tick-icon" class="tick" />--}}
-                                                            </div>
-                                                            <div class="table-cell table-col-4 table-body-cell" data-collapsed="true">
-{{--                                                                <img src="img/tick-icon.svg" alt="tick-icon" class="tick" />--}}
                                                             </div>
                                                         </div>
                                                         </div>
@@ -250,7 +233,8 @@
                         <section class="solutions-link">
                             <div class="row small-row">
                                 <div class="column large-12 medium-12 small-12" id="title-wrap">
-                                    <h2 style="font-size: 30px;">{{$trFrontDetail->favourite_apps_title}} </h2><br />
+                                    <h2 style="font-size: 30px;margin-bottom: 0px;">{{ $trFrontDetail->favourite_apps_title}} </h2><br />
+                                    <p class="mb-60">{{ $trFrontDetail->favourite_apps_detail }}</p>
                                 </div>
                                 <div class="column large-11 medium-12 small-12 flex-container" id="solutions-main">
                                     @foreach($featureWithApps as $key=>$value)
