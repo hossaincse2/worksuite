@@ -705,7 +705,7 @@
             success: function (response) {
                 if (response) {
                     if (response.switch === 'off') {
-                        showShippingSwitch.click();
+                       // showShippingSwitch.click();
                     }
                     else {
                         if (response.show !== undefined) {
@@ -726,16 +726,16 @@
         new Switchery($(this)[0], $(this).data());
     });
 
-    var showShippingSwitch = document.getElementById('show_shipping_address');
-
-    showShippingSwitch.onchange = function() {
-        if (showShippingSwitch.checked) {
-            checkShippingAddress();
-        }
-        else {
-            $('#shippingAddress').html('');
-        }
-    }
+    // var showShippingSwitch = document.getElementById('show_shipping_address');
+    //
+    // showShippingSwitch.onchange = function() {
+    //     if (showShippingSwitch.checked) {
+    //         checkShippingAddress();
+    //     }
+    //     else {
+    //         $('#shippingAddress').html('');
+    //     }
+    // }
 
     $(function () {
         $( "#sortable" ).sortable();
