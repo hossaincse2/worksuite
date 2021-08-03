@@ -11,6 +11,7 @@ use App\Helper\Reply;
 use App\Http\Requests\StoreEstimate;
 use App\InvoiceSetting;
 use App\Notifications\NewEstimate;
+use App\PaymentGatewayCredentials;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -43,6 +44,7 @@ class ManageEstimatesController extends AdminBaseController
         $this->currencies = Currency::all();
         $this->lastEstimate = Estimate::lastEstimateNumber() + 1;
         $this->invoiceSetting = InvoiceSetting::first();
+        $this->credentials = PaymentGatewayCredentials::first();
         $this->zero = '';
         if (strlen($this->lastEstimate) < $this->invoiceSetting->estimate_digit) {
             for ($i = 0; $i < $this->invoiceSetting->estimate_digit - strlen($this->lastEstimate); $i++) {

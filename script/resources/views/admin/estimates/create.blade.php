@@ -21,6 +21,8 @@
 
 @push('head-script')
     {{--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>--}}
+
+    <link rel="stylesheet" href="{{ asset('plugins/image-picker/image-picker.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/bower_components/custom-select/custom-select.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.css') }}">
 
@@ -144,10 +146,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="dropzone-wrapper">
-                                                    <div class="dropzone-desc">
-                                                        <i class="glyphicon glyphicon-download-alt"></i>
-                                                        <p>Choose an image file or drag it here.</p>
-                                                    </div>
+{{--                                                    <div class="dropzone-desc">--}}
+{{--                                                        <i class="glyphicon glyphicon-download-alt"></i>--}}
+{{--                                                        <p>Choose an image file or drag it here.</p>--}}
+{{--                                                    </div>--}}
+                                                    <img src="{{ $global->logo_url }}"
+                                                         alt=""/>
                                                     <input type="file" name="img_logo" class="dropzone">
                                                 </div>
                                                 <!---->
@@ -162,14 +166,14 @@
                                                     <div class="myText">012345677</div>
                                                 </div>
                                                 <div class="col-md-6 text-right">
-                                                    <div class="myText">Rimland 12</div>
-                                                    <div class="myText">Amsterdam, Holland</div>
-                                                    <div class="myText">1010okk</div>
-                                                    <div class="myText">Bangladesh</div>
-                                                    <div class="display-inline3">
-                                                        <input class="form-controls text-right" type="text" placeholder="Tax Name">
-                                                        <input class="form-controls text-right" type="text" placeholder="Tax Number">
-                                                    </div>
+                                                    <div class="myText">{{$global->company_name}}</div>
+                                                    <div class="myText">{{$global->address}}</div>
+                                                    <div class="myText">{{$global->company_phone}}</div>
+                                                    <div class="myText">{{$global->company_email}}</div>
+                                                    {{--                                                    <div class="display-inline3">--}}
+                                                    {{--                                                        <input class="form-controls text-right" type="text" placeholder="Tax Name">--}}
+                                                    {{--                                                        <input class="form-controls text-right" type="text" placeholder="Tax Number">--}}
+                                                    {{--                                                    </div>--}}
                                                 </div>
                                             </div>
                                         </div>
@@ -187,7 +191,7 @@
                                                 </div>
                                                 <div class="display-inline">
                                                     <input class="form-controls" type="text" name="first_name" id="first_name" placeholder="First Name" autocomplete="off">
-                                                    <input class="form-controls" type="text" name="last_name" id="last_name" placeholder="Last Name" autocomplete="off">
+{{--                                                    <input class="form-controls" type="text" name="last_name" id="last_name" placeholder="Last Name" autocomplete="off">--}}
                                                 </div>
 
                                                 <input class="form-controls" type="text" name="company_name" id="company_name" placeholder="Company Name">
@@ -540,7 +544,7 @@
                                 <h2>Settings</h2>
                                 <h4 class="heading-3 u-media">
                                   <span class="meta-pane-panel-header-text u-media-body">
-                                    For This Invoice
+                                    For This Estimate
                                   </span>
                                 </h4>
                                 <ul class="meta-pane-panel-list js-for-invoice-settings">
@@ -550,25 +554,72 @@
                                                 <i class="ti-desktop fa-fw"></i>
                                             </div>
                                             <div class="u-media-imageRight">
-                                                <small class="entity-setting-status js-pay-online-yesno">
-                                                    NO
-                                                </small>
-                                                <i class="ti-angle-right fa-fw"></i>
+                                                {{--                                                <small class="entity-setting-status js-pay-online-yesno">--}}
+                                                {{--                                                    NO--}}
+                                                {{--                                                </small>--}}
+                                                {{--                                                <i class="ti-angle-right fa-fw"></i>--}}
+                                                <div class="switchery-demo">
+                                                    <input type="checkbox" id="show_online_payment" name="show_online_payment" class="js-switch" data-color="#00c292" data-secondary-color="#f96262" />
+                                                </div>
                                             </div>
+
                                             <div class="u-media-body">
                                                 <h3 class="js-pane-pay-online">Accept Online Payments</h3>
-                                                <small class="entity-setting-description">
+                                                <small class="entity-setting-description online-payment-option">
                                                     Let clients pay you online
-                                                    <div id="ember542" class="onlinePayments-smallIcons ember-view">  <img src="{{asset('img/visa-icon.svg')}}" class="onlinePayments-creditCardLogo" alt="Visa">
-
-                                                        <img src="{{asset('img/mastercard-icon.svg')}}" class="onlinePayments-creditCardLogo" alt="MasterCard">
-
-                                                        <!---->
-                                                        <img src="{{asset('img/amex-icon.svg')}}" class="onlinePayments-creditCardLogo" alt="American Express">
-
-                                                        <img src="{{asset('img/applepay-icon.svg')}}" class="onlinePayments-creditCardLogo" alt="Apple Pay">
-
-                                                        <!----></div>
+                                                    <div id="ember542" class="onlinePayments-smallIcons ember-view">
+                                                        <a class="active" href="#Paypal">
+                                                    <span class="hidden-sm-up">
+                                                        <i class="fa fa-paypal"></i>
+                                                    </span>
+                                                            <span class="hidden-xs-down">Paypal @if($credentials->paypal_status == 'active')
+                                                                    <i class="fa fa-check-circle activated-gateway"></i> @endif</span>
+                                                        </a>
+                                                        <a class="" href="#Stripe">
+                                                    <span class="hidden-sm-up">
+                                                        <i class="fa fa-cc-stripe"></i>
+                                                    </span>
+                                                            <span class="hidden-xs-down">Stripe @if($credentials->stripe_status == 'active')
+                                                                    <i class="fa fa-check-circle activated-gateway"></i> @endif</span>
+                                                        </a>
+                                                        <a class="" href="#Razorpay">
+                                                    <span class="hidden-sm-up">
+                                                        <i class=" display-small"></i>
+                                                        <img src="{{ asset('img/razorpay.svg') }}" width="45px"
+                                                             class="display-small">
+                                                    </span>
+                                                            <span class="hidden-xs-down">Razorpay @if($credentials->razorpay_status == 'active')
+                                                                    <i class="fa fa-check-circle activated-gateway"></i> @endif</span>
+                                                        </a>
+                                                        <a class="" href="#Paystack">
+                                                    <span class="hidden-sm-up">
+                                                         <img src="{{ asset('img/paystack.png') }}" width="45px"
+                                                              class="display-small">
+                                                    </span>
+                                                            <span class="hidden-xs-down">Paystack @if($credentials->paystack_status == 'active')
+                                                                    <i class="fa fa-check-circle activated-gateway"></i> @endif</span>
+                                                        </a>
+                                                        <a class="" href="#Mollie">
+                                                    <span class="hidden-sm-up">
+                                                         <img src="{{ asset('img/mollie.svg') }}" width="35px"
+                                                              class="display-small">
+                                                    </span>
+                                                            <span class="hidden-xs-down">Mollie @if($credentials->mollie_status == 'active')
+                                                                    <i class="fa fa-check-circle activated-gateway"></i> @endif</span>
+                                                        </a>
+                                                        <a class="" href="#authorize">
+                                                            <span class="hidden-xs-down">Authorize.net @if($credentials->authorize_status == 'active')
+                                                                    <i class="fa fa-check-circle activated-gateway"></i> @endif</span>
+                                                        </a>
+                                                        <a class="" href="#payfast">
+                                                        <span class="hidden-sm-up">
+                                                             <img src="{{ asset('img/payFast-coins.png') }}"
+                                                                  width="25px" class="display-small">
+                                                        </span>
+                                                            <span class="hidden-xs-down">PayFast @if($credentials->payfast_status == 'active')
+                                                                    <i class="fa fa-check-circle activated-gateway"></i> @endif</span>
+                                                        </a>
+                                                    </div>
                                                 </small>
                                             </div>
                                         </a>
@@ -580,16 +631,49 @@
                                             </div>
                                             <div class="u-media-imageRight">
                                                 <!-- no status for invoice template -->
-                                                <small class="entity-setting-status">
-                                                </small>
-                                                <i class="ti-angle-right fa-fw"></i>
+                                                {{--                                                <small class="entity-setting-status">--}}
+                                                {{--                                                </small>--}}
+                                                {{--                                                <i class="ti-angle-right fa-fw"></i>--}}
+                                                <div class="switchery-demo">
+                                                    <input type="checkbox" id="show_invoice_template" name="show_invoice_template" class="js-switch" data-color="#00c292" data-secondary-color="#f96262" />
+                                                </div>
                                             </div>
                                             <div class="u-media-body">
                                                 <h3 class="js-pane-customize-style">
                                                     Customize Invoice Style
                                                 </h3>
-                                                <small class="entity-setting-description js-templates-status">
+                                                <small class="entity-setting-description js-templates-status invoice-template-option">
                                                     Change Template, Color, and Font
+                                                    <div class="form-group">
+                                                        <label for="template">@lang('app.invoice') @lang('modules.invoiceSettings.template')</label>
+                                                        <select name="template" class="image-picker show-labels show-html">
+                                                            <option data-img-src="{{ asset('invoice-template/1.png') }}"
+                                                                    @if($invoiceSetting->template == 'invoice-1') selected @endif
+                                                                    value="invoice-1">Template
+                                                                1
+                                                            </option>
+                                                            <option data-img-src="{{ asset('invoice-template/2.png') }}"
+                                                                    @if($invoiceSetting->template == 'invoice-2') selected @endif
+                                                                    value="invoice-2">Template
+                                                                2
+                                                            </option>
+                                                            <option data-img-src="{{ asset('invoice-template/3.png') }}"
+                                                                    @if($invoiceSetting->template == 'invoice-3') selected @endif
+                                                                    value="invoice-3">Template
+                                                                3
+                                                            </option>
+                                                            <option data-img-src="{{ asset('invoice-template/4.png') }}"
+                                                                    @if($invoiceSetting->template == 'invoice-4') selected @endif
+                                                                    value="invoice-4">Template
+                                                                4
+                                                            </option>
+                                                            <option data-img-src="{{ asset('invoice-template/5.png') }}"
+                                                                    @if($invoiceSetting->template == 'invoice-5') selected @endif
+                                                                    value="invoice-5">Template
+                                                                5
+                                                            </option>
+                                                        </select>
+                                                    </div>
                                                 </small>
                                             </div>
                                         </a>
@@ -651,7 +735,7 @@
     {{--    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>--}}
     {{--<script src="{{ asset('plugins/bower_components/custom-select/custom-select.min.js') }}"></script>--}}
     <script src="{{ asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.js') }}"></script>
-
+    <script src="{{ asset('plugins/image-picker/image-picker.min.js') }}"></script>
     <script src="{{ asset('plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('plugins/bower_components/switchery/dist/switchery.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/select2.min.js') }}"></script>
@@ -659,6 +743,7 @@
 
 
     <script>
+        $(".image-picker").imagepicker();
         function readFile(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -860,6 +945,28 @@
         //         $('#shippingAddress').html('');
         //     }
         // }
+
+        var showOnlinePaymentSwitch = document.getElementById('show_online_payment');
+        $('.online-payment-option').hide();
+        showOnlinePaymentSwitch.onchange = function() {
+            if (showOnlinePaymentSwitch.checked) {
+                $('.online-payment-option').show();
+            }
+            else {
+                $('.online-payment-option').hide();
+            }
+        }
+
+        var showTemplateSwitch = document.getElementById('show_invoice_template');
+        $('.invoice-template-option').hide();
+        showTemplateSwitch.onchange = function() {
+            if (showTemplateSwitch.checked) {
+                $('.invoice-template-option').show();
+            }
+            else {
+                $('.invoice-template-option').hide();
+            }
+        }
 
         $(function () {
             $( "#sortable" ).sortable();

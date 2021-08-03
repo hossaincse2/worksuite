@@ -236,7 +236,6 @@ class ManageAllInvoicesController extends AdminBaseController
         $this->lastInvoice = Invoice::lastInvoiceNumber() + 1;
         $this->invoiceSetting = InvoiceSetting::first();
         $this->credentials = PaymentGatewayCredentials::first();
-        $this->invoiceSetting = InvoiceSetting::first();
         $this->zero = '';
         if (strlen($this->lastInvoice) < $this->invoiceSetting->invoice_digit) {
             for ($i = 0; $i < $this->invoiceSetting->invoice_digit - strlen($this->lastInvoice); $i++) {
