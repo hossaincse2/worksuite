@@ -16,9 +16,10 @@
         });
 
 //        setClient();
-
+        getClientInfo();
         $('#client_company_id').change(function() {
             checkShippingAddress();
+            getClientInfo();
         });
     </script>
 @else

@@ -62,6 +62,7 @@
                     <div class="panel-body">
                         {!! Form::open(['id'=>'updatePayments','class'=>'ajax-form','method'=>'PUT']) !!}
                         <div class="form-body">
+
                             <div class="row">
                                 <div class="col-md-4">
 
