@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Member;
 
+use App\ClientDetails;
 use App\CreditNotes;
 use App\Currency;
 use App\Estimate;
@@ -667,6 +668,15 @@ class MemberAllInvoicesController extends MemberBaseController
             }
         } else {
             return Reply::dataOnly(['switch' => 'off']);
+        }
+    }
+
+    public function getClientInfo($id){
+        if ($id) {
+            $client=ClientDetails::where('user_id','=',$id)
+                ->with('country')
+                ->first();
+            return $client;
         }
     }
 

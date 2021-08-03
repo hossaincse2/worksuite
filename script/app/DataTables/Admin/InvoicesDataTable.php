@@ -5,6 +5,8 @@ namespace App\DataTables\Admin;
 use App\DataTables\BaseDataTable;
 use App\Invoice;
 use App\InvoiceSetting;
+use App\Scopes\CompanyScope;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Html\Button;
@@ -24,6 +26,7 @@ class InvoicesDataTable extends BaseDataTable
     {
         $firstInvoice = $this->firstInvoice;
         $invoiceSettings = $this->invoiceSettings;
+//        dd($invoiceSettings);
         return datatables()
             ->eloquent($query)
             ->addIndexColumn()

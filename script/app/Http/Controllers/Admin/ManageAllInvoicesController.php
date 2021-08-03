@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\ClientDetails;
 use App\ClientPayment;
+use App\Country;
 use App\CreditNotes;
 use App\Currency;
 use App\DataTables\Admin\InvoicesDataTable;
@@ -19,6 +21,7 @@ use App\InvoiceSetting;
 use App\Notifications\PaymentReminder;
 use App\OfflineInvoicePayment;
 use App\Payment;
+use App\PaymentGatewayCredentials;
 use App\Product;
 use App\Project;
 use App\Proposal;
@@ -232,6 +235,8 @@ class ManageAllInvoicesController extends AdminBaseController
         $this->currencies = Currency::all();
         $this->lastInvoice = Invoice::lastInvoiceNumber() + 1;
         $this->invoiceSetting = InvoiceSetting::first();
+        $this->credentials = PaymentGatewayCredentials::first();
+        $this->invoiceSetting = InvoiceSetting::first();
         $this->zero = '';
         if (strlen($this->lastInvoice) < $this->invoiceSetting->invoice_digit) {
             for ($i = 0; $i < $this->invoiceSetting->invoice_digit - strlen($this->lastInvoice); $i++) {
@@ -241,6 +246,7 @@ class ManageAllInvoicesController extends AdminBaseController
 
 
         $this->taxes = Tax::all();
+        $this->countries=Country::all();
         $this->products = Product::select('id', 'name as title', 'name as text')->get();
         $this->clients = User::allClients();
         if (request('type') == "timelog") {
@@ -257,6 +263,7 @@ class ManageAllInvoicesController extends AdminBaseController
 
     public function store(StoreInvoice $request)
     {
+
         $items = $request->input('item_name');
         $itemsSummary = $request->input('item_summary');
         $cost_per_item = $request->input('cost_per_item');
@@ -701,6 +708,16 @@ class ManageAllInvoicesController extends AdminBaseController
         }
     }
 
+    public function getClientInfo($id)
+    {
+        if ($id) {
+            $client=ClientDetails::where('user_id','=',$id)
+                ->with('country')
+                ->first();
+            return $client;
+        }
+    }
+
     public function toggleShippingAddress(Invoice $invoice)
     {
         if ($invoice->show_shipping_address === 'yes') {
@@ -833,6 +850,7 @@ class ManageAllInvoicesController extends AdminBaseController
 
     public function getClientOrCompanyName($projectID = '')
     {
+
         $this->projectID = $projectID;
 
         if ($projectID == '') {
@@ -842,7 +860,7 @@ class ManageAllInvoicesController extends AdminBaseController
             $this->companyName = $companyName->clientdetails ? $companyName->clientdetails->company_name : '';
             $this->clientId = $companyName->clientdetails ? $companyName->clientdetails->user_id : '';
         }
-
+//        dd($this->data);
         $list = view('admin.invoices.client_or_company_name', $this->data)->render();
         return Reply::dataOnly(['html' => $list]);
     }
