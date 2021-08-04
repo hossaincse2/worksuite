@@ -159,7 +159,7 @@
                                                     </div>
                                                     <img src="{{ $global->logo_url }}"
                                                          alt=""/>
-                                                    <input type="file" name="img_logo" class="dropzone">
+{{--                                                    <input type="file" name="img_logo" class="dropzone">--}}
                                                 </div>
                                                 <!---->
                                                 {{--                                            <input accept="image/png, image/jpg, image/jpeg, image/gif" id="ember148" class="ember-text-field u-hide js-droppable-image-file-input ember-view" type="file">--}}

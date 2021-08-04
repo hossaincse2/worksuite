@@ -126,6 +126,7 @@ ol, ul {
     max-width: 300px;
     min-height: 150px;
     max-height: 200px;
+    background-color: #f6f6f6;
 }
 .simpleTemplate .invoice-logoUploadButton {
     color: #062942;
