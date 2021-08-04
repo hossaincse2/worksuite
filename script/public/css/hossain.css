@@ -192,3 +192,32 @@ ol, ul {
     font-size: 36px;
     line-height: 36px;
 }
+.dropzone-wrapper img{
+    height: 100% !important;
+    width: 100% !important;
+    z-index: -1;
+}
+.dropzone, .dropzone:focus {
+    position: absolute;
+    outline: none !important;
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    opacity: 0;
+    top: 0!important;
+}
+.meta-pane-group{
+    position: relative;
+}
+.accept_online{
+    margin-top: -30px;
+    margin-left: 38px;
+}
+.panel .panel-body:first-child h3 {
+    font-size: 12px !important;
+}
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #f6f6f6;
+    border-radius: 4px;
+}
