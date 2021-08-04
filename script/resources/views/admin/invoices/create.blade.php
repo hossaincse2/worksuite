@@ -157,7 +157,8 @@
                                                         {{--                                                    <i class="glyphicon glyphicon-download-alt"></i>--}}
                                                         {{--                                                    <p>Choose an image file or drag it here.</p>--}}
                                                     </div>
-                                                    <img src="{{ $global->logo_url }}"
+{{--                                                    @dd($invoiceSetting)--}}
+                                                    <img src="{{ $invoiceSetting->logo_url }}"
                                                          alt=""/>
 {{--                                                    <input type="file" name="img_logo" class="dropzone">--}}
                                                 </div>
@@ -299,12 +300,35 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label class="control-label">GST Number</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="input-icon">
+                                                            <input type="text" class="form-controls" name="gst_number" id="gst_number"
+                                                                   value="{{$invoiceSetting->gst_number}}" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label class="control-label">Amount Due (EUR)</label>
                                                 <div class="invoice-value invoice-total u-noWrap ">
                                                     €0.00
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">BTW</label>
+                                                <div class="invoice-value invoice-total u-noWrap ">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Bank</label>
+                                                <div class="invoice-value invoice-total u-noWrap ">
+
                                                 </div>
                                             </div>
                                         </div>
@@ -616,7 +640,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">@lang('app.note')</label>
                                                 <textarea class="form-control" name="note" id="note"
-                                                          rows="5"></textarea>
+                                                          rows="5">{{$invoiceSetting->invoice_terms}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -805,7 +829,7 @@
                                         </a>
                                     </li>
                                     <li class="meta-pane-group">
-                                        <a href="#" role="link" tabindex="0"
+                                        <a href="{{route('admin.invoice-recurring.create')}}" role="link" tabindex="0"
                                            class="u-media meta-pane-link entity-setting-item" data-ember-action=""
                                            data-ember-action-546="546">
                                             <div class="u-media-imageLeft entity-setting-icon">
