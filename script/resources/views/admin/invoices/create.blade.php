@@ -321,13 +321,13 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label">BTW</label>
-                                                <div class="invoice-value invoice-total u-noWrap ">
+                                                <div class="invoice-value  u-noWrap ">
 
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label">Bank</label>
-                                                <div class="invoice-value invoice-total u-noWrap ">
+                                                <div class="invoice-value  u-noWrap ">
 
                                                 </div>
                                             </div>
@@ -1403,6 +1403,7 @@
             var total = decimalupto2(totalAfterDiscount + taxTotal);
 
             $('.total').html(total.toFixed(2));
+            $('.invoice-total').html(total.toFixed(2));
             $('.total-field').val(total.toFixed(2));
 
         }
