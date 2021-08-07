@@ -115,8 +115,8 @@
                     <div class="panel-body">
                         {!! Form::open(['id'=>'storePayments','class'=>'ajax-form','enctype'=>'multipart/form-data','method'=>'POST']) !!}
                         <div class="row">
-                            <div class="col-md-9">
-                                <h2 class="pull-left">New Invoice </h2>
+                            <div class="col-md-9"><h2 class="pull-left">New Invoice </h2></div>
+                            <div class="col-md-3">
                                 <div class="pull-right">
                                     <a class="btn btn-default btn-custome-cancel"
                                        href="{{route('admin.all-invoices.index')}}">Cancel</a>
@@ -169,19 +169,24 @@
 
                                         <div class="col-md-7">
                                             <div class="row">
-                                                <div class="col-md-6 text-right">
-                                                    <div class="myText">Sols</div>
-                                                    <div class="myText">012345677</div>
-                                                </div>
-                                                <div class="col-md-6 text-right">
-                                                    <div class="myText">{{$global->company_name}}</div>
+{{--                                                <div class="col-md-6 text-right">--}}
+{{--                                                    <div class="myText">Sols</div>--}}
+{{--                                                    <div class="myText">012345677</div>--}}
+{{--                                                </div>--}}
+                                                <div class="col-md-6"></div>
+                                                <div class="col-md-6 text-left">
+                                                    <div class="myText"><b>{{$global->company_name}}</b></div>
                                                     <div class="myText">{{$global->address}}</div>
-                                                    <div class="myText">{{$global->company_phone}}</div>
+                                                    <br>
                                                     <div class="myText">{{$global->company_email}}</div>
-                                                    {{--                                                    <div class="display-inline3">--}}
-                                                    {{--                                                        <input class="form-controls text-right" type="text" placeholder="Tax Name">--}}
-                                                    {{--                                                        <input class="form-controls text-right" type="text" placeholder="Tax Number">--}}
-                                                    {{--                                                    </div>--}}
+                                                    <div class="myText">{{$global->company_phone}}</div>
+                                                    <br>
+                                                    <div class="myText">KvK Number: <br>
+                                                        {{$invoiceSetting->gst_number}}</div>
+                                                    <div class="myText">Btw Number: <br>
+                                                         NL81445454454541</div>
+                                                    <div class="myText">Bank:  330054545454</div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -189,15 +194,17 @@
                                     <br/>
                                     <br/>
                                     <div class="row">
+                                        <label class="col-md-2" for="exampleFormControlFile1">Billed To</label> <br>
+                                        <div class="col-md-6" id="client_company_div">
+                                            <div class="input-icon">
+                                                <input type="text" readonly class="form-control" name=""
+                                                       id="company_name" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="exampleFormControlFile1">Billed To</label> <br>
-                                                <div id="client_company_div">
-                                                    <div class="input-icon">
-                                                        <input type="text" readonly class="form-control" name=""
-                                                               id="company_name" value="">
-                                                    </div>
-                                                </div>
                                                 <div class="display-inline">
                                                     <input class="form-controls" type="text" name="first_name"
                                                            id="first_name" placeholder="First Name" autocomplete="off">
@@ -227,47 +234,9 @@
                                                 {{--                                            </select>--}}
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label">Date of Issue</label>
-                                                <div class="row">
-                                                    <div class="col-xs-12">
-                                                        <div class="input-icon">
-                                                            <input type="text" class="form-controls" name="issue_date"
-                                                                   id="invoice_date"
-                                                                   value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label"> Due Date </label>
-                                                <div class="row">
-                                                    <div class="col-xs-12">
-                                                        <div class="input-icon">
-                                                            <input type="text" class="form-controls" name="due_date"
-                                                                   id="due_date"
-                                                                   value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">@lang('modules.invoices.currency')</label>
-                                                <div class="row">
-                                                    <div class="col-xs-12">
-                                                        <select class="form-control select2" name="currency_id"
-                                                                id="currency_id">
-                                                            @foreach($currencies as $currency)
-                                                                <option value="{{ $currency->id }}"
-                                                                        @if($global->currency_id == $currency->id) selected @endif>{{ $currency->currency_symbol.' ('.$currency->currency_code.')' }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div class="col-md-3">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">@lang('app.invoice') #</label>
                                                 <div class="row">
@@ -300,67 +269,72 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                        </div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">GST Number</label>
+                                                <label class="control-label">@lang('app.project')<a class="mytooltip" href="javascript:void(0)">
+                                                        <i class="fa fa-info-circle"></i>
+                                                        <span class="tooltip-content5">
+                                                        <span class="tooltip-text3">
+                                                            <span class="tooltip-inner2">
+                                                                @lang('modules.invoices.projectWithClient')
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                    </a></label>
                                                 <div class="row">
                                                     <div class="col-xs-12">
                                                         <div class="input-icon">
-                                                            <input type="text" class="form-controls" name="gst_number" id="gst_number"
-                                                                   value="{{$invoiceSetting->gst_number}}" readonly>
+                                                            <select class="select2 form-control " onchange="getCompanyName()" data-placeholder="Choose Project" id="project_id" name="project_id">
+                                                                <option value="">--</option>
+                                                                @foreach($projects as $project)
+                                                                    <option
+                                                                            value="{{ $project->id }}">{{ ucwords($project->project_name) }}</option>
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label class="control-label">Amount Due (EUR)</label>
-                                                <div class="invoice-value invoice-total u-noWrap ">
-                                                    €0.00
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">BTW</label>
-                                                <div class="invoice-value  u-noWrap ">
 
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">Bank</label>
-                                                <div class="invoice-value  u-noWrap ">
-
-                                                </div>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">@lang('modules.invoices.showShippingAddress')
-                                                    <a class="mytooltip" href="javascript:void(0)">
-                                                        <i class="fa fa-info-circle"></i>
-                                                        <span class="tooltip-content5">
-                                                            <span class="tooltip-text3">
-                                                                <span class="tooltip-inner2">
-                                                                    @lang('modules.invoices.showShippingAddressInfo')
-                                                                </span>
-                                                            </span>
-                                                        </span>
-                                                    </a>
-                                                </label>
-                                                <div class="switchery-demo">
-                                                    <input type="checkbox" id="show_shipping_address"
-                                                           name="show_shipping_address" class="js-switch "
-                                                           data-color="#00c292" data-secondary-color="#f96262"/>
+                                                <label class="control-label">Date of Issue</label>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="input-icon">
+                                                            <input type="text" class="form-controls" name="issue_date"
+                                                                   id="invoice_date"
+                                                                   value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div id="shippingAddress">
-
+                                            <div class="form-group">
+                                                <label class="control-label"> Due Date </label>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="input-icon">
+                                                            <input type="text" class="form-controls" name="due_date"
+                                                                   id="due_date"
+                                                                   value="{{ Carbon\Carbon::today()->format($global->date_format) }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
+{{--                                    <div class="row">--}}
+{{--                                       --}}
+{{--                                        <div class="col-md-8">--}}
+{{--                                            <div id="shippingAddress">--}}
+
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                     <h3 class="box-title">@lang('modules.projects.otherInfo')</h3>
                                     <div class="row">
                                         @foreach($fields as $field)
@@ -677,6 +651,14 @@
                                 {{--                            </div>--}}
                             </div>
                             <div class="col-md-3">
+                                <div class="blance">
+                                    <div class="form-group">
+                                        <label class="control-label">Amount Due <br> (EUR)</label>
+                                        <div class="invoice-value invoice-total u-noWrap ">
+                                            €0.00
+                                        </div>
+                                    </div>
+                                </div>
                                 <h2>Settings</h2>
                                 <h4 class="heading-3 u-media">
                                   <span class="meta-pane-panel-header-text u-media-body">
@@ -845,6 +827,44 @@
                                                 </small>
                                             </div>
                                         </a>
+                                    </li>
+                                    <li class="meta-pane-group">
+                                            <div class="u-media-imageLeft entity-setting-icon">
+                                                <i class="ti-agenda fa-fw"></i>
+                                            </div>
+                                            <div class="u-media-imageRight">
+                                                <select class="form-control select2" name="currency_id"
+                                                        id="currency_id">
+                                                    @foreach($currencies as $currency)
+                                                        <option value="{{ $currency->id }}"
+                                                                @if($global->currency_id == $currency->id) selected @endif>{{ $currency->currency_symbol.' ('.$currency->currency_code.')' }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="u-media-body">
+                                                <h3 class="js-pane-make-recurring">@lang('modules.invoices.currency')</h3>
+
+                                            </div>
+                                    </li>
+                                    <li class="meta-pane-group">
+                                            <div class="u-media-imageLeft entity-setting-icon">
+                                                <i class="ti-map fa-fw"></i>
+                                            </div>
+                                            <div class="u-media-imageRight">
+                                                <div class="switchery-demo">
+                                                    <input type="checkbox" id="show_shipping_address"
+                                                           name="show_shipping_address" class="js-switch "
+                                                           data-color="#00c292" data-secondary-color="#f96262"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="u-media-body">
+                                                <h3 class="js-pane-make-recurring">@lang('modules.invoices.showShippingAddress')</h3>
+
+                                                <small class="entity-setting-description">
+                                                    @lang('modules.invoices.showShippingAddressInfo')
+                                                </small>
+                                            </div>
                                     </li>
                                 </ul>
                             </div>
